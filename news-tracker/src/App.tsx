@@ -1,12 +1,14 @@
 import styles from './App.module.scss'
-import News from "./News.tsx";
+import News from "./components/News.tsx";
+import Header from "./components/Header.tsx";
+import Footer from "./components/Footer.tsx";
 
 function App() {
     return (
         <div className={styles.mainBlock}>
-            <header className={styles.HeaderBlock}>Header</header>
+            <Header/>
             <News/>
-            <footer className={styles.FooterBlock}>Footer</footer>
+            <Footer/>
         </div>
     )
 }

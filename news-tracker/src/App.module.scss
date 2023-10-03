@@ -9,33 +9,36 @@
   min-height: 100vh;
   flex-direction: column;
   background: coral;
+}
 
-  .HeaderBlock {
-    height: 60px;
-  }
+.HeaderBlock {
+  height: 60px;
+  background: chartreuse;
+}
 
-  .NewsBlock {
-    background: darkviolet;
-    flex: 1 1 auto;
-    display: flex;
-    flex-wrap: wrap;
+.NewsBlock {
+  background: darkviolet;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 120px);
+  flex-direction: row;
+}
 
-    .getDataBtn {
-      width: 200px;
-      height: 40px;
-    }
-    .newsContainer {
-      width: 300px;
-      background: rgb(255, 234, 8);
-      border: 1px solid;
-      padding: 10px;
-      margin: 10px;
-    }
-  }
+.getDataBtn {
+  width: 200px;
+  height: 40px;
+}
 
-  .FooterBlock {
-    background: aqua;
-    height: 60px;
-    display: flex;
-  }
+.newsContainer {
+  width: 300px;
+  background: rgb(255, 234, 8);
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}
+
+.FooterBlock {
+  background: aqua;
+  height: 60px;
+  display: flex;
 }

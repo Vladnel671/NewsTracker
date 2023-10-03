@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import styles from "./App.module.scss"
+import React, { useState } from 'react';
+import styles from "../App.module.scss";
 
 interface INewsData {
     author: string;
     title: string;
     description: string;
-    urlToImage: string
+    urlToImage: string;
 }
 
 const News: React.FC = () => {
@@ -26,19 +26,21 @@ const News: React.FC = () => {
 
     return (
         <div className={styles.NewsBlock}>
-            <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
+            <div>
+                <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
+            </div>
             <div>
                 {newsData.length === 0 ? (
                     <div>Загрузка...</div>
                 ) : (
                     newsData.map((news) => (
                         <div className={styles.newsContainer} key={news.title}>
-
                             <div>{news.title}</div>
-                            <div><img width={60} src={news.urlToImage} alt={news.title}/></div>
+                            {news.urlToImage ? (
+                                <div><img src={news.urlToImage} alt={news.title} /></div>
+                            ) : null}
                             <div>{news.description}</div>
                             <div>{news.author}</div>
-
                         </div>
                     ))
                 )}
