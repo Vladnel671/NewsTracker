@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainBlock {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: coral;
+
+  .HeaderBlock {
+    height: 60px;
+  }
+
+  .NewsBlock {
+    background: darkviolet;
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    .getDataBtn {
+      width: 200px;
+      height: 40px;
+    }
+    .newsContainer {
+      width: 300px;
+      background: rgb(255, 234, 8);
+      border: 1px solid;
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+
+  .FooterBlock {
+    background: aqua;
+    height: 60px;
+    display: flex;
+  }
+}
