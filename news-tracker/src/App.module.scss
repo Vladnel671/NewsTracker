@@ -19,9 +19,8 @@
 .NewsBlock {
   background: darkviolet;
   display: flex;
-  flex-wrap: wrap;
   min-height: calc(100vh - 120px);
-  flex-direction: row;
+
 }
 
 .getDataBtn {
@@ -35,10 +34,19 @@
   border: 1px solid;
   padding: 10px;
   margin: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .FooterBlock {
   background: aqua;
   height: 60px;
   display: flex;
+}
+.newsPicture {
+  width: 250px;
+}
+.MainNewsBlock {
+  display: flex;
+  flex-wrap: wrap;
 }

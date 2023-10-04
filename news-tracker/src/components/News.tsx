@@ -10,7 +10,7 @@ interface INewsData {
 
 const News: React.FC = () => {
     const [newsData, setNews] = useState<INewsData[]>([]);
-    const COUNTRY = 'ru';
+    const COUNTRY = 'us';
     const API_KEY = "9104cee86a3240cbb4f97d269814257d";
     const URL = `https://newsapi.org/v2/top-headlines?country=${COUNTRY}&apiKey=${API_KEY}`;
 
@@ -29,7 +29,7 @@ const News: React.FC = () => {
             <div>
                 <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
             </div>
-            <div>
+            <div className={styles.MainNewsBlock}>
                 {newsData.length === 0 ? (
                     <div>Загрузка...</div>
                 ) : (
@@ -37,9 +37,9 @@ const News: React.FC = () => {
                         <div className={styles.newsContainer} key={news.title}>
                             <div>{news.title}</div>
                             {news.urlToImage ? (
-                                <div><img src={news.urlToImage} alt={news.title} /></div>
+                                <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title} /></div>
                             ) : null}
-                            <div>{news.description}</div>
+                            <div>опис{news.description}опис</div>
                             <div>{news.author}</div>
                         </div>
                     ))
