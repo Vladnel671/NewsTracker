@@ -11,7 +11,7 @@ interface INewsData {
     source: { name: string }
 }
 
-const News: React.FC = () => {
+const TopHeadlines: React.FC = () => {
     const [newsData, setNews] = useState<INewsData[]>([]);
     const COUNTRY = 'us';
     const API_KEY = "9104cee86a3240cbb4f97d269814257d";
@@ -61,4 +61,4 @@ const News: React.FC = () => {
     );
 };
 
-export default News;
+export default TopHeadlines;

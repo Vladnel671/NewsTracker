@@ -27,44 +27,47 @@ const AllNews: React.FC = () => {
             const response = await fetch(URL);
             const data = await response.json();
             setAllNews(data.articles);
+            setKeyword('')
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
         }
     };
 
     return (
-        <div className={styles.News}>
+        <>
             <div className={styles.searchInputBlock}>
-                <input type="text" onChange={searchHandler} value={keyword}/>
-                <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
+                <button className={styles.getDataBtn} onClick={getData}>Get news</button>
+                <input className={styles.searchInput} type="text" onChange={searchHandler} value={keyword}/>
             </div>
-            {allNewsData.length === 0 ? (<div>Загрузка...</div>) : (allNewsData.map((news) => (
-                    <div className={styles.newsContainer} key={news.title}>
-                        <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
-                            <div className={styles.sourceNamePublishedBlock}>
-                                <h5 className={styles.source}>{news.source.name}</h5>
-                                <div className={styles.publishedAt}>
-                                    {new Date(news.publishedAt).toLocaleString(undefined, {
-                                        year: 'numeric',
-                                        month: 'numeric',
-                                        day: 'numeric',
-                                        hour: '2-digit',
-                                        minute: '2-digit'
-                                    })}
+            <div className={styles.News}>
+                {allNewsData.length === 0 ? (<div>Загрузка...</div>) : (allNewsData.map((news) => (
+                        <div className={styles.newsContainer} key={news.title}>
+                            <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
+                                <div className={styles.sourceNamePublishedBlock}>
+                                    <h5 className={styles.source}>{news.source.name}</h5>
+                                    <div className={styles.publishedAt}>
+                                        {new Date(news.publishedAt).toLocaleString(undefined, {
+                                            year: 'numeric',
+                                            month: 'numeric',
+                                            day: 'numeric',
+                                            hour: '2-digit',
+                                            minute: '2-digit'
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
-                            <span className={styles.titleBlock}>{news.title}</span>
-                            {news.urlToImage ? (
-                                <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title}/>
-                                </div>) : null}
-                        </a>
-                        {news.description ? (
-                            <span className={styles.descriptionBlock}>{news.description}</span>) : null}
-                        {news.author ? (<span className={styles.AuthorBlock}>Author: {news.author}</span>) : null}
-                    </div>
-                ))
-            )}
-        </div>
+                                <span className={styles.titleBlock}>{news.title}</span>
+                                {news.urlToImage ? (
+                                    <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title}/>
+                                    </div>) : null}
+                            </a>
+                            {news.author ? (<span className={styles.AuthorBlock}>Author: {news.author}</span>) : null}
+                            {news.description ? (
+                                <span className={styles.descriptionBlock}>{news.description}</span>) : null}
+                        </div>
+                    ))
+                )}
+            </div>
+        </>
     );
 };
 
