@@ -1,5 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import styles from "../App.module.scss";
+import {IconButton, TextField} from "@material-ui/core";
+import { Search as SearchIcon } from "@material-ui/icons";
 
 interface IAllNewsData {
     author: string;
@@ -36,8 +38,17 @@ const AllNews: React.FC = () => {
     return (
         <>
             <div className={styles.searchInputBlock}>
-                <button className={styles.getDataBtn} onClick={getData}>Get news</button>
-                <input className={styles.searchInput} type="text" onChange={searchHandler} value={keyword}/>
+                <TextField
+                    color='secondary'
+                    className={styles.searchInput}
+                    type="search"
+                    value={keyword}
+                    onChange={searchHandler}
+                    placeholder="Search..."
+                />
+                <IconButton onClick={getData} aria-label="search">
+                    <SearchIcon color='primary' />
+                </IconButton>
             </div>
             <div className={styles.News}>
                 {allNewsData.length === 0 ? (<div>Загрузка...</div>) : (allNewsData.map((news) => (
