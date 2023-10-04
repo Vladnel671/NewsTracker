@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from "../App.module.scss";
+import {NavLink} from "react-router-dom";
 
 const Header: React.FC = () => {
     return (
         <header className={styles.HeaderBlock}>
-            <h1>NewsTracker</h1>
+            <NavLink className={styles.newsLink} to="/allnews"><h1>NewsTracker</h1></NavLink>
             <div className={styles.NavBarMain}>
-                <a>Top and breaking headlines</a>
-                <a>All news</a>
+                <NavLink className={styles.newsLink} to="/topheadlines">Top and breaking headlines</NavLink>
+                <NavLink className={styles.newsLink} to="/allnews">All news</NavLink>
             </div>
         </header>
     );
