@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styles from "../App.module.scss";
 
 interface INewsData {
@@ -6,6 +6,7 @@ interface INewsData {
     title: string;
     description: string;
     urlToImage: string;
+    url: string
 }
 
 const News: React.FC = () => {
@@ -25,25 +26,28 @@ const News: React.FC = () => {
     };
 
     return (
-        <div className={styles.NewsBlock}>
+        <div className={styles.News}>
+            {newsData.length === 0 ? (
+                <div>Загрузка...</div>
+            ) : (
+                newsData.map((news) => (
+
+                    <div className={styles.newsContainer} key={news.title}>
+                        <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
+                            <div className={styles.titleBlock}>{news.title}</div>
+                            {news.urlToImage ? (
+                                <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title}/>
+                                </div>) : null}
+                        </a>
+                        {news.description ? (
+                            <div className={styles.descriptionBlock}>{news.description}</div>) : null}
+                        {news.author ? (<div className={styles.AuthorBlock}>Author: {news.author}</div>) : null}
+                    </div>
+
+                ))
+            )}
             <div>
                 <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
-            </div>
-            <div className={styles.MainNewsBlock}>
-                {newsData.length === 0 ? (
-                    <div>Загрузка...</div>
-                ) : (
-                    newsData.map((news) => (
-                        <div className={styles.newsContainer} key={news.title}>
-                            <div>{news.title}</div>
-                            {news.urlToImage ? (
-                                <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title} /></div>
-                            ) : null}
-                            <div>опис{news.description}опис</div>
-                            <div>{news.author}</div>
-                        </div>
-                    ))
-                )}
             </div>
         </div>
     );

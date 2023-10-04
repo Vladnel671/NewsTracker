@@ -4,7 +4,7 @@ import styles from "../App.module.scss";
 const Header: React.FC= () => {
     return (
         <div>
-            <header className={styles.HeaderBlock}>Header</header>
+            <header className={styles.HeaderBlock}>NewsTracker</header>
         </div>
     );
 };
