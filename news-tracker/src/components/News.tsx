@@ -6,7 +6,8 @@ interface INewsData {
     title: string;
     description: string;
     urlToImage: string;
-    url: string
+    url: string;
+    publishedAt: string;
 }
 
 const News: React.FC = () => {
@@ -24,7 +25,6 @@ const News: React.FC = () => {
             console.log('Ошибка при выполнении GET-запроса:', error);
         }
     };
-
     return (
         <div className={styles.News}>
             {newsData.length === 0 ? (
@@ -34,7 +34,10 @@ const News: React.FC = () => {
 
                     <div className={styles.newsContainer} key={news.title}>
                         <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
-                            <div className={styles.titleBlock}>{news.title}</div>
+                            <div>
+                                <div className={styles.titleBlock}>{news.title}</div>
+                                <div className={styles.publishedAt}>{new Date(news.publishedAt).toLocaleString()}</div>
+                            </div>
                             {news.urlToImage ? (
                                 <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title}/>
                                 </div>) : null}
