@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import styles from "../App.module.scss";
+
 interface IAllNewsData {
     author: string;
     title: string;
@@ -9,12 +10,18 @@ interface IAllNewsData {
     publishedAt: string;
     source: { name: string }
 }
+
 const AllNews: React.FC = () => {
 
     const [allNewsData, setAllNews] = useState<IAllNewsData[]>([]);
-    //const COUNTRY = 'us';
+    const [keyword, setKeyword] = useState<string>('')
     const API_KEY = "9104cee86a3240cbb4f97d269814257d";
-    const URL = ` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${API_KEY}`;
+    const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}&pageSize=10`;
+
+    const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setKeyword(event.target.value);
+    };
+
     const getData = async () => {
         try {
             const response = await fetch(URL);
@@ -27,6 +34,10 @@ const AllNews: React.FC = () => {
 
     return (
         <div className={styles.News}>
+            <div className={styles.searchInputBlock}>
+                <input type="text" onChange={searchHandler} value={keyword}/>
+                <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
+            </div>
             {allNewsData.length === 0 ? (<div>Загрузка...</div>) : (allNewsData.map((news) => (
                     <div className={styles.newsContainer} key={news.title}>
                         <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
@@ -53,9 +64,6 @@ const AllNews: React.FC = () => {
                     </div>
                 ))
             )}
-            <div>
-                <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
-            </div>
         </div>
     );
 };
