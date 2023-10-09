@@ -1,7 +1,8 @@
 import React, {ChangeEvent, useState} from 'react';
-import styles from "../App.module.scss";
+import styles from "../../App.module.scss";
 import {IconButton, TextField} from "@material-ui/core";
 import { Search as SearchIcon } from "@material-ui/icons";
+//import {LazyImage} from "./LazyImage/LazyImage.tsx";
 
 interface IAllNewsData {
     author: string;
@@ -67,8 +68,8 @@ const AllNews: React.FC = () => {
                                     </div>
                                 </div>
                                 <span className={styles.titleBlock}>{news.title}</span>
-                                {news.urlToImage ? (
-                                    <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title}/>
+                                {news.urlToImage ? (<div>
+                                      {/*<LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>*/}
                                     </div>) : null}
                             </a>
                             {news.author ? (<span className={styles.AuthorBlock}>Author: {news.author}</span>) : null}
