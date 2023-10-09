@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styles from "../../App.module.scss";
+import {Button} from "@material-ui/core";
 
 interface INewsData {
     author: string;
@@ -26,13 +27,14 @@ const TopHeadlines: React.FC = () => {
             console.log('Ошибка при выполнении GET-запроса:', error);
         }
     };
+
     return (
         <div className={styles.News}>
-            {newsData.length === 0 ? (<div>Загрузка...</div>) : (newsData.map((news) => (
+            {newsData.length === 0 ? (<span className={styles.spinner}></span>) : (newsData.map((news) => (
                     <div className={styles.newsContainer} key={news.title}>
                         <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
                             <div className={styles.sourceNamePublishedBlock}>
-                                <h5 className={styles.source}>{news.source.name}</h5>
+                                <h4 className={styles.source}>{news.source.name}</h4>
                                 <div className={styles.publishedAt}>
                                     {new Date(news.publishedAt).toLocaleString(undefined, {
                                         year: 'numeric',
@@ -55,7 +57,7 @@ const TopHeadlines: React.FC = () => {
                 ))
             )}
             <div>
-                <button className={styles.getDataBtn} onClick={getData}>Получить новости</button>
+                <Button color="primary" className={styles.getDataBtn} onClick={getData}>Get news</Button>
             </div>
         </div>
     );

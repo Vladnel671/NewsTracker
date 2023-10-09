@@ -1,8 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import styles from "../../App.module.scss";
 import {IconButton, TextField} from "@material-ui/core";
-import { Search as SearchIcon } from "@material-ui/icons";
-//import {LazyImage} from "./LazyImage/LazyImage.tsx";
+import {Search as SearchIcon} from "@material-ui/icons";
 
 interface IAllNewsData {
     author: string;
@@ -48,15 +47,15 @@ const AllNews: React.FC = () => {
                     placeholder="Search..."
                 />
                 <IconButton onClick={getData} aria-label="search">
-                    <SearchIcon color='primary' />
+                    <SearchIcon color='primary'/>
                 </IconButton>
             </div>
             <div className={styles.News}>
-                {allNewsData.length === 0 ? (<div>Загрузка...</div>) : (allNewsData.map((news) => (
+                {allNewsData.length === 0 ? (<span className={styles.spinner}></span>) : (allNewsData.map((news) => (
                         <div className={styles.newsContainer} key={news.title}>
                             <a className={styles.newsLink} href={news.url} target="_blank" rel='noopener noreferrer'>
                                 <div className={styles.sourceNamePublishedBlock}>
-                                    <h5 className={styles.source}>{news.source.name}</h5>
+                                    <h4 className={styles.source}>{news.source.name}</h4>
                                     <div className={styles.publishedAt}>
                                         {new Date(news.publishedAt).toLocaleString(undefined, {
                                             year: 'numeric',
@@ -69,8 +68,8 @@ const AllNews: React.FC = () => {
                                 </div>
                                 <span className={styles.titleBlock}>{news.title}</span>
                                 {news.urlToImage ? (<div>
-                                      {/*<LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>*/}
-                                    </div>) : null}
+                                    <img key={news.title} src={news.urlToImage} alt={news.title}/>
+                                </div>) : null}
                             </a>
                             {news.author ? (<span className={styles.AuthorBlock}>Author: {news.author}</span>) : null}
                             {news.description ? (

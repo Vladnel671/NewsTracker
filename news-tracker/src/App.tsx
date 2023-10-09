@@ -8,9 +8,9 @@ import {useSpring, animated} from '@react-spring/web'
 
 function App() {
     const springs = useSpring({
-        from: {opacity: 0},
-        to: {opacity: 1},
-        config: {duration: 500}
+        from: {opacity: 0, transform: "translateY(-4rem)"},
+        to: {opacity: 1, transform: "translateY(0rem)"},
+        config: {duration: 300}
     })
 
     return (
