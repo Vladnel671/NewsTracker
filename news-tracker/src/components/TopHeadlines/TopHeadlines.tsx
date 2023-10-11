@@ -23,7 +23,10 @@ const TopHeadlines: React.FC = () => {
         try {
             const response = await fetch(URL);
             const data = await response.json();
-            setNews(data.articles);
+            const filteredNews = data.articles.filter((news:INewsData) => {
+                return !(news.title === '[Removed]' || news.title.trim() === '');
+            });
+            setNews(filteredNews);
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
         }

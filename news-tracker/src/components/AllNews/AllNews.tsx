@@ -29,7 +29,10 @@ const AllNews: React.FC = () => {
         try {
             const response = await fetch(URL);
             const data = await response.json();
-            setAllNews(data.articles);
+            const filteredNews = data.articles.filter((news:IAllNewsData) => {
+                return !(news.title === '[Removed]' || news.title.trim() === '');
+            });
+            setAllNews(filteredNews);
             setKeyword('')
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
@@ -68,7 +71,7 @@ const AllNews: React.FC = () => {
                                     </div>
                                 </div>
                                 <span className={styles.titleBlock}>{news.title}</span>
-                                {news.urlToImage ? (<div>
+                                {news.urlToImage && !"[Removed]" ? (<div>
                                     <LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>
                                 </div>) : null}
                             </a>
