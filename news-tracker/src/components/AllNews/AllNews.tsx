@@ -2,6 +2,7 @@ import React, {ChangeEvent, useState} from 'react';
 import styles from "../../App.module.scss";
 import {IconButton, TextField} from "@material-ui/core";
 import {Search as SearchIcon} from "@material-ui/icons";
+import {LazyImage} from "../LazyImage/LazyImage.tsx";
 
 interface IAllNewsData {
     author: string;
@@ -18,7 +19,7 @@ const AllNews: React.FC = () => {
     const [allNewsData, setAllNews] = useState<IAllNewsData[]>([]);
     const [keyword, setKeyword] = useState<string>('')
     const API_KEY = "9104cee86a3240cbb4f97d269814257d";
-    const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}&pageSize=10`;
+    const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}`;//&pageSize=10
 
     const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
         setKeyword(event.target.value);
@@ -62,13 +63,13 @@ const AllNews: React.FC = () => {
                                             month: 'numeric',
                                             day: 'numeric',
                                             hour: '2-digit',
-                                            minute: '2-digit'
-                                        })}
+                                            minute: '2-digit'})
+                                        }
                                     </div>
                                 </div>
                                 <span className={styles.titleBlock}>{news.title}</span>
                                 {news.urlToImage ? (<div>
-                                    <img key={news.title} src={news.urlToImage} alt={news.title}/>
+                                    <LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>
                                 </div>) : null}
                             </a>
                             {news.author ? (<span className={styles.AuthorBlock}>Author: {news.author}</span>) : null}

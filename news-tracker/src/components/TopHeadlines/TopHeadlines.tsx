@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from "../../App.module.scss";
 import {Button} from "@material-ui/core";
+import {LazyImage} from "../LazyImage/LazyImage.tsx";
 
 interface INewsData {
     author: string;
@@ -46,9 +47,9 @@ const TopHeadlines: React.FC = () => {
                                 </div>
                             </div>
                             <span className={styles.titleBlock}>{news.title}</span>
-                            {news.urlToImage ? (
-                                <div><img className={styles.newsPicture} src={news.urlToImage} alt={news.title}/>
-                                </div>) : null}
+                            {news.urlToImage ? (<div>
+                                <LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>
+                            </div>) : null}
                         </a>
                         {news.description ? (
                             <span className={styles.descriptionBlock}>{news.description}</span>) : null}
