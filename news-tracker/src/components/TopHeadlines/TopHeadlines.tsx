@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from "../../App.module.scss";
 import {Button} from "@material-ui/core";
 import {LazyImage} from "../LazyImage/LazyImage.tsx";
+import axios from "axios";
 
 interface INewsData {
     author: string;
@@ -21,9 +22,9 @@ const TopHeadlines: React.FC = () => {
 
     const getData = async () => {
         try {
-            const response = await fetch(URL);
-            const data = await response.json();
-            const filteredNews = data.articles.filter((news:INewsData) => {
+            const response = await axios.get(URL);
+            const data = response.data;
+            const filteredNews = data.articles.filter((news: INewsData) => {
                 return !(news.title === '[Removed]' || news.title.trim() === '');
             });
             setNews(filteredNews);

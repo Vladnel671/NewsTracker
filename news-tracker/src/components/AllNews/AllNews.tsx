@@ -3,6 +3,7 @@ import styles from "../../App.module.scss";
 import {IconButton, TextField} from "@material-ui/core";
 import {Search as SearchIcon} from "@material-ui/icons";
 import {LazyImage} from "../LazyImage/LazyImage.tsx";
+import axios from "axios";
 
 interface IAllNewsData {
     author: string;
@@ -27,13 +28,12 @@ const AllNews: React.FC = () => {
 
     const getData = async () => {
         try {
-            const response = await fetch(URL);
-            const data = await response.json();
-            const filteredNews = data.articles.filter((news:IAllNewsData) => {
+            const response = await axios.get(URL);
+            const data = response.data;
+            const filteredNews = data.articles.filter((news: IAllNewsData) => {
                 return !(news.title === '[Removed]' || news.title.trim() === '');
             });
             setAllNews(filteredNews);
-            setKeyword('')
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
         }
