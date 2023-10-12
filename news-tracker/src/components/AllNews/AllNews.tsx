@@ -20,7 +20,7 @@ const AllNews: React.FC = () => {
     const [allNewsData, setAllNews] = useState<IAllNewsData[]>([]);
     const [keyword, setKeyword] = useState<string>('')
     const API_KEY = "9104cee86a3240cbb4f97d269814257d";
-    const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}`;//&pageSize=10
+    const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}&pageSize=10`;
 
     const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
         setKeyword(event.target.value);
@@ -71,7 +71,7 @@ const AllNews: React.FC = () => {
                                     </div>
                                 </div>
                                 <span className={styles.titleBlock}>{news.title}</span>
-                                {news.urlToImage && !"[Removed]" ? (<div>
+                                {news.urlToImage ? (<div>
                                     <LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>
                                 </div>) : null}
                             </a>
