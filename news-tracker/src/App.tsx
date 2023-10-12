@@ -1,9 +1,9 @@
-import styles from './App.module.scss'
+import styles from './App.module.css'
 import Header from "./components/Header/Header.tsx";
 import Footer from "./components/Footer/Footer.tsx";
-import AllNews from "./components/AllNews/AllNews.tsx";
+import AllNews from "./components/News/AllNews/AllNews.tsx";
 import {Route, Routes} from "react-router-dom";
-import TopHeadlines from "./components/TopHeadlines/TopHeadlines.tsx";
+import TopHeadlines from "./components/News/TopHeadlines/TopHeadlines.tsx";
 import {useSpring, animated} from '@react-spring/web'
 
 function App() {

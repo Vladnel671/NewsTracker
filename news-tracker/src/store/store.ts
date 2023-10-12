@@ -7,11 +7,3 @@ export interface INewsData {
     publishedAt: string;
     source: { name: string };
 }
-
-export interface AllNewsState {
-    news: INewsData[];
-    loading: boolean;
-    error: string | null;
-}
-
-export interface HeadlinesNewsState extends AllNewsState {}
