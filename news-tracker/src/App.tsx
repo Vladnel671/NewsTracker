@@ -5,6 +5,7 @@ import AllNews from "./components/News/AllNews/AllNews.tsx";
 import {Route, Routes} from "react-router-dom";
 import TopHeadlines from "./components/News/TopHeadlines/TopHeadlines.tsx";
 import {useSpring, animated} from '@react-spring/web'
+import NotFound from "./components/ErrorComponent/NotFound.tsx";
 
 function App() {
     const springs = useSpring({
@@ -24,6 +25,7 @@ function App() {
                     <Route path='/' element={<AllNews/>}/>
                     <Route path='/allnews' element={<AllNews/>}/>
                     <Route path='/topheadlines' element={<TopHeadlines/>}/>
+                    <Route path="*" element={<NotFound />}/>
                 </Routes>
                 <Footer/>
             </animated.div>
