@@ -52,7 +52,7 @@ const TopHeadlines: React.FC = () => {
                             </div>
                             <span className={styles.titleBlock}>{news.title}</span>
                             {news.urlToImage ? (<div>
-                                <LazyImage key={news.title} src={news.urlToImage} alt={news.title}/>
+                                <LazyImage src={news.urlToImage} alt={news.title}/>
                             </div>) : null}
                         </a>
                         {news.description ? (
