@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import styles from "../../../App.module.css";
 import {Button} from "@material-ui/core";
-import axios from "axios";
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {INewsData} from "../../../store/store.ts";
+import {fetchNewsData} from "../../../utils/NewsUtils.ts";
 
 const TopHeadlines: React.FC = () => {
 
@@ -14,11 +14,7 @@ const TopHeadlines: React.FC = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get(URL);
-            const data = response.data;
-            const filteredNews = data.articles.filter((news: INewsData) => {
-                return !(news.title === '[Removed]' || news.title.trim() === '');
-            });
+            const filteredNews = await fetchNewsData(URL);
             setNews(filteredNews);
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
