@@ -11,14 +11,8 @@ export interface INewsData {
     source: { name: string };
 }
 
-export const initialState: INewsData = {
-    author: "",
-    title: "",
-    description: "",
-    urlToImage: "",
-    url: "",
-    publishedAt: "",
-    source: {name: ""}
+export const initialState: { news: INewsData[] } = {
+    news: [],
 };
 
 const rootReducer = newsReducer;
@@ -27,9 +21,8 @@ export type RootState = ReturnType<typeof rootReducer>;
 export const store = createStore(rootReducer, initialState);
 
 const handleStateChange = () => {
-    //const currentState = store.getState();
-    console.log('State changed');
+    const initialState = store.getState()
+    console.log('State changed', initialState);
 };
 
 store.subscribe(handleStateChange);
-
