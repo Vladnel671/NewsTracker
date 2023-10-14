@@ -15,7 +15,7 @@ const AllNews: React.FC = () => {
     const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}&pageSize=10`;//&pageSize=10
 
     const dispatch = useDispatch();
-    const news = useSelector((state: RootState) => state);
+    const news = useSelector((state: RootState) => state.news);
 
     const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
         setKeyword(event.target.value);
@@ -25,6 +25,7 @@ const AllNews: React.FC = () => {
         try {
             const filteredNews = await fetchNewsData(URL);
             dispatch(SetNewsAC(filteredNews));
+            setKeyword("")
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
         }
