@@ -11,8 +11,9 @@ export interface INewsData {
     source: { name: string };
 }
 
-export const initialState: { news: INewsData[] } = {
+export const initialState: { news: INewsData[], topHeadlines: INewsData[] } = {
     news: [],
+    topHeadlines:[]
 };
 
 const rootReducer = newsReducer;

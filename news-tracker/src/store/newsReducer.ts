@@ -1,4 +1,4 @@
-import { initialState } from './store.ts';
+import {initialState} from './store.ts';
 
 export const newsReducer = (state = initialState, action: any) => {
     switch (action.type) {
@@ -6,6 +6,11 @@ export const newsReducer = (state = initialState, action: any) => {
             return {
                 ...state,
                 news: action.payload,
+            }
+        case 'SET_TOP_HEADLINES':
+            return {
+                ...state,
+                topHeadlines: action.payload,
             };
         default:
             return state;
