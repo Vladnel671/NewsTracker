@@ -1,6 +1,10 @@
 import {newsReducer} from "./newsReducer.ts";
 import {createStore} from 'redux';
 
+export interface Action {
+    type: string;
+}
+
 export interface INewsData {
     author: string;
     title: string;
