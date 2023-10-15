@@ -1,5 +1,5 @@
-import { INewsData } from './store.ts';
-import { Action } from './store.ts';
+import {INewsData} from './store.ts';
+import {Action} from './store.ts';
 
 export interface SetNewsAction extends Action {
     type: 'SET_NEWS';
@@ -11,18 +11,46 @@ export interface SetTopHeadlinesAction extends Action {
     payload: INewsData[];
 }
 
-export type ActionTypes = SetNewsAction | SetTopHeadlinesAction;
+export interface SetLoadingNewsAction extends Action {
+    type: 'SET_LOADING_NEWS';
+    isLoading: boolean;
+}
 
-export const SetNewsAC = (news: INewsData[]): SetNewsAction => {
+export interface SetLoadingTopHeadlinesAction extends Action {
+    type: 'SET_LOADING_TOP_HEADLINES';
+    isLoading: boolean;
+}
+
+export type ActionTypes =
+    | SetNewsAction
+    | SetTopHeadlinesAction
+    | SetLoadingNewsAction
+    | SetLoadingTopHeadlinesAction;
+
+export const setNews = (news: INewsData[]): SetNewsAction => {
     return {
         type: 'SET_NEWS',
         payload: news,
     };
 };
 
-export const SetTopHeadlinesAC = (topHeadlines: INewsData[]): SetTopHeadlinesAction => {
+export const setTopHeadlines = (topHeadlines: INewsData[]): SetTopHeadlinesAction => {
     return {
         type: 'SET_TOP_HEADLINES',
         payload: topHeadlines,
+    };
+};
+
+export const setLoadingNews = (isLoading: boolean): SetLoadingNewsAction => {
+    return {
+        type: 'SET_LOADING_NEWS',
+        isLoading
+    };
+};
+
+export const setLoadingTopHeadlines = (isLoading: boolean): SetLoadingTopHeadlinesAction => {
+    return {
+        type: 'SET_LOADING_TOP_HEADLINES',
+        isLoading
     };
 };
