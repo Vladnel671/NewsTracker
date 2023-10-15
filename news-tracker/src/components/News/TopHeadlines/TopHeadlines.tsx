@@ -32,12 +32,14 @@ const TopHeadlines: React.FC = () => {
         <div className={styles.News}>
             {isLoading ? (
                 <span className={styles.spinner}></span>
-            ) : news ? (news.length === 0 ? (<span>No news found</span>) : (news.map((news: INewsData) => (
+            ) : news ? (news.length === 0 ? (<>
+                <div>
+                    <Button color="primary" className={styles.getDataBtn} onClick={getData}>Get news</Button>
+                </div>
+                <span>No news found</span>
+            </>) : (news.map((news: INewsData) => (
                 <NewsItem news={news} key={news.title}/>
             )))) : null}
-            <div>
-                <Button color="primary" className={styles.getDataBtn} onClick={getData}>Get news</Button>
-            </div>
         </div>
     );
 };

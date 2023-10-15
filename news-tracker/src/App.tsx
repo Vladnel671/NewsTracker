@@ -22,7 +22,7 @@ function App() {
                 }}>
                 <Header/>
                 <Routes>
-                    <Route path='/' element={<AllNews/>}/>
+                    <Route path='/' element={<TopHeadlines/>}/>
                     <Route path='/allnews' element={<AllNews/>}/>
                     <Route path='/topheadlines' element={<TopHeadlines/>}/>
                     <Route path="*" element={<NotFound />}/>
