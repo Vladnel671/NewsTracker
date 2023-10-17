@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useCallback, useState} from 'react';
 import styles from "../../App.module.css";
 import {NavLink} from "react-router-dom";
 import {IconButton, TextField} from "@material-ui/core";
@@ -6,18 +6,19 @@ import {Search as SearchIcon} from "@material-ui/icons";
 import {fetchNewsData} from "../../utils/NewsUtils.ts";
 import {setLoadingNews, setNews} from "../../store/actions.ts";
 import {useDispatch} from "react-redux";
+import {ALL_NEWS_URL, API_KEY} from "../../../../config.ts";
 
 const Header: React.FC = () => {
+
     const [keyword, setKeyword] = useState<string>('')
-    const API_KEY = "9104cee86a3240cbb4f97d269814257d";
-    const URL = ` https://newsapi.org/v2/everything?q=${keyword}&apiKey=${API_KEY}&pageSize=10`;//&pageSize=10
-
     const dispatch = useDispatch();
-    const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setKeyword(event.target.value);
-    };
 
-    const getData = async () => {
+    const searchHandler = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        setKeyword(event.target.value);
+    }, []);
+
+    const getData = useCallback(async () => {
+        const URL = `${ALL_NEWS_URL}${API_KEY}&q=${keyword}&pageSize=10`;
         try {
             dispatch(setLoadingNews(true));
             const filteredNews = await fetchNewsData(URL);
@@ -28,7 +29,7 @@ const Header: React.FC = () => {
             console.log('Ошибка при выполнении GET-запроса:', error);
             dispatch(setLoadingNews(false));
         }
-    };
+    }, [keyword, dispatch]);
 
     return (
         <header className={styles.HeaderBlock}>

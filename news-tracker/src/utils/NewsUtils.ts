@@ -4,6 +4,7 @@ import axios from "axios";
 export const fetchNewsData = async (url: string): Promise<INewsData[]> => {
     try {
         const response = await axios.get(url);
+        console.log("запрос отправлен")
         const data = response.data;
         return data.articles.filter((news: INewsData) => {
             return !(news.title === '[Removed]' || news.title.trim() === '');
