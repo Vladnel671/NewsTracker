@@ -20,7 +20,7 @@ const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
                     </div>
                 </div>
                 <span className={styles.titleBlock}>{news.title}</span>
-                {news.urlToImage ? (<div>
+                {news.urlToImage ? (<div className={styles.newsPictureContainer}>
                     <LazyImage src={news.urlToImage} alt={news.title}/>
                 </div>) : null}
             </a>
