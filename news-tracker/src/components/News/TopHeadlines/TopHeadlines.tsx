@@ -8,13 +8,15 @@ import {setLoadingTopHeadlines, setTopHeadlines} from "../../../store/actions.ts
 import {TOP_HEADLINES_URL} from "../../../../../config.ts";
 
 const TopHeadlines: React.FC = () => {
-
     const NewsItemMemo = React.memo(NewsItem);
     const dispatch = useDispatch();
 
     const {data: news, isLoading} = useSelector((state: RootState) => state.topHeadlines);
 
     const getData = useCallback(async () => {
+        if (news.length > 0) {
+            return;
+        }
         try {
             dispatch(setLoadingTopHeadlines(true));
             const filteredNews = await fetchNewsData(TOP_HEADLINES_URL);
@@ -22,7 +24,8 @@ const TopHeadlines: React.FC = () => {
             dispatch(setLoadingTopHeadlines(false));
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
-            dispatch(setLoadingTopHeadlines(false))
+        } finally {
+            dispatch(setLoadingTopHeadlines(false));
         }
     }, [dispatch]);
 
@@ -31,6 +34,7 @@ const TopHeadlines: React.FC = () => {
             getData();
         }
     }, [getData, news.length]);
+
     if (!news.length) return null;
 
     return (
