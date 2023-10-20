@@ -3,11 +3,18 @@ import styles from "../../../App.module.css";
 import {INewsData, RootState} from "../../../store/store.ts";
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
+import {Button} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const AllNews: React.FC = () => {
 
     const NewsItemMemo = React.memo(NewsItem);
     const { data: newsData, isLoading } = useSelector((state: RootState) => state.news);
+    const navigate = useNavigate();
+
+    const goBackHandler = () => {
+        navigate(-1);
+    };
 
     const renderNews = useCallback(() => {
         if (isLoading) {
@@ -20,6 +27,7 @@ const AllNews: React.FC = () => {
 
     return (
         <>
+            <Button variant="text" onClick={goBackHandler}>Back to Top and breaking headlines</Button>
             <div className={styles.News}>
                 {renderNews()}
             </div>

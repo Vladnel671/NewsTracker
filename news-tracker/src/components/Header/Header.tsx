@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useCallback, useState} from 'react';
 import styles from "../../App.module.css";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {IconButton, TextField} from "@material-ui/core";
 import {Search as SearchIcon} from "@material-ui/icons";
 import {fetchNewsData} from "../../utils/NewsUtils.ts";
@@ -12,6 +12,7 @@ const Header: React.FC = () => {
 
     const [keyword, setKeyword] = useState<string>('')
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const searchHandler = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setKeyword(event.target.value);
@@ -25,6 +26,7 @@ const Header: React.FC = () => {
             dispatch(setNews(filteredNews));
             dispatch(setLoadingNews(false));
             setKeyword("")
+            navigate('/allnews');
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
             dispatch(setLoadingNews(false));
@@ -49,7 +51,6 @@ const Header: React.FC = () => {
                 />
             </div>
             <div className={styles.NavBarMain}>
-                <NavLink className={styles.HeaderLink} to="/topheadlines">Top and breaking headlines</NavLink>
                 <NavLink className={styles.HeaderLink} to="/allnews">All news</NavLink>
             </div>
         </header>
