@@ -1,29 +1,9 @@
 .mainBlock {
-
   display: flex;
-  min-height: 100vh;
+  flex-grow: 1;
   flex-direction: column;
   background: black;
   overflow-x: hidden;
-
-  .News {
-    background: #0e0e10;
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 30px;
-  }
-
-  .masonryGrid {
-    display: flex;
-  }
-
-  .allNewsBlock {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
 
   .newsContainer {
     display: flex;
@@ -33,7 +13,7 @@
     border: 1px solid;
     padding: 20px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     height: min-content;
     word-wrap: break-word;
 
@@ -84,6 +64,30 @@
     transition: 0.6s;
   }
 
+  .allNewsBlock {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .topHeadlinesNewsBlock {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 15px;
+    background: #0e0e10;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  .masonryGrid {
+    display: flex;
+  }
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -93,7 +97,18 @@
     }
   }
 
+  .spinnerBlock {
+    background: #0e0e10;
+    display: flex;
+    height: calc(100vh - 120px);
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+    align-items: center;
+  }
+
   .spinner {
+    display: flex;
     animation: spin 0.3s infinite linear;
     border: 3px solid #f3f3f3;
     border-top: 3px solid #3498db;

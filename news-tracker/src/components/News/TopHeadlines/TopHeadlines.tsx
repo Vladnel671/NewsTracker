@@ -43,25 +43,21 @@ const TopHeadlines: React.FC = () => {
         }
     }, [getData, news.length]);
 
-    if (!news.length) return null;
+    if (!news.length || isLoading) return <div className={styles.spinnerBlock}>
+        <span className={styles.spinner}></span>
+    </div>
 
     return (
-        <div className={styles.News}>
-            {isLoading ? (
-                <span className={styles.spinner}></span>
-            ) : news.length === 0 ? (
-                <span>No news found</span>
-            ) : (
-                <Masonry
-                    breakpointCols={breakpointColumnsObj}
-                    className={styles.masonryGrid}
-                    columnClassName={styles.masonryGridColumn}
-                >
-                    {news.map((newsItem: INewsData) => (
-                        <NewsItemMemo news={newsItem} key={newsItem.title}/>
-                    ))}
-                </Masonry>
-            )}
+        <div className={styles.topHeadlinesNewsBlock}>
+            <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className={styles.masonryGrid}
+                columnClassName={styles.masonryGridColumn}
+            >
+                {news.map((newsItem: INewsData) => (
+                    <NewsItemMemo news={newsItem} key={newsItem.title}/>
+                ))}
+            </Masonry>
         </div>
     );
 };

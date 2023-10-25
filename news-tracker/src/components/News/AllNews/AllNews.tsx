@@ -1,11 +1,8 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import styles from '../../../styles/main.module.scss';
 import {INewsData, RootState} from "../../../store/store.ts";
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {IconButton} from "@material-ui/core";
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Masonry from 'react-masonry-css';
 
 const AllNews: React.FC = () => {
@@ -18,37 +15,23 @@ const AllNews: React.FC = () => {
 
     const NewsItemMemo = React.memo(NewsItem);
     const {data: newsData, isLoading} = useSelector((state: RootState) => state.news);
-    const navigate = useNavigate();
 
-    const goBackHandler = () => {
-        navigate(-1);
-    };
-
-    const renderNews = useCallback(() => {
-        if (isLoading) {
-            return <span className={styles.spinner}></span>;
-        } else if (newsData) {
-            return newsData.length === 0 ? <span>No news found</span> : newsData.map((news: INewsData) => <NewsItemMemo
-                news={news} key={news.title}/>);
-        }
-        return null;
-    }, [isLoading, newsData]);
+    if (!newsData.length || isLoading) return <div className={styles.spinnerBlock}>
+        <span className={styles.spinner}></span>
+    </div>
 
     return (
-        <div className={styles.allNewsBlock}>
-            <IconButton color={"primary"} onClick={goBackHandler}>
-                <ArrowBackIcon/>Back to Top and breaking headlines
-            </IconButton>
-            <div className={styles.News}>
+            <div className={styles.allNewsBlock}>
                 <Masonry
                     breakpointCols={breakpointColumnsObj}
                     className={styles.masonryGrid}
                     columnClassName={styles.masonryGridColumn}
                 >
-                {renderNews()}
+                {newsData.map((news: INewsData) => (
+                    <NewsItemMemo news={news} key={news.title}/>
+                ))}
                 </Masonry>
             </div>
-        </div>
     );
 };
 
