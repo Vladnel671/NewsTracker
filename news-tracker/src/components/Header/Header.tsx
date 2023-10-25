@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useCallback, useState} from 'react';
-import styles from "../../App.module.css";
+import styles from '../../styles/main.module.scss';
 import {NavLink, useNavigate} from "react-router-dom";
 import {IconButton, TextField} from "@material-ui/core";
 import {Search as SearchIcon} from "@material-ui/icons";

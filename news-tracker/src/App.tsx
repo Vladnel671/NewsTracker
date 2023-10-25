@@ -1,4 +1,4 @@
-import styles from './App.module.css'
+import styles from './styles/main.module.scss'
 import Header from "./components/Header/Header.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import {AppRoutes} from "./AppRoutes.tsx";

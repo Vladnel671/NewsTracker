@@ -1,5 +1,5 @@
 import React, {useEffect, useCallback} from 'react';
-import styles from "../../../App.module.css";
+import styles from '../../../styles/main.module.scss';
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {INewsData, RootState} from "../../../store/store.ts";
 import {fetchNewsData} from "../../../utils/NewsUtils.ts";
@@ -12,8 +12,8 @@ const TopHeadlines: React.FC = () => {
 
     const breakpointColumnsObj = {
         default: 3,
-        1100: 2,
-        700: 1
+        1250: 2,
+        830: 1
     };
 
     const NewsItemMemo = React.memo(NewsItem);

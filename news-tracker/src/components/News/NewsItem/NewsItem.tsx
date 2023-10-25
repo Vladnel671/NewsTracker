@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../../../App.module.css";
+import styles from '../../../styles/main.module.scss';
 import {LazyImage} from "../../LazyImage/LazyImage.tsx";
 import {INewsData} from "../../../store/store.ts";
 import {motion} from "framer-motion"
