@@ -4,11 +4,18 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .mainBlock {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     background: black;
+    overflow-x: hidden;
 }
 
 .HeaderBlock {
@@ -30,7 +37,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
 }
 
 .HeaderLink:hover {
@@ -51,11 +58,20 @@
 .News {
     background: #0e0e10;
     display: flex;
-    min-height: calc(100vh - 120px);
+    height: 100%;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
     padding-top: 30px;
+}
+
+.masonryGrid {
+    display: flex;
+}
+
+.allNewsBlock {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .getDataBtn {
@@ -83,6 +99,7 @@
 }
 
 .FooterBlock {
+    margin-top: auto;
     background: aqua;
     height: 60px;
     display: flex;

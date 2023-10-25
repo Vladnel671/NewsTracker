@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     }, []);
 
     const getData = useCallback(async () => {
-        const URL = `${ALL_NEWS_URL}${API_KEY}&q=${keyword}&pageSize=10`;
+        const URL = `${ALL_NEWS_URL}${API_KEY}&q=${keyword}`;
         try {
             dispatch(setLoadingNews(true));
             const filteredNews = await fetchNewsData(URL);

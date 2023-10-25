@@ -6,8 +6,16 @@ import {fetchNewsData} from "../../../utils/NewsUtils.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoadingTopHeadlines, setTopHeadlines} from "../../../store/actions.ts";
 import {TOP_HEADLINES_URL} from "../../../../../config.ts";
+import Masonry from 'react-masonry-css';
 
 const TopHeadlines: React.FC = () => {
+
+    const breakpointColumnsObj = {
+        default: 3,
+        1100: 2,
+        700: 1
+    };
+
     const NewsItemMemo = React.memo(NewsItem);
     const dispatch = useDispatch();
 
@@ -44,9 +52,15 @@ const TopHeadlines: React.FC = () => {
             ) : news.length === 0 ? (
                 <span>No news found</span>
             ) : (
-                news.map((newsItem: INewsData) => (
-                    <NewsItemMemo news={newsItem} key={newsItem.title}/>
-                ))
+                <Masonry
+                    breakpointCols={breakpointColumnsObj}
+                    className={styles.masonryGrid}
+                    columnClassName={styles.masonryGridColumn}
+                >
+                    {news.map((newsItem: INewsData) => (
+                        <NewsItemMemo news={newsItem} key={newsItem.title}/>
+                    ))}
+                </Masonry>
             )}
         </div>
     );
