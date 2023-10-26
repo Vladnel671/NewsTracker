@@ -19,6 +19,7 @@ const Header: React.FC = () => {
     }, []);
 
     const getData = useCallback(async () => {
+        navigate('/allnews');
         const URL = `${ALL_NEWS_URL}${API_KEY}&q=${keyword}`;
         try {
             dispatch(setLoadingNews(true));
@@ -26,7 +27,6 @@ const Header: React.FC = () => {
             dispatch(setNews(filteredNews));
             dispatch(setLoadingNews(false));
             setKeyword("")
-            navigate('/allnews');
         } catch (error) {
             console.log('Ошибка при выполнении GET-запроса:', error);
             dispatch(setLoadingNews(false));
