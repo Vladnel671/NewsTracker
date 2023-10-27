@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {setLoadingTopHeadlines, setTopHeadlines} from "../../../store/actions.ts";
 import {TOP_HEADLINES_URL} from "../../../../../config.ts";
 import Masonry from 'react-masonry-css';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const TopHeadlines: React.FC = () => {
 
@@ -44,7 +46,9 @@ const TopHeadlines: React.FC = () => {
     }, [getData, news.length]);
 
     if (!news.length || isLoading) return <div className={styles.spinnerBlock}>
-        <span className={styles.spinner}></span>
+        <Stack sx={{color: 'grey.500'}} spacing={2} direction="row">
+            <CircularProgress  color="secondary"/>
+        </Stack>
     </div>
 
     return (

@@ -4,7 +4,9 @@ import {RootState} from "../../../store/store.ts";
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
-import ReactPaginate from 'react-paginate';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -18,7 +20,9 @@ const AllNews: React.FC = () => {
     const {data: newsData, isLoading} = useSelector((state: RootState) => state.news);
 
     if (!newsData.length || isLoading) return <div className={styles.spinnerBlock}>
-        <span className={styles.spinner}></span>
+        <Stack sx={{color: 'grey.500'}} spacing={2} direction="row">
+            <CircularProgress color="secondary"/>
+        </Stack>
     </div>
 
     const PER_PAGE = 10;
@@ -30,12 +34,20 @@ const AllNews: React.FC = () => {
 
     const pageCount = Math.ceil(newsData.length / PER_PAGE);
 
-    function handlePageClick({selected: selectedPage}: { selected: number }) {
-        setCurrentPage(selectedPage);
+    function handlePageChange(_: unknown, value: number) {
+        setCurrentPage(value - 1);
     }
 
     return (
         <div className={styles.allNewsBlock}>
+            <Pagination
+                count={pageCount}
+                page={currentPage + 1}
+                onChange={handlePageChange}
+                color="secondary"
+                size="large"
+                className={styles.pagination}
+            />
             <Masonry
                 breakpointCols={breakpointColumnsObj}
                 className={styles.masonryGrid}
@@ -43,16 +55,12 @@ const AllNews: React.FC = () => {
             >
                 {currentPageData}
             </Masonry>
-            <ReactPaginate
-                previousLabel={"← Предыдущая"}
-                nextLabel={"Следующая →"}
-                pageCount={pageCount}
-                onPageChange={handlePageClick}
-                containerClassName={"pagination"}
-                previousLinkClassName={"pagination__link"}
-                nextLinkClassName={"pagination__link"}
-                disabledClassName={"pagination__link--disabled"}
-                activeClassName={"pagination__link--active"}
+            <Pagination
+                count={pageCount}
+                page={currentPage + 1}
+                onChange={handlePageChange}
+                color="secondary"
+                size="large"
                 className={styles.pagination}
             />
         </div>
