@@ -28,22 +28,22 @@ const TopHeadlines: React.FC = () => {
             return;
         }
         try {
-            dispatch(setLoadingTopHeadlines(true));
-            const filteredNews = await fetchNewsData(TOP_HEADLINES_URL);
-            dispatch(setTopHeadlines(filteredNews));
-            dispatch(setLoadingTopHeadlines(false));
+            dispatch(setLoadingTopHeadlines(true))
+            const filteredNews = await fetchNewsData(TOP_HEADLINES_URL)
+            dispatch(setTopHeadlines(filteredNews))
+            dispatch(setLoadingTopHeadlines(false))
         } catch (error) {
-            console.log('Ошибка при выполнении GET-запроса:', error);
+            console.log('Ошибка при выполнении GET-запроса:', error)
         } finally {
-            dispatch(setLoadingTopHeadlines(false));
+            dispatch(setLoadingTopHeadlines(false))
         }
-    }, [dispatch]);
+    }, [dispatch])
 
     useEffect(() => {
         if (!news.length) {
-            getData();
+            getData()
         }
-    }, [getData, news.length]);
+    }, [getData, news.length])
 
     if (!news.length || isLoading) return <div className={styles.spinnerBlock}>
         <Stack sx={{color: 'grey.500'}} spacing={2} direction="row">

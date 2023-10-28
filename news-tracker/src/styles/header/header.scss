@@ -7,14 +7,14 @@
 
   position: fixed;
   top: 0;
+
   width: 100%;
   background-color: rgba(33, 39, 45, 0.95);
   backdrop-filter: blur(3px);
 
   .HeaderLink {
-    color: #bbbbbb;
+    color: #f3f6f9;
     text-decoration: none;
-    height: 90%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,17 +26,28 @@
   .NavBarMain {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 90%;
     border-radius: 3px;
-    padding-right: 10px;
+    padding: 0 10px;
+    width: 300px;
+
+    .BurgerMenuBlock {
+      color: #f3f6f9;
+      display: flex;
+
+      .MenuItems {
+        position: relative;
+      }
+    }
   }
   .searchInputBlock {
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
-
-
+  .searchInput {
+    color: white !important;
+  }
 }

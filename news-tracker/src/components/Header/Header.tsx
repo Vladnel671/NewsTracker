@@ -7,31 +7,36 @@ import {fetchNewsData} from "../../utils/NewsUtils.ts";
 import {setLoadingNews, setNews} from "../../store/actions.ts";
 import {useDispatch} from "react-redux";
 import {ALL_NEWS_URL, API_KEY} from "../../../../config.ts";
+import BurgerMenu from "./BurgerMenu/BurgerMenu.tsx";
 
 const Header: React.FC = () => {
 
     const [keyword, setKeyword] = useState<string>('')
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const searchHandler = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-        setKeyword(event.target.value);
-    }, []);
+        setKeyword(event.target.value)
+    }, [])
 
     const getData = useCallback(async () => {
+        if (keyword.trim() === '') {
+            navigate('/allnews');
+        }
+
         navigate('/allnews');
-        const URL = `${ALL_NEWS_URL}${API_KEY}&q=${keyword}`;
+        const URL = `${ALL_NEWS_URL}${API_KEY}&q=${keyword}`
         try {
             dispatch(setLoadingNews(true));
-            const filteredNews = await fetchNewsData(URL);
+            const filteredNews = await fetchNewsData(URL)
             dispatch(setNews(filteredNews));
-            dispatch(setLoadingNews(false));
+            dispatch(setLoadingNews(false))
             setKeyword("")
         } catch (error) {
-            console.log('Ошибка при выполнении GET-запроса:', error);
-            dispatch(setLoadingNews(false));
+            console.log(error);
+            dispatch(setLoadingNews(false))
         }
-    }, [keyword, dispatch]);
+    }, [keyword, dispatch])
 
     return (
         <header className={styles.HeaderBlock}>
@@ -51,7 +56,9 @@ const Header: React.FC = () => {
                 />
             </div>
             <div className={styles.NavBarMain}>
-                <NavLink className={styles.HeaderLink} to="/allnews">All news</NavLink>
+                <div className={styles.BurgerMenuBlock}>
+                    <BurgerMenu/>
+                </div>
             </div>
         </header>
     );

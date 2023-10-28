@@ -5,8 +5,6 @@ import NewsItem from "../NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -17,16 +15,10 @@ const AllNews: React.FC = () => {
     };
 
     const NewsItemMemo = React.memo(NewsItem);
-    const {data: newsData, isLoading} = useSelector((state: RootState) => state.news);
+    const {data: newsData} = useSelector((state: RootState) => state.news);
 
-    if (!newsData.length || isLoading) return <div className={styles.spinnerBlock}>
-        <Stack sx={{color: 'grey.500'}} spacing={2} direction="row">
-            <CircularProgress color="secondary"/>
-        </Stack>
-    </div>
-
-    const PER_PAGE = 10;
-    const offset = currentPage * PER_PAGE;
+    const PER_PAGE = 10
+    const offset = currentPage * PER_PAGE
 
     const currentPageData = newsData
         .slice(offset, offset + PER_PAGE)
@@ -35,11 +27,12 @@ const AllNews: React.FC = () => {
     const pageCount = Math.ceil(newsData.length / PER_PAGE);
 
     function handlePageChange(_: unknown, value: number) {
-        setCurrentPage(value - 1);
+        setCurrentPage(value - 1)
     }
 
     return (
         <div className={styles.allNewsBlock}>
+            <span style={{color: "wheat"}}>Search results for:</span>
             <Pagination
                 count={pageCount}
                 page={currentPage + 1}
