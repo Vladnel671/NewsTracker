@@ -1,5 +1,5 @@
-import {INewsData} from "../store/store.ts";
 import axios from "axios";
+import {INewsData} from "../types/types.ts";
 export const fetchNewsData = async (url: string): Promise<INewsData[]> => {
     try {
         const response = await axios.get(url)

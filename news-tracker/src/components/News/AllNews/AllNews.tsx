@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import styles from '../../../styles/main.module.scss';
-import {RootState} from "../../../store/store.ts";
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import Pagination from '@mui/material/Pagination';
+import {INewsData, RootState} from "../../../types/types.ts";
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -22,7 +22,7 @@ const AllNews: React.FC = () => {
 
     const currentPageData = newsData
         .slice(offset, offset + PER_PAGE)
-        .map((news) => <NewsItemMemo news={news} key={news.title}/>);
+        .map((news: INewsData) => <NewsItemMemo news={news} key={news.title}/>);
 
     const pageCount = Math.ceil(newsData.length / PER_PAGE);
 
