@@ -3,10 +3,10 @@ import {IconButton, Menu, MenuItem} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import styles from '../../../styles/main.module.scss'
 import {fetchNewsData} from "../../../utils/NewsUtils.ts";
-import {ALL_NEWS_URL, API_KEY} from "../../../../../config.ts";
 import {setLoadingNews, setNews} from "../../../store/actions.ts";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import {ALL_NEWS_URL, API_KEY} from "../../../constant";
 
 const BurgerMenu: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

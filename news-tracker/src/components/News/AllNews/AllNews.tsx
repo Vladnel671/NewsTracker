@@ -28,6 +28,7 @@ const AllNews: React.FC = () => {
 
     function handlePageChange(_: unknown, value: number) {
         setCurrentPage(value - 1)
+        window.scrollTo(0, 0);
     }
 
     return (

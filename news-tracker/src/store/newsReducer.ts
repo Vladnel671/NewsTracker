@@ -1,5 +1,4 @@
-import {ActionTypes} from "./actions.ts";
-import {INewsState, initialState} from "../types/types.ts";
+import {ActionTypes, INewsState, initialState} from "../types/types.ts";
 
 export const newsReducer = (state = initialState, action: ActionTypes): {
     news: INewsState;

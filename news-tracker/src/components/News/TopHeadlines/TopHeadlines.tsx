@@ -4,11 +4,11 @@ import NewsItem from "../NewsItem/NewsItem.tsx";
 import {fetchNewsData} from "../../../utils/NewsUtils.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoadingTopHeadlines, setTopHeadlines} from "../../../store/actions.ts";
-import {TOP_HEADLINES_URL} from "../../../../../config.ts";
 import Masonry from 'react-masonry-css';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 import {INewsData, RootState} from "../../../types/types.ts";
+import {TOP_HEADLINES_URL} from "../../../constant";
 
 const TopHeadlines: React.FC = () => {
 

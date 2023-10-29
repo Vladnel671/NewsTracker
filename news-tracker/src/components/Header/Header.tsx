@@ -6,8 +6,8 @@ import {Search as SearchIcon} from "@material-ui/icons";
 import {fetchNewsData} from "../../utils/NewsUtils.ts";
 import {setLoadingNews, setNews} from "../../store/actions.ts";
 import {useDispatch} from "react-redux";
-import {ALL_NEWS_URL, API_KEY} from "../../../../config.ts";
 import BurgerMenu from "./BurgerMenu/BurgerMenu.tsx";
+import {ALL_NEWS_URL, API_KEY} from "../../constant";
 
 const Header: React.FC = () => {
 

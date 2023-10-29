@@ -33,11 +33,6 @@ export const initialState: { news: INewsState; topHeadlines: INewsState } = {
     }
 };
 
-export interface ILazyImageProps {
-    src: string;
-    alt: string;
-}
-
 export interface SetNewsAction extends Action {
     type: 'SET_NEWS';
     payload: INewsData[];
@@ -63,3 +58,8 @@ export type ActionTypes =
     | SetTopHeadlinesAction
     | SetLoadingNewsAction
     | SetLoadingTopHeadlinesAction;
+
+export interface ILazyImageProps {
+    src: string;
+    alt: string;
+}
