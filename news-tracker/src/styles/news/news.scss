@@ -1,0 +1,114 @@
+.mainBlock {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background: #101418;
+  overflow-x: hidden;
+
+  .newsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background: #14191f;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    height: min-content;
+    word-wrap: break-word;
+
+    .newsPictureContainer {
+      width: 100%;
+    }
+
+    .newsPicture {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .AuthorBlock {
+      padding-top: 5px;
+      padding-bottom: 10px;
+      color: #f3f6f9;
+    }
+
+    .titleBlock {
+      color: #f3f6f9;
+    }
+
+    .descriptionBlock {
+      color: #f3f6f9;
+      width: 350px;
+    }
+
+    .newsLink {
+      text-decoration: none;
+      color: #f3f6f9;
+      height: min-content;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sourceNamePublishedBlock {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      color: #f3f6f9;
+    }
+  }
+
+  .allNewsBlock {
+    background: #101418;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .pagination {
+      background: #101418;
+      color: #f3f6f9;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 700px;
+      margin: 20px 0;
+      align-items: center;
+    }
+  }
+
+  .topHeadlinesNewsBlock {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 15px;
+    background: #101418;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 70px;
+  }
+
+  .masonryGrid {
+    display: flex;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spinnerBlock {
+    background: #101418;
+    display: flex;
+    height: calc(100vh - 60px);
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+    align-items: center;
+  }
+}

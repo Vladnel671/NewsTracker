@@ -1,31 +1,10 @@
-import {INewsData} from './store.ts';
-import {Action} from './store.ts';
-
-export interface SetNewsAction extends Action {
-    type: 'SET_NEWS';
-    payload: INewsData[];
-}
-
-export interface SetTopHeadlinesAction extends Action {
-    type: 'SET_TOP_HEADLINES';
-    payload: INewsData[];
-}
-
-export interface SetLoadingNewsAction extends Action {
-    type: 'SET_LOADING_NEWS';
-    isLoading: boolean;
-}
-
-export interface SetLoadingTopHeadlinesAction extends Action {
-    type: 'SET_LOADING_TOP_HEADLINES';
-    isLoading: boolean;
-}
-
-export type ActionTypes =
-    | SetNewsAction
-    | SetTopHeadlinesAction
-    | SetLoadingNewsAction
-    | SetLoadingTopHeadlinesAction;
+import {
+    INewsData,
+    SetLoadingNewsAction,
+    SetLoadingTopHeadlinesAction,
+    SetNewsAction,
+    SetTopHeadlinesAction
+} from "../types/types.ts";
 
 export const setNews = (news: INewsData[]): SetNewsAction => {
     return {

@@ -1,25 +1,63 @@
-import React from 'react';
-import styles from "../../../App.module.css";
-import {INewsData, RootState} from "../../../store/store.ts";
+import React, {useState} from 'react';
+import styles from '../../../styles/main.module.scss';
 import NewsItem from "../NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
+import Masonry from 'react-masonry-css';
+import Pagination from '@mui/material/Pagination';
+import {INewsData, RootState} from "../../../types/types.ts";
 
 const AllNews: React.FC = () => {
+    const [currentPage, setCurrentPage] = useState(0);
+    const breakpointColumnsObj = {
+        default: 3,
+        1250: 2,
+        830: 1
+    };
 
-    const news = useSelector((state: RootState) => state.news);
-    const isLoading = useSelector((state: RootState) => state.news.isLoading)
+    const NewsItemMemo = React.memo(NewsItem);
+    const {data: newsData} = useSelector((state: RootState) => state.news);
+
+    const PER_PAGE = 10
+    const offset = currentPage * PER_PAGE
+
+    const currentPageData = newsData
+        .slice(offset, offset + PER_PAGE)
+        .map((news: INewsData) => <NewsItemMemo news={news} key={news.title}/>);
+
+    const pageCount = Math.ceil(newsData.length / PER_PAGE);
+
+    function handlePageChange(_: unknown, value: number) {
+        setCurrentPage(value - 1)
+        window.scrollTo(0, 0);
+    }
 
     return (
-        <>
-            <div className={styles.News}>
-                {isLoading ? (
-                    <span className={styles.spinner}></span>
-                ) : news ? (news.data.length === 0 ? (
-                    <span>No news found</span>) : (news.data.map((news: INewsData) => (
-                    <NewsItem news={news} key={news.title}/>
-                )))) : null}
-            </div>
-        </>
+        <div className={styles.allNewsBlock}>
+            <span style={{color: "wheat"}}>Search results for:</span>
+            <Pagination
+                count={pageCount}
+                page={currentPage + 1}
+                onChange={handlePageChange}
+                color="secondary"
+                size="large"
+                className={styles.pagination}
+            />
+            <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className={styles.masonryGrid}
+                columnClassName={styles.masonryGridColumn}
+            >
+                {currentPageData}
+            </Masonry>
+            <Pagination
+                count={pageCount}
+                page={currentPage + 1}
+                onChange={handlePageChange}
+                color="secondary"
+                size="large"
+                className={styles.pagination}
+            />
+        </div>
     );
 };
 

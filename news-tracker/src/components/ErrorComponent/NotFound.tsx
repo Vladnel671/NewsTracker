@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../App.module.css'
+import styles from '../../styles/main.module.scss';
 const NotFound :React.FC = () => {
     return (
         <div className={styles.News}>
