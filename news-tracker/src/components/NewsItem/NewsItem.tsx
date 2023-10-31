@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../../../styles/main.module.scss';
-import {LazyImage} from "../../LazyImage/LazyImage.tsx";
+import styles from '../../styles/main.module.scss';
+import {LazyImage} from "../LazyImage/LazyImage.tsx";
 import {motion} from "framer-motion"
-import {INewsData} from "../../../types/types.ts";
+import {INewsData} from "../../types/types.ts";
 
 const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleString(undefined, {

@@ -1,14 +1,13 @@
 import React, {useEffect, useCallback} from 'react';
-import styles from '../../../styles/main.module.scss';
-import NewsItem from "../NewsItem/NewsItem.tsx";
-import {fetchNewsData} from "../../../utils/NewsUtils.ts";
+import styles from '../styles/main.module.scss';
+import NewsItem from "../components/NewsItem/NewsItem.tsx";
+import {fetchNewsData} from "../utils/NewsUtils.ts";
 import {useDispatch, useSelector} from "react-redux";
-import {setLoadingTopHeadlines, setTopHeadlines} from "../../../store/actions.ts";
+import {setLoadingTopHeadlines, setTopHeadlines} from "../store/actions.ts";
 import Masonry from 'react-masonry-css';
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
-import {INewsData, RootState} from "../../../types/types.ts";
-import {TOP_HEADLINES_URL} from "../../../constant";
+import {INewsData, RootState} from "../types/types.ts";
+import {TOP_HEADLINES_URL} from "../constant";
+import MainLoadingScreen from "../components/MainLoadingScreen.tsx";
 
 const TopHeadlines: React.FC = () => {
 
@@ -45,11 +44,7 @@ const TopHeadlines: React.FC = () => {
         }
     }, [getData, news.length])
 
-    if (!news.length || isLoading) return <div className={styles.spinnerBlock}>
-        <Stack sx={{color: 'grey.500'}} spacing={2} direction="row">
-            <CircularProgress  color="secondary"/>
-        </Stack>
-    </div>
+    if (!news.length || isLoading) return <MainLoadingScreen/>
 
     return (
         <div className={styles.topHeadlinesNewsBlock}>

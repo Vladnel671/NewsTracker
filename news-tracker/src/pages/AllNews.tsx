@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import styles from '../../../styles/main.module.scss';
-import NewsItem from "../NewsItem/NewsItem.tsx";
+import styles from '../styles/main.module.scss';
+import NewsItem from "../components/NewsItem/NewsItem.tsx";
 import {useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import Pagination from '@mui/material/Pagination';
-import {INewsData, RootState} from "../../../types/types.ts";
+import {INewsData, RootState} from "../types/types.ts";
+import MainLoadingScreen from "../components/MainLoadingScreen.tsx";
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -15,7 +16,7 @@ const AllNews: React.FC = () => {
     };
 
     const NewsItemMemo = React.memo(NewsItem);
-    const {data: newsData} = useSelector((state: RootState) => state.news);
+    const {data: newsData, isLoading} = useSelector((state: RootState) => state.news);
 
     const PER_PAGE = 10
     const offset = currentPage * PER_PAGE
@@ -30,6 +31,8 @@ const AllNews: React.FC = () => {
         setCurrentPage(value - 1)
         window.scrollTo(0, 0);
     }
+
+    if (!newsData.length || isLoading) return <MainLoadingScreen/>
 
     return (
         <div className={styles.allNewsBlock}>

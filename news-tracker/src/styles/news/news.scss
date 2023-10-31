@@ -101,14 +101,4 @@
       transform: rotate(360deg);
     }
   }
-
-  .spinnerBlock {
-    background: #101418;
-    display: flex;
-    height: calc(100vh - 60px);
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 30px;
-    align-items: center;
-  }
 }
