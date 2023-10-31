@@ -1,6 +1,6 @@
 import React, {useEffect, useCallback} from 'react';
 import styles from '../styles/main.module.scss';
-import NewsItem from "../components/NewsItem/NewsItem.tsx";
+import NewsItem from "../components/NewsItem.tsx";
 import {fetchNewsData} from "../utils/NewsUtils.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoadingTopHeadlines, setTopHeadlines} from "../store/actions.ts";

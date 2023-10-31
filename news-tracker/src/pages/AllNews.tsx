@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from '../styles/main.module.scss';
-import NewsItem from "../components/NewsItem/NewsItem.tsx";
+import NewsItem from "../components/NewsItem.tsx";
 import {useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import Pagination from '@mui/material/Pagination';

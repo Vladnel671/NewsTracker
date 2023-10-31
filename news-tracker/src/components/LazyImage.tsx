@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import LazyLoad from 'react-lazyload';
-import styles from '../../styles/main.module.scss';
+import styles from '../styles/main.module.scss';
 import ContentLoader from "react-content-loader";
-import {ILazyImageProps} from "../../types/types.ts";
+import {ILazyImageProps} from "../types/types.ts";
 
 const ImagePlaceholder: React.FC = () => (
     <ContentLoader className={styles.newsPicture}>

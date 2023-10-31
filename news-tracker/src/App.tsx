@@ -1,6 +1,6 @@
 import styles from './styles/main.module.scss'
-import Header from "./components/Header/Header.tsx";
-import Footer from "./components/Footer/Footer.tsx";
+import Header from "./components/layouts/Header.tsx";
+import Footer from "./components/layouts/Footer.tsx";
 import {AppRoutes} from "./routes/AppRoutes.tsx";
 import {motion} from "framer-motion"
 
