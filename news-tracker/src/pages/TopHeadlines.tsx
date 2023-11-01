@@ -1,21 +1,14 @@
-import React, {useEffect, useCallback} from 'react';
-import styles from '../styles/main.module.scss';
-import NewsItem from "../components/NewsItem.tsx";
-import {fetchNewsData} from "../utils/NewsUtils.ts";
-import {useDispatch, useSelector} from "react-redux";
-import {setLoadingTopHeadlines, setTopHeadlines} from "../store/actions.ts";
-import Masonry from 'react-masonry-css';
-import {INewsData, RootState} from "../types/types.ts";
-import {TOP_HEADLINES_URL} from "../constant";
-import MainLoadingScreen from "../components/MainLoadingScreen.tsx";
+import React, {useEffect, useCallback} from 'react'
+import styles from '../styles/main.module.scss'
+import NewsItem from "../components/NewsItem.tsx"
+import {fetchNewsData} from "../utils/NewsUtils.ts"
+import {useDispatch, useSelector} from "react-redux"
+import {setLoadingTopHeadlines, setTopHeadlines} from "../store/actions.ts"
+import {INewsData, RootState} from "../types/types.ts"
+import {TOP_HEADLINES_URL} from "../constant"
+import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
 
 const TopHeadlines: React.FC = () => {
-
-    const breakpointColumnsObj = {
-        default: 3,
-        1250: 2,
-        830: 1
-    };
 
     const NewsItemMemo = React.memo(NewsItem);
     const dispatch = useDispatch();
@@ -24,7 +17,7 @@ const TopHeadlines: React.FC = () => {
 
     const getData = useCallback(async () => {
         if (news.length > 0) {
-            return;
+            return
         }
         try {
             dispatch(setLoadingTopHeadlines(true))
@@ -48,15 +41,14 @@ const TopHeadlines: React.FC = () => {
 
     return (
         <div className={styles.topHeadlinesNewsBlock}>
-            <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className={styles.masonryGrid}
-                columnClassName={styles.masonryGridColumn}
-            >
                 {news.map((newsItem: INewsData) => (
                     <NewsItemMemo news={newsItem} key={newsItem.title}/>
                 ))}
-            </Masonry>
+            <div className={styles.mainNewsAndTopStoriesBlock}>
+                <div>MainNews</div>
+                <div>Top Stories</div>
+            </div>
+            <div>Other news...</div>
         </div>
     );
 };

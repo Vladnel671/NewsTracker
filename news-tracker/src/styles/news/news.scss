@@ -76,6 +76,9 @@
       margin: 20px 0;
       align-items: center;
     }
+    :global(.MuiPaginationItem-page) {
+      color: #f3f6f9 !important;
+    }
   }
 
   .topHeadlinesNewsBlock {
@@ -83,6 +86,7 @@
     font-size: 15px;
     background: #101418;
     display: flex;
+    flex-wrap: wrap;
     min-height: 100vh;
     flex-direction: row;
     justify-content: center;
@@ -91,6 +95,7 @@
 
   .masonryGrid {
     display: flex;
+    flex-direction: row;
   }
 
   @keyframes spin {
