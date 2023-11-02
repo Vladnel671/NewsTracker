@@ -9,8 +9,9 @@
   top: 0;
 
   width: 100%;
-  background-color: rgba(33, 39, 45, 0.95);
+  background-color: rgba(33, 39, 45, 0.90);
   backdrop-filter: blur(3px);
+  z-index: 10000;
 
   .HeaderLink {
     color: #f3f6f9;
@@ -31,13 +32,13 @@
     border-radius: 3px;
     padding: 0 10px;
     width: 300px;
+    z-index: 10001;
 
     .BurgerMenuBlock {
       color: #f3f6f9;
       display: flex;
 
       .MenuItems {
-        position: relative;
       }
     }
   }

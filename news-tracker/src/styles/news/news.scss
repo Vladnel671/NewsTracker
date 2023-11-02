@@ -67,17 +67,13 @@
     align-items: center;
 
     .pagination {
-      background: #101418;
-      color: #f3f6f9;
+      z-index: 100;
       display: flex;
       flex-direction: row;
       justify-content: center;
       width: 700px;
       margin: 20px 0;
       align-items: center;
-    }
-    :global(.MuiPaginationItem-page) {
-      color: #f3f6f9 !important;
     }
   }
 

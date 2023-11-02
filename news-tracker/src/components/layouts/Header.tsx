@@ -73,9 +73,7 @@ const Header: React.FC = () => {
                 />
             </div>
             <div className={styles.NavBarMain}>
-                <div className={styles.BurgerMenuBlock}>
-                    <BurgerMenu/>
-                </div>
+                <BurgerMenu/>
             </div>
         </header>
     );

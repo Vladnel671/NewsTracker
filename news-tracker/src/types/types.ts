@@ -1,4 +1,5 @@
 import newsReducer from "../store/newsReducer.ts";
+import {PaginationProps} from "@mui/material";
 
 export const rootReducer = newsReducer;
 export type RootState = ReturnType<typeof rootReducer>;
@@ -62,4 +63,9 @@ export type ActionTypes =
 export interface ILazyImageProps {
     src: string;
     alt: string;
+}
+export interface CustomPaginationProps extends PaginationProps {
+    count: number
+    page: number
+    onChange: (event: React.ChangeEvent<unknown>, page: number) => void
 }

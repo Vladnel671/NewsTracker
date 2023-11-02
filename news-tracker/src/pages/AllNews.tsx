@@ -3,14 +3,13 @@ import styles from '../styles/main.module.scss'
 import NewsItem from "../components/NewsItem.tsx"
 import {useSelector} from "react-redux"
 import Masonry from 'react-masonry-css'
-import Pagination from '@mui/material/Pagination'
 import {INewsData, RootState} from "../types/types.ts"
 import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
 import {breakpointColumnsObj} from "../constant"
+import CustomPagination from "../components/CustomPagination.tsx"
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
-
     const NewsItemMemo = React.memo(NewsItem);
     const {data: newsData, isLoading} = useSelector((state: RootState) => state.news)
 
@@ -25,7 +24,7 @@ const AllNews: React.FC = () => {
 
     function handlePageChange(_: unknown, value: number) {
         setCurrentPage(value - 1)
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0)
     }
 
     if (isLoading) return <MainLoadingScreen/>
@@ -33,13 +32,10 @@ const AllNews: React.FC = () => {
     return (
         <div className={styles.allNewsBlock}>
             <span style={{color: "wheat"}}>Search results for:</span>
-            {!newsData.length ? null : <Pagination
+            {!newsData.length ? null : <CustomPagination
                 count={pageCount}
                 page={currentPage + 1}
                 onChange={handlePageChange}
-                color="secondary"
-                size="large"
-                className={styles.pagination}
             />}
             <Masonry
                 breakpointCols={breakpointColumnsObj}
@@ -48,13 +44,10 @@ const AllNews: React.FC = () => {
             >
                 {currentPageData}
             </Masonry>
-            {!newsData.length ? null : <Pagination
+            {!newsData.length ? null : <CustomPagination
                 count={pageCount}
                 page={currentPage + 1}
                 onChange={handlePageChange}
-                color="secondary"
-                size="large"
-                className={`${styles.pagination} customPagination`}
             />}
         </div>
     );

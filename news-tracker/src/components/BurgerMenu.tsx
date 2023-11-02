@@ -39,7 +39,7 @@ const BurgerMenu: React.FC = () => {
         fetchNewsByCategory(category)
     };
     return (
-        <div>
+        <div className={styles.BurgerMenuBlock}>
             <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
                 <MenuIcon/>
             </IconButton>
