@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import {IconButton, Menu, MenuItem} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import styles from '../styles/main.module.scss'
-import {fetchNewsData} from "../utils/NewsUtils.ts";
-import {setLoadingNews, setNews} from "../store/actions.ts";
-import {useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {ALL_NEWS_URL, API_KEY} from "../constant";
+import React, {useState} from 'react'
+import {IconButton, Menu, MenuItem} from "@material-ui/core"
+import MenuIcon from "@material-ui/icons/Menu"
+import styles from '../../src/styles/main.module.scss'
+import {fetchNewsData} from "../utils/NewsUtils.ts"
+import {setLoadingNews, setNews} from "../store/actions.ts"
+import {useDispatch} from "react-redux"
+import {useNavigate} from "react-router-dom"
+import {ALL_NEWS_URL, API_KEY} from "../constant"
 
 const BurgerMenu: React.FC = () => {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const fetchNewsByCategory = async (category: string) => {
@@ -24,20 +24,20 @@ const BurgerMenu: React.FC = () => {
             console.log(error);
             dispatch(setLoadingNews(false))
         }
-    };
+    }
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget)
-    };
+    }
 
     const handleClose = () => {
-        setAnchorEl(null);
-    };
+        setAnchorEl(null)
+    }
 
     const handleMenuItemClick = (category: string) => {
         handleClose()
         fetchNewsByCategory(category)
-    };
+    }
     return (
         <div className={styles.BurgerMenuBlock}>
             <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
@@ -49,10 +49,9 @@ const BurgerMenu: React.FC = () => {
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
-                className={styles.MenuItems}
+                style={{zIndex: '10001'}}
             >
                 <MenuItem onClick={() => handleMenuItemClick('U.S.')}>U.S.</MenuItem>
-                <MenuItem onClick={() => handleMenuItemClick('Politics')}>Politics</MenuItem>
                 <MenuItem onClick={() => handleMenuItemClick('International')}>International</MenuItem>
                 <MenuItem onClick={() => handleMenuItemClick('Entertainment')}>Entertainment</MenuItem>
                 <MenuItem onClick={() => handleMenuItemClick('Business')}>Business</MenuItem>

@@ -31,8 +31,8 @@ const AllNews: React.FC = () => {
 
     return (
         <div className={styles.allNewsBlock}>
-            <span style={{color: "wheat"}}>Search results for:</span>
-            {!newsData.length ? null : <CustomPagination
+
+            {!newsData.length ? <></> : <CustomPagination
                 count={pageCount}
                 page={currentPage + 1}
                 onChange={handlePageChange}
@@ -44,7 +44,7 @@ const AllNews: React.FC = () => {
             >
                 {currentPageData}
             </Masonry>
-            {!newsData.length ? null : <CustomPagination
+            {!newsData.length ? <></> : <CustomPagination
                 count={pageCount}
                 page={currentPage + 1}
                 onChange={handlePageChange}
