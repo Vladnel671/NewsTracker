@@ -1,5 +1,4 @@
 import React, {useEffect, useCallback} from 'react'
-import styles from '../styles/main.module.scss'
 import NewsItem from "../components/NewsItem.tsx"
 import {fetchNewsData} from "../utils/NewsUtils.ts"
 import {useDispatch, useSelector} from "react-redux"
@@ -7,6 +6,7 @@ import {setLoadingTopHeadlines, setTopHeadlines} from "../store/actions.ts"
 import {INewsData, RootState} from "../types/types.ts"
 import {TOP_HEADLINES_URL} from "../constant"
 import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
+import MainNewsBlock from "./MainNewsBlock.tsx";
 
 const TopHeadlines: React.FC = () => {
 
@@ -40,16 +40,9 @@ const TopHeadlines: React.FC = () => {
     if (!news.length || isLoading) return <MainLoadingScreen/>
 
     return (
-        <div className={styles.topHeadlinesNewsBlock}>
-                {news.map((newsItem: INewsData) => (
-                    <NewsItemMemo news={newsItem} key={newsItem.title}/>
-                ))}
-            <div className={styles.mainNewsAndTopStoriesBlock}>
-                <div>MainNews</div>
-                <div>Top Stories</div>
-            </div>
-            <div>Other news...</div>
-        </div>
+        <>
+            <MainNewsBlock/>
+        </>
     );
 };
 
