@@ -63,6 +63,7 @@ export type ActionTypes =
 export interface ILazyImageProps {
     src: string;
     alt: string;
+    className?: string;
 }
 export interface CustomPaginationProps extends PaginationProps {
     count: number

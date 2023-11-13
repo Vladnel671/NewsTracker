@@ -3,16 +3,7 @@ import styles from '../styles/main.module.scss';
 import {LazyImage} from "./LazyImage.tsx";
 import {motion} from "framer-motion"
 import {INewsData} from "../types/types.ts";
-
-const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleString(undefined, {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-};
+import {formatDate} from "../constant";
 
 const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
 

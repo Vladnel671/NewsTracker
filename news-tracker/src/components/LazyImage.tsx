@@ -9,7 +9,7 @@ const ImagePlaceholder: React.FC = () => (
         <rect x="0" y="0" rx="3" ry="3" width="100%" height="100%"/>
     </ContentLoader>
 );
-export const LazyImage: React.FC<ILazyImageProps> = ({src, alt}) => {
+export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className}) => {
 
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -17,18 +17,20 @@ export const LazyImage: React.FC<ILazyImageProps> = ({src, alt}) => {
         setIsLoaded(true);
     };
 
+    const imageClass = className ? className : styles.newsPicture;
+
     return (
         <LazyLoad placeholder={<ImagePlaceholder/>}>
             {!isLoaded && <ImagePlaceholder/>}
             <img
-                className={styles.newsPicture}
+                className={imageClass}
                 src={src}
                 alt={alt}
                 onLoad={handleImageLoad}
                 style={{display: isLoaded ? 'block' : 'none'}}
             />
         </LazyLoad>
-
     );
 };
+
 

@@ -82,11 +82,9 @@
     font-size: 15px;
     background: #101418;
     display: flex;
-    flex-wrap: wrap;
     min-height: 100vh;
     flex-direction: row;
     padding-top: 70px;
-    align-items: center;
     justify-content: center;
 
     .firstBlock {
@@ -129,6 +127,10 @@
         flex-direction: column;
         justify-content: space-between;
 
+        .listImg {
+          width: 150px
+        }
+
         .firstItemBlock {
           width: 100%;
           display: flex;
@@ -156,8 +158,8 @@
       width: 600px;
       background: burlywood;
       height: 650px;
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
 
       .centralNewsBlock {
         display: flex;
@@ -171,7 +173,6 @@
         .centralImg {
           width: 100%;
           background: dimgray;
-          height: 350px;
         }
 
         .centralText {
