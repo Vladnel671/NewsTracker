@@ -87,79 +87,78 @@
     padding-top: 70px;
     justify-content: center;
 
-    .firstBlock {
+    .sideBlock {
+      display: flex;
       width: 350px;
-      margin-left: 90px;
       background: chartreuse;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
       height: 100%;
 
-      .firstColumnMainNewsBlock {
+      .sideColumnMainNewsBlock {
         display: flex;
         width: 100%;
         background: chocolate;
-        height: 300px;
         padding: 10px;
         flex-direction: column;
 
-        .firstColumnMainNewsImg {
+        .sideColumnMainNewsImg {
           display: flex;
           width: 100%;
           background: aqua;
         }
 
-        .firstColumnMainNewsText {
+        .sideColumnMainNewsText {
           display: flex;
           width: 100%;
           background: crimson;
         }
-
       }
 
-      .firstListNewsBlock {
+      .sideListNewsBlock {
         padding: 10px;
-        height: 350px;
         display: flex;
-        width: 100%;
+        width: 350px;
         background: darkviolet;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
 
         .listImg {
-          width: 150px
+          display: flex;
+          width: 150px;
+          align-items: center;
+          justify-content: center;
         }
 
-        .firstItemBlock {
+        .listText {
+          display: flex;
+          width: 350px;
+          align-items: center;
+          padding-left: 10px;
+        }
+
+        .ListItemBlock {
+          justify-content: space-between;
           width: 100%;
           display: flex;
           flex-direction: row;
           background: #5ee782;
-        }
-
-        .secondItemBlock {
-          background: #034d27;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-        }
-
-        .thirdItemBlock {
-          background: #92e71f;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
+          margin: 5px;
         }
       }
     }
 
-    .secondBlock {
+    .centralBlock {
       width: 600px;
       background: burlywood;
-      height: 650px;
       margin-left: 20px;
       margin-right: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
 
       .centralNewsBlock {
         display: flex;
@@ -171,11 +170,13 @@
         padding: 10px;
 
         .centralImg {
-          width: 100%;
+          display: flex;
           background: dimgray;
+          width: 100%;
         }
 
         .centralText {
+          display: flex;
           width: 100%;
           background: indianred;
         }
@@ -203,7 +204,6 @@
           .firstCentralListItemImgBlock {
             display: flex;
             background: lemonchiffon;
-            height: 70px;
             width: 120px;
             align-items: center;
             justify-content: center;
@@ -239,70 +239,6 @@
             align-items: center;
             justify-content: center;
           }
-        }
-      }
-    }
-
-    .thirdBlock {
-      width: 350px;
-      background: dodgerblue;
-      margin-right: 90px;
-      height: 650px;
-
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: column;
-
-      .thirdColumnMainNewsBlock {
-        display: flex;
-        width: 100%;
-        background: chocolate;
-        height: 300px;
-        padding: 10px;
-        flex-direction: column;
-
-        .thirdColumnMainNewsImg {
-          display: flex;
-          width: 100%;
-          background: aqua;
-        }
-
-        .thirdColumnMainNewsText {
-          display: flex;
-          width: 100%;
-          background: crimson;
-        }
-
-      }
-
-      .thirdListNewsBlock {
-        padding: 10px;
-        height: 350px;
-        display: flex;
-        width: 100%;
-        background: darkviolet;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .thirdListFirstItemBlock {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          background: #5ee782;
-        }
-
-        .thirdListSecondItemBlock {
-          background: #034d27;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-        }
-
-        .thirdListThirdItemBlock {
-          background: #92e71f;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
         }
       }
     }
