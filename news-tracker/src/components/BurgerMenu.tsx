@@ -10,15 +10,15 @@ import {ALL_NEWS_URL, API_KEY} from "../constant"
 
 const BurgerMenu: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     useEffect(() => {
         if (menuOpen) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'
         }
     }, [menuOpen]);
 

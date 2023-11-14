@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from '../styles/main.module.scss';
-import {LazyImage} from "./LazyImage.tsx";
+import React from 'react'
+import styles from '../styles/main.module.scss'
+import {LazyImage} from "./LazyImage.tsx"
 import {motion} from "framer-motion"
-import {INewsData} from "../types/types.ts";
-import {formatDate} from "../constant";
+import {INewsData} from "../types/types.ts"
+import {formatDate} from "../constant"
 
 const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
 
-    const {source, publishedAt, title, urlToImage, author, description, url} = news;
+    const {source, publishedAt, title, urlToImage, author, description, url} = news
 
     return (
         <motion.div
@@ -35,4 +35,4 @@ const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
     );
 };
 
-export default NewsItem;
+export default NewsItem

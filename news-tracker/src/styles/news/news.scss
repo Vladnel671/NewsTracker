@@ -87,6 +87,14 @@
     padding-top: 70px;
     justify-content: center;
 
+    .listImg {
+      display: flex;
+      width: 130px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+
     .sideBlock {
       display: flex;
       width: 350px;
@@ -95,6 +103,7 @@
       justify-content: space-between;
       flex-direction: column;
       height: 100%;
+      color: #f3f6f9;
 
       .sideColumnMainNewsBlock {
         display: flex;
@@ -127,14 +136,6 @@
         min-height: 100%;
         padding-top: 20px;
 
-        .listImg {
-          display: flex;
-          width: 150px;
-          align-items: center;
-          justify-content: center;
-          margin-right: 10px;
-        }
-
         .listText {
           display: flex;
           width: 350px;
@@ -159,7 +160,8 @@
       margin-right: 20px;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      color: #f3f6f9;
+      display: flex;
 
       .centralNewsBlock {
         display: flex;
@@ -201,14 +203,6 @@
           display: flex;
           width: 100%;
 
-          .firstCentralListItemImgBlock {
-            display: flex;
-            background: lemonchiffon;
-            width: 120px;
-            align-items: center;
-            justify-content: center;
-          }
-
           .firstCentralListItemTextBlock {
             display: flex;
             background: lightblue;
@@ -222,15 +216,6 @@
           display: flex;
           width: 100%;
           padding-top: 20px;
-
-          .secondCentralListItemImgBlock {
-            display: flex;
-            background: lemonchiffon;
-            height: 70px;
-            width: 120px;
-            align-items: center;
-            justify-content: center;
-          }
 
           .secondCentralListItemTextBlock {
             display: flex;

@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import LazyLoad from 'react-lazyload';
-import styles from '../styles/main.module.scss';
-import ContentLoader from "react-content-loader";
-import {ILazyImageProps} from "../types/types.ts";
+import React, {useState} from 'react'
+import LazyLoad from 'react-lazyload'
+import styles from '../styles/main.module.scss'
+import ContentLoader from "react-content-loader"
+import {ILazyImageProps} from "../types/types.ts"
 
 const ImagePlaceholder: React.FC = () => (
     <ContentLoader className={styles.newsPicture}>
@@ -11,13 +11,13 @@ const ImagePlaceholder: React.FC = () => (
 );
 export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className}) => {
 
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false)
 
     const handleImageLoad = () => {
         setIsLoaded(true);
     };
 
-    const imageClass = className ? className : styles.newsPicture;
+    const imageClass = className ? className : styles.newsPicture
 
     return (
         <LazyLoad placeholder={<ImagePlaceholder/>}>
