@@ -3,6 +3,8 @@ import styles from "../styles/main.module.scss"
 import {MainNewsBlockProps} from "../types/types.ts"
 import {LazyImage} from "../components/LazyImage.tsx"
 
+let regex = /<a[^>]*>([^<]+)<\/a>/g
+
 const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                                                     firstColumnNews,
                                                                     secondColumnNews,
@@ -39,7 +41,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                 <div className={styles.centralNewsBlock}>
                     <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}
                                className={styles.centralImg}/>
-                    <span className={styles.centralNewsAuthor}>{secondColumnNews[0]?.author}</span>
+                    <span className={styles.centralNewsAuthor}>{secondColumnNews[0]?.author.replace(regex, '$1')}</span>
                     <span className={styles.centralText}>{secondColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.centralListNewsBlock}>
