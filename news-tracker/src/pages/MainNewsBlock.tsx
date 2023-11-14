@@ -3,8 +3,11 @@ import styles from "../styles/main.module.scss"
 import {MainNewsBlockProps} from "../types/types.ts"
 import {LazyImage} from "../components/LazyImage.tsx"
 
-const MainNewsBlock: React.FC<MainNewsBlockProps> = ({ firstColumnNews, secondColumnNews, thirdColumnNews }) => {
-
+const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
+                                                                    firstColumnNews,
+                                                                    secondColumnNews,
+                                                                    thirdColumnNews
+                                                                }) => {
     return (
         <div className={styles.topHeadlinesNewsBlock}>
             <div className={styles.sideBlock}>
@@ -78,7 +81,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = ({ firstColumnNews, secondCo
                 </div>
             </div>
         </div>
-    );
-};
+    )
+})
 
 export default MainNewsBlock
