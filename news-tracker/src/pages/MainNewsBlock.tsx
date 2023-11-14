@@ -19,24 +19,14 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <span className={styles.sideColumnMainNewsText}>{firstColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.sideListNewsBlock}>
-                    <div className={styles.ListItemBlock}>
-                        <LazyImage src={firstColumnNews[1]?.urlToImage} alt={firstColumnNews[1]?.title}
-                                   className={styles.listImg}/>
-                        <span>{firstColumnNews[1]?.title}</span>
-                    </div>
-                    <div className={styles.ListItemBlock}>
-                        <LazyImage src={firstColumnNews[2]?.urlToImage} alt={firstColumnNews[2]?.title}
-                                   className={styles.listImg}/>
-                        <span>{firstColumnNews[2]?.title}</span>
-                    </div>
-                    <div className={styles.ListItemBlock}>
-                        <LazyImage src={firstColumnNews[3]?.urlToImage} alt={firstColumnNews[3]?.title}
-                                   className={styles.listImg}/>
-                        <span>{firstColumnNews[3]?.title}</span>
-                    </div>
+                    {firstColumnNews.slice(1, 4).map((newsItem, index) => (
+                        <div className={styles.ListItemBlock} key={index}>
+                            <LazyImage src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/>
+                            <span>{newsItem.title}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
-
             <div className={styles.centralBlock}>
                 <div className={styles.centralNewsBlock}>
                     <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}
@@ -45,41 +35,37 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <span className={styles.centralText}>{secondColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.centralListNewsBlock}>
-                    <div className={styles.firstCentralListItemBlock}>
-                        <LazyImage src={secondColumnNews[1]?.urlToImage} alt={secondColumnNews[1]?.title}
-                                   className={styles.listImg}/>
-                        <span className={styles.firstCentralListItemTextBlock}>{secondColumnNews[1]?.title}</span>
-                    </div>
-                    <div className={styles.secondCentralListItemBlock}>
-                        <LazyImage src={secondColumnNews[2]?.urlToImage} alt={secondColumnNews[2]?.title}
-                                   className={styles.listImg}/>
-                        <span className={styles.secondCentralListItemTextBlock}>{secondColumnNews[2]?.title}</span>
-                    </div>
+                    {secondColumnNews.slice(1, 3).map((newsItem, index) => (
+                        <div
+                            className={index === 0 ? styles.firstCentralListItemBlock : styles.secondCentralListItemBlock}
+                            key={index}>
+                            <LazyImage src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/>
+                            <span
+                                className={index === 0 ? styles.firstCentralListItemTextBlock : styles.secondCentralListItemTextBlock}>{newsItem.title}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
-
             <div className={styles.sideBlock}>
                 <div className={styles.sideColumnMainNewsBlock}>
-                    <LazyImage src={thirdColumnNews[0]?.urlToImage} alt={thirdColumnNews[0]?.title}
-                               className={styles.sideColumnMainNewsImg}/>
+                    <LazyImage
+                        src={thirdColumnNews[0]?.urlToImage}
+                        alt={thirdColumnNews[0]?.title}
+                        className={styles.sideColumnMainNewsImg}
+                    />
                     <span className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.sideListNewsBlock}>
-                    <div className={styles.ListItemBlock}>
-                        <LazyImage src={thirdColumnNews[1]?.urlToImage} alt={thirdColumnNews[1]?.title}
-                                   className={styles.listImg}/>
-                        <span className={styles.listText}>{thirdColumnNews[1]?.title}</span>
-                    </div>
-                    <div className={styles.ListItemBlock}>
-                        <LazyImage src={thirdColumnNews[2]?.urlToImage} alt={thirdColumnNews[2]?.title}
-                                   className={styles.listImg}/>
-                        <span className={styles.listText}>{thirdColumnNews[2]?.title}</span>
-                    </div>
-                    <div className={styles.ListItemBlock}>
-                        <LazyImage src={thirdColumnNews[3]?.urlToImage} alt={thirdColumnNews[3]?.title}
-                                   className={styles.listImg}/>
-                        <span className={styles.listText}>{thirdColumnNews[3]?.title}</span>
-                    </div>
+                    {thirdColumnNews.slice(1,4).map((newsItem, index) => (
+                        <div className={styles.ListItemBlock} key={index}>
+                            <LazyImage
+                                src={newsItem.urlToImage}
+                                alt={newsItem.title}
+                                className={styles.listImg}
+                            />
+                            <span className={styles.listText}>{newsItem.title}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
