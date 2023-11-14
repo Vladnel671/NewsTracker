@@ -113,11 +113,11 @@
           display: flex;
           width: 100%;
           background: crimson;
+          padding-top: 10px;
         }
       }
 
       .sideListNewsBlock {
-        padding: 10px;
         display: flex;
         width: 350px;
         background: darkviolet;
@@ -125,19 +125,20 @@
         justify-content: center;
         align-items: center;
         min-height: 100%;
+        padding-top: 20px;
 
         .listImg {
           display: flex;
           width: 150px;
           align-items: center;
           justify-content: center;
+          margin-right: 10px;
         }
 
         .listText {
           display: flex;
           width: 350px;
           align-items: center;
-          padding-left: 10px;
         }
 
         .ListItemBlock {
@@ -162,10 +163,8 @@
 
       .centralNewsBlock {
         display: flex;
-        justify-content: space-between;
         flex-direction: column;
         background: darksalmon;
-        height: 420px;
         align-items: center;
         padding: 10px;
 
@@ -179,6 +178,7 @@
           display: flex;
           width: 100%;
           background: indianred;
+          text-align: justify;
         }
 
         .centralNewsAuthor {

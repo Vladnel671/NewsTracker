@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {IconButton, Menu, MenuItem} from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
 import styles from '../../src/styles/main.module.scss'
@@ -10,8 +10,18 @@ import {ALL_NEWS_URL, API_KEY} from "../constant"
 
 const BurgerMenu: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+    const [menuOpen, setMenuOpen] = useState(false);
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [menuOpen]);
+
     const fetchNewsByCategory = async (category: string) => {
         const URL = `${ALL_NEWS_URL}${API_KEY}&q=${category}`
         try {
@@ -28,10 +38,12 @@ const BurgerMenu: React.FC = () => {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget)
+        setMenuOpen(true)
     }
 
     const handleClose = () => {
         setAnchorEl(null)
+        setMenuOpen(false)
     }
 
     const handleMenuItemClick = (category: string) => {
