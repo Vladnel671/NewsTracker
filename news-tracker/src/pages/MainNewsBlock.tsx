@@ -1,12 +1,9 @@
 import React from 'react'
 import styles from "../styles/main.module.scss"
-import {INewsData} from "../types/types.ts"
+import {MainNewsBlockProps} from "../types/types.ts"
 import {LazyImage} from "../components/LazyImage.tsx"
 
-const MainNewsBlock: React.FC<{ news: INewsData[] }> = ({news}) => {
-    const firstColumnNews = news.slice(0, 5)
-    const secondColumnNews = news.slice(5, 8)
-    const thirdColumnNews = news.slice(8, 12)
+const MainNewsBlock: React.FC<MainNewsBlockProps> = ({ firstColumnNews, secondColumnNews, thirdColumnNews }) => {
 
     return (
         <div className={styles.topHeadlinesNewsBlock}>

@@ -11,6 +11,10 @@ const TopHeadlines: React.FC = () => {
 
     const {data: news, isLoading} = useSelector((state: RootState) => state.topHeadlines)
 
+    const firstColumnNews = news.slice(0, 5);
+    const secondColumnNews = news.slice(5, 8);
+    const thirdColumnNews = news.slice(8, 12);
+
     useEffect(() => {
         if (!news.length) {
             getData()
@@ -24,7 +28,7 @@ const TopHeadlines: React.FC = () => {
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 3}}>
-                <MainNewsBlock news={news}/>
+                <MainNewsBlock firstColumnNews={firstColumnNews} secondColumnNews={secondColumnNews} thirdColumnNews={thirdColumnNews}/>
             </motion.div>
         </>
     );
