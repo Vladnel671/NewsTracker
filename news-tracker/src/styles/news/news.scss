@@ -4,7 +4,7 @@
   flex-direction: column;
   background: #101418;
   overflow-x: hidden;
-
+  font-family: 'Roboto Condensed', sans-serif;
   .newsContainer {
     display: flex;
     flex-direction: column;
@@ -79,7 +79,6 @@
   }
 
   .topHeadlinesNewsBlock {
-    font-family: "Ubuntu", sans-serif;
     font-size: 15px;
     background: #101418;
     display: flex;
@@ -122,7 +121,9 @@
           display: flex;
           width: 100%;
           background: crimson;
-          padding-top: 10px;
+          padding-top: 5px;
+          text-align: start;
+          font-size: 25px;
         }
       }
 
@@ -180,7 +181,10 @@
           display: flex;
           width: 100%;
           background: indianred;
-          text-align: justify;
+          text-align: start;
+          font-family: 'Roboto Condensed', sans-serif;
+          font-weight: 700;
+          font-size: 25px;
         }
 
         .centralNewsAuthor {
@@ -215,15 +219,15 @@
         .secondCentralListItemBlock {
           display: flex;
           width: 100%;
-          padding-top: 20px;
+          margin-top: 20px;
 
-          .secondCentralListItemTextBlock {
-            display: flex;
-            background: #183656;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-          }
+        }
+        .secondCentralListItemTextBlock {
+          display: flex;
+          background: #183656;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
