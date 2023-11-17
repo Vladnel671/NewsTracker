@@ -5,6 +5,7 @@
   background: #101418;
   overflow-x: hidden;
   font-family: 'Roboto Condensed', sans-serif;
+
   .newsContainer {
     display: flex;
     flex-direction: column;
@@ -18,13 +19,15 @@
 
     .newsPictureContainer {
       width: 100%;
-    }
+      display: flex;
 
-    .newsPicture {
-      width: 100%;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      height: auto;
+      .newsPicture {
+        display: flex;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+      }
     }
 
     .AuthorBlock {
@@ -165,17 +168,11 @@
       display: flex;
       height: max-content;
 
-      .centralNewsBlock {
-        display: flex;
-        flex-direction: column;
-        background: darksalmon;
-        align-items: center;
-        padding: 10px;
-
         .centralImg {
           display: flex;
           background: dimgray;
           width: 100%;
+          min-height: 325px;
         }
 
         .centralText {
@@ -194,7 +191,7 @@
           width: 100%;
           justify-content: end;
         }
-      }
+
 
       .centralListNewsBlock {
         background: hotpink;
@@ -223,6 +220,7 @@
           margin-top: 20px;
 
         }
+
         .secondCentralListItemTextBlock {
           display: flex;
           background: #183656;

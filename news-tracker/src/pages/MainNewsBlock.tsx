@@ -21,7 +21,8 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                 <div className={styles.sideListNewsBlock}>
                     {firstColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div className={styles.ListItemBlock} key={index}>
-                            <LazyImage src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/>
+                            <div className={styles.listImgBlock}>
+                            <LazyImage src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/></div>
                             <span>{newsItem.title}</span>
                         </div>
                     ))}
@@ -31,7 +32,9 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                 <div className={styles.centralNewsBlock}>
                     <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}
                                className={styles.centralImg}/>
-                    <span className={styles.centralNewsAuthor}>{secondColumnNews[0]?.author.replace(regex, '$1')}</span>
+                    <span className={styles.centralNewsAuthor}>
+  {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
+                    </span>
                     <span className={styles.centralText}>{secondColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.centralListNewsBlock}>
@@ -56,7 +59,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <span className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.sideListNewsBlock}>
-                    {thirdColumnNews.slice(1,4).map((newsItem, index) => (
+                    {thirdColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div className={styles.ListItemBlock} key={index}>
                             <LazyImage
                                 src={newsItem.urlToImage}

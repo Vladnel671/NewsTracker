@@ -24,7 +24,7 @@ const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
                     <span className={styles.titleBlock}>{title}</span>
                     {urlToImage && (
                         <div className={styles.newsPictureContainer}>
-                            <LazyImage src={urlToImage} alt={title}/>
+                            <LazyImage className={styles.newsPicture} src={urlToImage} alt={title}/>
                         </div>
                     )}
                 </a>
