@@ -66,6 +66,7 @@ export interface ILazyImageProps {
     className?: string
     width?: string
     height?: string
+    isLoading: boolean
 }
 export interface CustomPaginationProps extends PaginationProps {
     count: number
@@ -77,4 +78,5 @@ export interface MainNewsBlockProps {
     firstColumnNews: INewsData[]
     secondColumnNews: INewsData[]
     thirdColumnNews: INewsData[]
+    isLoading: boolean
 }

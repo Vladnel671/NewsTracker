@@ -8,29 +8,36 @@ let regex = /<a[^>]*>([^<]+)<\/a>/g
 const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                                                     firstColumnNews,
                                                                     secondColumnNews,
-                                                                    thirdColumnNews
+                                                                    thirdColumnNews,
+                                                                    isLoading
                                                                 }) => {
     return (
         <div className={styles.topHeadlinesNewsBlock}>
             <div className={styles.sideBlock}>
                 <div className={styles.sideColumnMainNewsBlock}>
-                    <LazyImage src={firstColumnNews[0]?.urlToImage} alt={firstColumnNews[0]?.title}
+                    <LazyImage isLoading={isLoading} src={firstColumnNews[0]?.urlToImage} alt={firstColumnNews[0]?.title}
                                className={styles.sideColumnMainNewsImg}/>
                     <span className={styles.sideColumnMainNewsText}>{firstColumnNews[0]?.title}</span>
                 </div>
                 <div className={styles.sideListNewsBlock}>
                     {firstColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div className={styles.ListItemBlock} key={index}>
-                            <div className={styles.listImgBlock}>
-                            <LazyImage src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/></div>
-                            <span>{newsItem.title}</span>
+                            <div className={styles.listImgBLock}>
+                                <LazyImage
+                                    isLoading={isLoading}
+                                    src={newsItem.urlToImage}
+                                    alt={newsItem.title}
+                                    className={styles.listImg}
+                                />
+                            </div>
+                            <span className={styles.listText}>{newsItem.title}</span>
                         </div>
                     ))}
                 </div>
             </div>
             <div className={styles.centralBlock}>
                 <div className={styles.centralNewsBlock}>
-                    <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}
+                    <LazyImage isLoading={isLoading} src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}
                                className={styles.centralImg}/>
                     <span className={styles.centralNewsAuthor}>
   {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
@@ -42,7 +49,9 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                         <div
                             className={index === 0 ? styles.firstCentralListItemBlock : styles.secondCentralListItemBlock}
                             key={index}>
-                            <LazyImage src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/>
+                            <div className={styles.ListItemBlock}>
+                                <LazyImage isLoading={isLoading} src={newsItem.urlToImage} alt={newsItem.title} className={styles.listImg}/>
+                            </div>
                             <span
                                 className={index === 0 ? styles.firstCentralListItemTextBlock : styles.secondCentralListItemTextBlock}>{newsItem.title}</span>
                         </div>
@@ -52,6 +61,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
             <div className={styles.sideBlock}>
                 <div className={styles.sideColumnMainNewsBlock}>
                     <LazyImage
+                        isLoading={isLoading}
                         src={thirdColumnNews[0]?.urlToImage}
                         alt={thirdColumnNews[0]?.title}
                         className={styles.sideColumnMainNewsImg}
@@ -61,11 +71,14 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                 <div className={styles.sideListNewsBlock}>
                     {thirdColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div className={styles.ListItemBlock} key={index}>
-                            <LazyImage
-                                src={newsItem.urlToImage}
-                                alt={newsItem.title}
-                                className={styles.listImg}
-                            />
+                            <div className={styles.listImgBLock}>
+                                <LazyImage
+                                    isLoading={isLoading}
+                                    src={newsItem.urlToImage}
+                                    alt={newsItem.title}
+                                    className={styles.listImg}
+                                />
+                            </div>
                             <span className={styles.listText}>{newsItem.title}</span>
                         </div>
                     ))}

@@ -1,33 +1,21 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import LazyLoad from 'react-lazyload'
-import ContentLoader from "react-content-loader"
+import Skeleton from 'react-loading-skeleton'
 import {ILazyImageProps} from "../types/types.ts"
+import 'react-loading-skeleton/dist/skeleton.css'
 
-const ImagePlaceholder: React.FC<{classname?: string}> = ({classname}) => (
-    <ContentLoader className={classname}>
-        <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%"/>
-    </ContentLoader>
-);
 export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className}) => {
-
-    const [isLoaded, setIsLoaded] = useState(false)
-
-    const handleImageLoad = () => {
-        setIsLoaded(true);
-    };
+    const [isLoading, setIsLoading] = useState(true);
 
     return (
-        <LazyLoad placeholder={<ImagePlaceholder/>}>
-            {!isLoaded && <ImagePlaceholder classname={className}/>}
-            <img
-                className={className}
-                src={src}
-                alt={alt}
-                onLoad={handleImageLoad}
-                style={{display: isLoaded ? 'block' : 'none'}}
-            />
-        </LazyLoad>
+        isLoading ?
+            <Skeleton style={{height: '100%', width: '100%'}}/> :
+            <LazyLoad>
+                <img
+                    className={className}
+                    src={src}
+                    alt={alt}
+                />
+            </LazyLoad>
     );
 };
-
-

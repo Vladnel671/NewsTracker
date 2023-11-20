@@ -28,7 +28,7 @@ const TopHeadlines: React.FC = () => {
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 3}}>
-                <MainNewsBlock firstColumnNews={firstColumnNews} secondColumnNews={secondColumnNews} thirdColumnNews={thirdColumnNews}/>
+                <MainNewsBlock isLoading={isLoading} firstColumnNews={firstColumnNews} secondColumnNews={secondColumnNews} thirdColumnNews={thirdColumnNews}/>
             </motion.div>
         </>
     );
