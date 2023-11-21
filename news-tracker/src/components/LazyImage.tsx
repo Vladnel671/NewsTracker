@@ -5,11 +5,11 @@ import {ILazyImageProps} from "../types/types.ts"
 import 'react-loading-skeleton/dist/skeleton.css'
 
 export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className}) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading] = useState(true);
 
     return (
         isLoading ?
-            <Skeleton style={{height: '100%', width: '100%'}}/> :
+            <Skeleton height="100%" width="100%"/> :
             <LazyLoad>
                 <img
                     className={className}
