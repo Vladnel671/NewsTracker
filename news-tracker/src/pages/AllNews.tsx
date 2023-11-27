@@ -5,7 +5,7 @@ import {useSelector} from "react-redux"
 import Masonry from 'react-masonry-css'
 import {INewsData, RootState} from "../types/types.ts"
 import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
-import {breakpointColumnsObj} from "../constant"
+import {breakpointColumnsObj, PER_PAGE} from "../constant"
 import CustomPagination from "../components/CustomPagination.tsx"
 
 const AllNews: React.FC = () => {
@@ -13,7 +13,6 @@ const AllNews: React.FC = () => {
     const NewsItemMemo = React.memo(NewsItem);
     const {data: newsData, isLoading} = useSelector((state: RootState) => state.news)
 
-    const PER_PAGE = 10
     const offset = currentPage * PER_PAGE
 
     const currentPageData = newsData

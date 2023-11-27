@@ -9,7 +9,7 @@ import {motion} from "framer-motion"
 const TopHeadlines: React.FC = () => {
     const getData = useGetData();
 
-    const {data: news, isLoading} = useSelector((state: RootState) => state.topHeadlines)
+    const {data: news} = useSelector((state: RootState) => state.topHeadlines)
 
     const firstColumnNews = news.slice(0, 5);
     const secondColumnNews = news.slice(5, 8);
@@ -21,14 +21,19 @@ const TopHeadlines: React.FC = () => {
         }
     }, [getData, news.length])
 
-    if (!news.length || isLoading) return <MainLoadingScreen/>
+    let isLoading
 
+    if (!news.length || isLoading) return <MainLoadingScreen/>
+    isLoading = true
     return (
         <>
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 3}}>
-                <MainNewsBlock isLoading={isLoading} firstColumnNews={firstColumnNews} secondColumnNews={secondColumnNews} thirdColumnNews={thirdColumnNews}/>
+                <MainNewsBlock isLoading={isLoading}
+                               firstColumnNews={firstColumnNews}
+                               secondColumnNews={secondColumnNews}
+                               thirdColumnNews={thirdColumnNews}/>
             </motion.div>
         </>
     );

@@ -9,6 +9,8 @@ export const breakpointColumnsObj = {
     830: 1
 };
 
+export const PER_PAGE = 10
+
 export const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleString(undefined, {
         year: 'numeric',
@@ -18,3 +20,5 @@ export const formatDate = (dateString: string) => {
         minute: '2-digit'
     });
 };
+
+export const regex = /<a[^>]*>([^<]+)<\/a>/g
