@@ -12,8 +12,9 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                                                     isLoading
                                                                 }) => {
     return (
-            <div className={styles.topHeadlinesNewsBlock}>
-                {isLoading ? <NewsSkeleton/> : <>
+        <div className={styles.topHeadlinesNewsBlock}>
+            {isLoading ? <NewsSkeleton/> :
+                <>
                     <div className={styles.sideBlock}>
                         <div className={styles.sideColumnMainNewsBlock}>
                             <LazyImage isLoading={isLoading} src={firstColumnNews[0]?.urlToImage}
@@ -94,7 +95,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                         </div>
                     </div>
                 </>}
-            </div>
+        </div>
     )
 })
 

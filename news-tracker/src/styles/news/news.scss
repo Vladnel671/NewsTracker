@@ -93,6 +93,13 @@ $text-color: #f3f6f9;
     padding-top: 70px;
     justify-content: center;
 
+    .newsSkeletonMainBlock {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      flex-direction: row;
+    }
+
     .ListItemBlock {
       justify-content: start;
       width: 100%;
@@ -136,14 +143,12 @@ $text-color: #f3f6f9;
       flex-direction: column;
       height: max-content;
       color: $text-color;
-      min-height: 350px;
 
       .sideColumnMainNewsBlock {
         display: flex;
         width: 100%;
         background: chocolate;
         flex-direction: column;
-        height: 300px;
         justify-content: space-between;
 
         .sideColumnMainNewsImg {

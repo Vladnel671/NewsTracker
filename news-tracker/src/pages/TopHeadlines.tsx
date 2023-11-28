@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
 import {useGetData} from "../hooks/useGetData.ts"
 import {useSelector} from "react-redux"
 import {RootState} from "../types/types.ts"
@@ -9,7 +8,7 @@ import {motion} from "framer-motion"
 const TopHeadlines: React.FC = () => {
     const getData = useGetData();
 
-    const {data: news} = useSelector((state: RootState) => state.topHeadlines)
+    const {data: news, isLoading} = useSelector((state: RootState) => state.topHeadlines)
 
     const firstColumnNews = news.slice(0, 5);
     const secondColumnNews = news.slice(5, 8);
@@ -21,10 +20,7 @@ const TopHeadlines: React.FC = () => {
         }
     }, [getData, news.length])
 
-    let isLoading
 
-    if (!news.length || isLoading) return <MainLoadingScreen/>
-    isLoading = true
     return (
         <>
             <motion.div
