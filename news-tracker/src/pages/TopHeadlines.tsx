@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
-import {useGetData} from "../hooks/useGetData.ts"
 import {useSelector} from "react-redux"
 import {RootState} from "../types/types.ts"
 import MainNewsBlock from "../pages/MainNewsBlock.tsx"
 import {motion} from "framer-motion"
+import {fetchTopHeadlinesData} from "../utils/NewsUtils.ts";
 
 const TopHeadlines: React.FC = () => {
-    const getData = useGetData();
+    const getData = fetchTopHeadlinesData();
 
     const {data: news, isLoading} = useSelector((state: RootState) => state.topHeadlines)
 
@@ -19,7 +19,6 @@ const TopHeadlines: React.FC = () => {
             getData()
         }
     }, [getData, news.length])
-
 
     return (
         <>

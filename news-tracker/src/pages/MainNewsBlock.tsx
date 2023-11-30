@@ -3,7 +3,7 @@ import styles from "../styles/main.module.scss"
 import {MainNewsBlockProps} from "../types/types.ts"
 import {LazyImage} from "../components/LazyImage.tsx"
 import {regex} from "../constant";
-import NewsSkeleton from "../components/NewsSkeleton.tsx";
+import NewsSkeleton from "../components/NewsSkeleton.tsx"
 
 const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                                                     firstColumnNews,

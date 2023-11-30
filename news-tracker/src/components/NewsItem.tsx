@@ -4,8 +4,10 @@ import {LazyImage} from "./LazyImage.tsx"
 import {motion} from "framer-motion"
 import {INewsData} from "../types/types.ts"
 import {formatDate} from "../constant"
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
-const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
+const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news, isLoading}) => {
 
     const {source, publishedAt, title, urlToImage, author, description, url} = news
 
@@ -22,17 +24,21 @@ const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
                         </div>
                     </div>
                     <span className={styles.titleBlock}>{title}</span>
-                    {urlToImage && (
-                        <div className={styles.newsPictureContainer}>
-                            <LazyImage className={styles.newsPicture} src={urlToImage} alt={title}/>
-                        </div>
+                    {isLoading ? (
+                        <Skeleton style={{ height: '150px', marginTop: '5px' }} />
+                    ) : (
+                        urlToImage && (
+                            <div className={styles.newsPictureContainer}>
+                                <LazyImage className={styles.newsPicture} src={urlToImage} alt={title} />
+                            </div>
+                        )
                     )}
                 </a>
                 {author && <span className={styles.AuthorBlock}>Author: {author}</span>}
                 {description && <span className={styles.descriptionBlock}>{description}</span>}
             </div>
         </motion.div>
-    );
+    )
 };
 
 export default NewsItem

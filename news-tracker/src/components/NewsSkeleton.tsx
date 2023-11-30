@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import styles from '../styles/main.module.scss'
@@ -10,30 +10,64 @@ const NewsSkeleton: React.FC = () => {
                 <Skeleton style={{marginBottom: '5px'}} width={'350px'} height={'180px'}/>
                 <Skeleton style={{marginBottom: '3px'}} count={3} height={'20px'}/>
                 <div style={{marginTop: '20px'}}>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between"}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "space-between",
+                        alignItems: 'center'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'190px'} count={4}/>
+                        <Skeleton height={'5px'} width={'190px'} count={3}/>
                     </div>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between", marginTop:'10px'}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "space-between",
+                        marginTop: '10px',
+                        alignItems: 'center'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'190px'} count={4}/>
+                        <Skeleton height={'5px'} width={'190px'} count={3}/>
                     </div>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between", marginTop:'10px'}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "space-between",
+                        marginTop: '10px',
+                        alignItems: 'center'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'190px'} count={4}/>
+                        <Skeleton height={'5px'} width={'190px'} count={3}/>
                     </div>
                 </div>
             </div>
-            <div style={{display:'flex', justifyContent:"center", alignItems:"center", flexDirection:'column', height: 'max-content'}}>
-                <Skeleton style={{marginLeft: '20px', marginRight: '20px', marginBottom:'10px'}} width={'600px'} height={'300px'}/>
-                <div style={{display: 'flex', flexDirection:'column', width:'600px'}}>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between", marginTop:'10px'}}>
+            <div style={{
+                display: 'flex',
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: 'column',
+                height: 'max-content'
+            }}>
+                <Skeleton style={{marginLeft: '20px', marginRight: '20px', marginBottom: '10px'}} width={'600px'}
+                          height={'300px'}/>
+                <div style={{display: 'flex', flexDirection: 'column', width: '600px'}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "start",
+                        marginTop: '10px'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'415px'} count={4}/>
+                        <Skeleton style={{marginLeft: "10px"}} height={'5px'} width={'240px'} count={2}/>
                     </div>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between", marginTop:'10px'}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "start",
+                        marginTop: '10px'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'415px'} count={4}/>
+                        <Skeleton style={{marginLeft: "10px"}} height={'5px'} width={'240px'} count={2}/>
                     </div>
                 </div>
             </div>
@@ -41,17 +75,34 @@ const NewsSkeleton: React.FC = () => {
                 <Skeleton style={{marginBottom: '5px'}} width={'350px'} height={'180px'}/>
                 <Skeleton style={{marginBottom: '3px'}} count={3} height={'20px'}/>
                 <div style={{marginTop: '20px'}}>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between"}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "space-between",
+                        alignItems: 'center'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'190px'} count={4}/>
+                        <Skeleton height={'5px'} width={'190px'} count={3}/>
                     </div>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between", marginTop:'10px'}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "space-between",
+                        marginTop: '10px',
+                        alignItems: 'center'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'190px'} count={4}/>
+                        <Skeleton height={'5px'} width={'190px'} count={3}/>
                     </div>
-                    <div style={{display:'flex', flexDirection:'row', justifyContent:"space-between", marginTop:'10px'}}>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: "space-between",
+                        marginTop: '10px',
+                        alignItems: 'center'
+                    }}>
                         <Skeleton width={'150px'} height={'70px'}/>
-                        <Skeleton height={'13px'} width={'190px'} count={4}/>
+                        <Skeleton height={'5px'} width={'190px'} count={3}/>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ import {breakpointColumnsObj, PER_PAGE} from "../constant"
 import CustomPagination from "../components/CustomPagination.tsx"
 
 const AllNews: React.FC = () => {
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0)
     const NewsItemMemo = React.memo(NewsItem);
     const {data: newsData, isLoading} = useSelector((state: RootState) => state.news)
 
@@ -17,7 +17,7 @@ const AllNews: React.FC = () => {
 
     const currentPageData = newsData
         .slice(offset, offset + PER_PAGE)
-        .map((news: INewsData) => <NewsItemMemo news={news} key={news.title}/>)
+        .map((news: INewsData) => <NewsItemMemo isLoading={isLoading} news={news} key={news.title}/>)
 
     const pageCount = Math.ceil(newsData.length / PER_PAGE)
 

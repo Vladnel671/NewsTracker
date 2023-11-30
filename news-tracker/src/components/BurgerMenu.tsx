@@ -18,9 +18,9 @@ const BurgerMenu: React.FC = () => {
         try {
             dispatch(setLoadingNews(true))
             const filteredNews = await fetchNewsData(URL)
-            dispatch(setNews(filteredNews));
+            dispatch(setNews(filteredNews))
             dispatch(setLoadingNews(false))
-            navigate('/allnews');
+            navigate('/allnews')
         } catch (error) {
             console.log(error);
             dispatch(setLoadingNews(false))
