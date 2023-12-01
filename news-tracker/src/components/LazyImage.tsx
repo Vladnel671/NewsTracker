@@ -9,7 +9,7 @@ export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className, heigh
 
     return (
         <LazyLoad>
-            <div style={{minHeight: height}}>
+            <div style={{minHeight: height, alignItems:"center",display:"flex"}}>
                 {!isLoaded && <Skeleton height={height} />}
                 <img
                     className={className}

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 import {INewsData} from "../types/types.ts"
 import {useCallback} from 'react'
 import {useDispatch, useSelector} from "react-redux"
@@ -41,15 +41,19 @@ export const fetchTopHeadlinesData = () => {
 }
 
 export const fetchNewsByCategory = async (category: string, dispatch: any, navigate: any) => {
-    const URL = `${ALL_NEWS_URL}${API_KEY}&q=${category}`;
+    const URL = `${ALL_NEWS_URL}${API_KEY}&q=${category}`
     try {
-        dispatch(setLoadingNews(true));
-        const filteredNews = await fetchNewsData(URL);
-        dispatch(setNews(filteredNews));
-        dispatch(setLoadingNews(false));
-        navigate('/allnews');
+        dispatch(setLoadingNews(true))
+        const filteredNews = await fetchNewsData(URL)
+        dispatch(setNews(filteredNews))
+        dispatch(setLoadingNews(false))
+        navigate('/allnews')
     } catch (error) {
-        console.log(error);
-        dispatch(setLoadingNews(false));
+        console.log(error)
+        dispatch(setLoadingNews(false))
     }
+}
+
+export function scrollToTop() {
+    window.scrollTo(0, 0)
 }

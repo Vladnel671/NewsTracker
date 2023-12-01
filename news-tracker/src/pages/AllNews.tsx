@@ -7,6 +7,7 @@ import {INewsData, RootState} from "../types/types.ts"
 import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
 import {breakpointColumnsObj, PER_PAGE} from "../constant"
 import CustomPagination from "../components/CustomPagination.tsx"
+import {scrollToTop} from "../utils/NewsUtils.ts";
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0)
@@ -23,7 +24,7 @@ const AllNews: React.FC = () => {
 
     function handlePageChange(_: unknown, value: number) {
         setCurrentPage(value - 1)
-        window.scrollTo(0, 0)
+        scrollToTop()
     }
 
     if (isLoading) return <MainLoadingScreen/>
