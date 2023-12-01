@@ -1,22 +1,13 @@
-import React from 'react';
-import styles from '../../../styles/main.module.scss';
-import {LazyImage} from "../../LazyImage/LazyImage.tsx";
+import React from 'react'
+import styles from '../styles/main.module.scss'
+import {LazyImage} from "./LazyImage.tsx"
 import {motion} from "framer-motion"
-import {INewsData} from "../../../types/types.ts";
+import {INewsData} from "../types/types.ts"
+import {formatDate} from "../constant"
 
-const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleString(undefined, {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-};
+const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => {
 
-const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
-
-    const {source, publishedAt, title, urlToImage, author, description, url} = news;
+    const {source, publishedAt, title, urlToImage, author, description, url} = news
 
     return (
         <motion.div
@@ -31,17 +22,19 @@ const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
                         </div>
                     </div>
                     <span className={styles.titleBlock}>{title}</span>
-                    {urlToImage && (
+                    {urlToImage &&
                         <div className={styles.newsPictureContainer}>
-                            <LazyImage src={urlToImage} alt={title}/>
-                        </div>
-                    )}
+                            <LazyImage className={styles.newsPicture}
+                                       src={urlToImage}
+                                       alt={title}
+                                       height='150px'/>
+                        </div>}
                 </a>
                 {author && <span className={styles.AuthorBlock}>Author: {author}</span>}
                 {description && <span className={styles.descriptionBlock}>{description}</span>}
             </div>
         </motion.div>
-    );
+    )
 };
 
-export default NewsItem;
+export default NewsItem
