@@ -19,7 +19,8 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                         <div className={styles.sideColumnMainNewsBlock}>
                             <LazyImage src={firstColumnNews[0]?.urlToImage}
                                        alt={firstColumnNews[0]?.title}
-                                       className={styles.sideColumnMainNewsImg}/>
+                                       className={styles.sideColumnMainNewsImg}
+                                       height='190px'/>
                             <span className={styles.sideColumnMainNewsText}>
                         {firstColumnNews[0]?.title}
                     </span>
@@ -29,6 +30,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                 <div className={styles.ListItemBlock} key={index}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
+                                            height='50px'
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
                                             className={styles.listImg}
@@ -42,6 +44,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <div className={styles.centralBlock}>
                         <div className={styles.centralNewsBlock}>
                             <LazyImage
+                                height='330px'
                                 src={secondColumnNews[0]?.urlToImage}
                                 alt={secondColumnNews[0]?.title}
                                 className={styles.centralImg}/>
@@ -55,6 +58,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                 <div className={styles.ListItemBlock} key={index}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
+                                            height='50px'
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
                                             className={styles.listImg}
@@ -68,6 +72,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <div className={styles.sideBlock}>
                         <div className={styles.sideColumnMainNewsBlock}>
                             <LazyImage
+                                height='190px'
                                 src={thirdColumnNews[0]?.urlToImage}
                                 alt={thirdColumnNews[0]?.title}
                                 className={styles.sideColumnMainNewsImg}
@@ -79,6 +84,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                 <div className={styles.ListItemBlock} key={index}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
+                                            height='50px'
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
                                             className={styles.listImg}

@@ -124,7 +124,6 @@ $text-color: #f3f6f9;
         width: 150px;
         justify-content: center;
         align-items: start;
-        min-height: 50px;
 
         .listImg {
           display: flex;
@@ -165,6 +164,7 @@ $text-color: #f3f6f9;
           padding-top: 5px;
           text-align: start;
           font-size: 25px;
+          min-height: 65px;
         }
       }
 
@@ -206,6 +206,7 @@ $text-color: #f3f6f9;
         font-weight: 700;
         font-size: 25px;
         margin-bottom: 10px;
+        min-height: 60px;
       }
 
       .centralNewsAuthor {

@@ -10,7 +10,7 @@ function App() {
 
     return (
         <div className={styles.mainBlock}>
-            <SkeletonTheme baseColor="#313131" highlightColor="#525252">
+            <SkeletonTheme baseColor="#a19c9c" highlightColor="#313131">
                 <motion.div
                     initial={{opacity: 0}}
                     animate={{opacity: 3}}>
