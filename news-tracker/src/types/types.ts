@@ -64,7 +64,9 @@ export interface ILazyImageProps {
     src: string
     alt: string
     className?: string
+    height?: string
 }
+
 export interface CustomPaginationProps extends PaginationProps {
     count: number
     page: number

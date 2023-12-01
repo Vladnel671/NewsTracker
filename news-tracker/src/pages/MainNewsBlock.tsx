@@ -17,7 +17,7 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                 <>
                     <div className={styles.sideBlock}>
                         <div className={styles.sideColumnMainNewsBlock}>
-                            <LazyImage isLoading={isLoading} src={firstColumnNews[0]?.urlToImage}
+                            <LazyImage src={firstColumnNews[0]?.urlToImage}
                                        alt={firstColumnNews[0]?.title}
                                        className={styles.sideColumnMainNewsImg}/>
                             <span className={styles.sideColumnMainNewsText}>
@@ -29,7 +29,6 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                 <div className={styles.ListItemBlock} key={index}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
-                                            isLoading={isLoading}
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
                                             className={styles.listImg}
@@ -43,7 +42,6 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <div className={styles.centralBlock}>
                         <div className={styles.centralNewsBlock}>
                             <LazyImage
-                                isLoading={isLoading}
                                 src={secondColumnNews[0]?.urlToImage}
                                 alt={secondColumnNews[0]?.title}
                                 className={styles.centralImg}/>
@@ -57,7 +55,6 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                 <div className={styles.ListItemBlock} key={index}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
-                                            isLoading={isLoading}
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
                                             className={styles.listImg}
@@ -71,7 +68,6 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                     <div className={styles.sideBlock}>
                         <div className={styles.sideColumnMainNewsBlock}>
                             <LazyImage
-                                isLoading={isLoading}
                                 src={thirdColumnNews[0]?.urlToImage}
                                 alt={thirdColumnNews[0]?.title}
                                 className={styles.sideColumnMainNewsImg}
@@ -83,7 +79,6 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
                                 <div className={styles.ListItemBlock} key={index}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
-                                            isLoading={isLoading}
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
                                             className={styles.listImg}
