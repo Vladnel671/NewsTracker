@@ -21,9 +21,10 @@ $text-color: #f3f6f9;
     word-wrap: break-word;
 
     .newsPictureContainer {
-      width: 100%;
       display: flex;
-
+      width: 100%;
+      align-items: center;
+      justify-content: center;
       .newsPicture {
         display: flex;
         width: 100%;

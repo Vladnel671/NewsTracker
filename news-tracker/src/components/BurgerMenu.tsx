@@ -2,45 +2,28 @@ import React, {useState} from 'react'
 import {IconButton, Menu, MenuItem} from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
 import styles from '../../src/styles/main.module.scss'
-import {fetchNewsData} from "../utils/NewsUtils.ts"
-import {setLoadingNews, setNews} from "../store/actions.ts"
 import {useDispatch} from "react-redux"
 import {useNavigate} from "react-router-dom"
-import {ALL_NEWS_URL, API_KEY} from "../constant"
+import {fetchNewsByCategory} from "../utils/NewsUtils.ts"
 
 const BurgerMenu: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const fetchNewsByCategory = async (category: string) => {
-        const URL = `${ALL_NEWS_URL}${API_KEY}&q=${category}`
-        try {
-            dispatch(setLoadingNews(true))
-            const filteredNews = await fetchNewsData(URL)
-            dispatch(setNews(filteredNews))
-            setTimeout(() => {
-                dispatch(setLoadingNews(false))
-            }, 3000);
-            navigate('/allnews')
-        } catch (error) {
-            console.log(error);
-            dispatch(setLoadingNews(false))
-        }
-    }
-
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget)
     }
 
     const handleClose = () => {
-        setAnchorEl(null)
+        setAnchorEl(null);
     }
 
     const handleMenuItemClick = (category: string) => {
         handleClose()
-        fetchNewsByCategory(category)
+        fetchNewsByCategory(category, dispatch, navigate)
     }
+
     return (
         <div className={styles.BurgerMenuBlock}>
             <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
@@ -66,7 +49,7 @@ const BurgerMenu: React.FC = () => {
                 <MenuItem onClick={() => handleMenuItemClick('Sports')}>Sports</MenuItem>
             </Menu>
         </div>
-    );
-};
+    )
+}
 
-export default BurgerMenu;
+export default BurgerMenu
