@@ -5,7 +5,7 @@ import {LazyImage} from "../components/LazyImage.tsx"
 import {regex} from "../constant";
 import NewsSkeleton from "../components/NewsSkeleton.tsx"
 
-const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
+const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                                                     firstColumnNews,
                                                                     secondColumnNews,
                                                                     thirdColumnNews,
@@ -100,4 +100,4 @@ const MainNewsBlock: React.FC<MainNewsBlockProps> = React.memo(({
     )
 })
 
-export default MainNewsBlock
+export default MainNews

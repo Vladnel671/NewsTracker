@@ -1,0 +1,32 @@
+.multiNewsBlock {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  background: darkkhaki;
+  flex-direction: row;
+  margin-top: 70px;
+
+  .multiNewsFirstBlock {
+    display: flex;
+    width: 500px;
+    min-height: 600px;
+    background: dodgerblue;
+  }
+
+  .multiNewsSecondBlock {
+    display: flex;
+    width: 500px;
+    min-height: 600px;
+    background: darkgreen;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .multiNewsThirdBlock {
+    display: flex;
+    width: 500px;
+    min-height: 600px;
+    background: gray;
+  }
+}

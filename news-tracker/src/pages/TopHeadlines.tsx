@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react'
 import {useSelector} from "react-redux"
 import {RootState} from "../types/types.ts"
-import MainNewsBlock from "../pages/MainNewsBlock.tsx"
+import MainNews from "./MainNews.tsx"
 import {motion} from "framer-motion"
 import {fetchTopHeadlinesData} from "../utils/NewsUtils.ts";
+import MultiCategoryNews from "./MultiCategoryNews.tsx";
 
 const TopHeadlines: React.FC = () => {
     const getData = fetchTopHeadlinesData();
@@ -25,10 +26,11 @@ const TopHeadlines: React.FC = () => {
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 3}}>
-                <MainNewsBlock isLoading={isLoading}
-                               firstColumnNews={firstColumnNews}
-                               secondColumnNews={secondColumnNews}
-                               thirdColumnNews={thirdColumnNews}/>
+                <MainNews isLoading={isLoading}
+                          firstColumnNews={firstColumnNews}
+                          secondColumnNews={secondColumnNews}
+                          thirdColumnNews={thirdColumnNews}/>
+                <MultiCategoryNews/>
             </motion.div>
         </>
     );
