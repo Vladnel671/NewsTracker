@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react'
 import {useSelector} from "react-redux"
 import {RootState} from "../types/types.ts"
-import MainNews from "./MainNews.tsx"
+import MainNews from "../components/MainNews.tsx"
 import {motion} from "framer-motion"
 import {fetchTopHeadlinesData} from "../utils/NewsUtils.ts";
-import MultiCategoryNews from "./MultiCategoryNews.tsx";
+import MultiCategoryNews from "../components/MultiCategoryNews.tsx";
 
 const TopHeadlines: React.FC = () => {
     const getData = fetchTopHeadlinesData();

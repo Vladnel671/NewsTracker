@@ -27,7 +27,7 @@ const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => 
                             <LazyImage className={styles.newsPicture}
                                        src={urlToImage}
                                        alt={title}
-                                       height='150px'/>
+                                       width='400px'/>
                         </div>}
                 </a>
                 {author && <span className={styles.AuthorBlock}>Author: {author}</span>}

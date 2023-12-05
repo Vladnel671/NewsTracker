@@ -4,13 +4,13 @@ import {ILazyImageProps} from "../types/types.ts"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className, height}) => {
+export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className, width}) => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     return (
         <LazyLoad>
-            <div style={{minHeight: height, alignItems:"center",display:"flex"}}>
-                {!isLoaded && <Skeleton height={height} />}
+            <div style={{alignItems:"center",display:"flex"}}>
+                {!isLoaded && <Skeleton height={80} width={width} />}
                 <img
                     className={className}
                     src={src}

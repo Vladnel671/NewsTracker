@@ -17,6 +17,7 @@ $text-color: #f3f6f9;
     padding: 0;
     margin: 0;
     color: $text-color;
+    width: 100%;
   }
 
   .newsContainer {
@@ -91,7 +92,7 @@ $text-color: #f3f6f9;
   }
 
   .topHeadlinesNewsBlock {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: lighter;
     background: $background-color;
     display: flex;
@@ -114,18 +115,19 @@ $text-color: #f3f6f9;
       display: flex;
       flex-direction: row;
       background: #5ee782;
-      padding-top: 5px;
+      margin-top: 5px;
 
       &:first-child {
-        padding-top: 0;
+        margin-top: 0;
       }
 
       .listText {
         display: flex;
-        width: 350px;
-        align-items: center;
+        align-items: start;
         padding-left: 10px;
-        @include hoverUnderline
+        @include hoverUnderline;
+        word-wrap: break-word;
+        justify-content: start;
       }
 
       .listImgBLock {
@@ -136,7 +138,7 @@ $text-color: #f3f6f9;
 
         .listImg {
           display: flex;
-          width: 100%;
+          width: 150px;
           align-items: center;
           justify-content: center;
           @include hoverEffect;
@@ -164,7 +166,7 @@ $text-color: #f3f6f9;
 
         .sideColumnMainNewsImg {
           display: flex;
-          width: 100%;
+          width: 350px;
           background: aqua;
           @include hoverEffect;
         }
@@ -203,12 +205,12 @@ $text-color: #f3f6f9;
       align-items: center;
       color: $text-color;
       background: #233632;
-      max-height: 450px;
-
+      min-height: 700px
+    ;
       .centralImg {
         display: flex;
         background: #e3ba1d;
-        width: 100%;
+        width: 600px;
         @include hoverEffect;
       }
 
@@ -236,7 +238,6 @@ $text-color: #f3f6f9;
         display: flex;
         flex-direction: column;
         width: 100%;
-        justify-content: space-between;
       }
     }
   }
