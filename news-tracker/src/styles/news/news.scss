@@ -110,7 +110,6 @@ $text-color: #f3f6f9;
     }
 
     .ListItemBlock {
-      justify-content: start;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -121,28 +120,22 @@ $text-color: #f3f6f9;
         margin-top: 0;
       }
 
-      .listText {
-        display: flex;
-        align-items: start;
-        padding-left: 10px;
-        @include hoverUnderline;
-        word-wrap: break-word;
-        justify-content: start;
-      }
-
       .listImgBLock {
         display: flex;
         width: 150px;
-        justify-content: center;
-        align-items: start;
 
         .listImg {
           display: flex;
           width: 150px;
-          align-items: center;
-          justify-content: center;
           @include hoverEffect;
         }
+      }
+
+      .listText {
+        display: flex;
+        padding-left: 10px;
+        @include hoverUnderline;
+        width: 100%;
       }
     }
 
@@ -169,6 +162,7 @@ $text-color: #f3f6f9;
           width: 350px;
           background: aqua;
           @include hoverEffect;
+          min-height: 190px;
         }
 
         .sideColumnMainNewsText {
@@ -192,7 +186,6 @@ $text-color: #f3f6f9;
         justify-content: center;
         align-items: center;
         padding-top: 20px;
-        min-height: 240px;
       }
     }
 
@@ -205,13 +198,14 @@ $text-color: #f3f6f9;
       align-items: center;
       color: $text-color;
       background: #233632;
-      min-height: 700px
-    ;
+      min-height: 700px;
+
       .centralImg {
         display: flex;
         background: #e3ba1d;
         width: 600px;
         @include hoverEffect;
+        min-height: 300px;
       }
 
       .centralText {
@@ -234,10 +228,10 @@ $text-color: #f3f6f9;
       }
 
       .centralListNewsBlock {
+        width: 100%;
         background: hotpink;
         display: flex;
         flex-direction: column;
-        width: 100%;
       }
     }
   }
