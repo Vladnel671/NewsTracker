@@ -65,7 +65,7 @@ export interface ILazyImageProps {
     alt: string
     className?: string
     width?: string
-    height?:string
+    height?: string
 }
 
 export interface CustomPaginationProps extends PaginationProps {
@@ -78,5 +78,10 @@ export interface MainNewsBlockProps {
     firstColumnNews: INewsData[]
     secondColumnNews: INewsData[]
     thirdColumnNews: INewsData[]
+    isLoading: boolean
+}
+
+export interface MultiCategoryNewsProps {
+    firstColumnMultiCategoryNews: INewsData[]
     isLoading: boolean
 }

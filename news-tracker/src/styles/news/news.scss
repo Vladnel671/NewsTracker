@@ -11,6 +11,11 @@ $text-color: #f3f6f9;
   font-family: 'Roboto Condensed', sans-serif;
   min-height: 100vh;
 
+  .horizontalRule {
+    margin: 10px 0;
+    width: 100%;
+  }
+
   .newsLink {
     text-decoration: none;
     height: min-content;
@@ -18,16 +23,6 @@ $text-color: #f3f6f9;
     margin: 0;
     color: $text-color;
     width: 100%;
-  }
-
-  .centralListNewsLink {
-    text-decoration: none;
-    height: min-content;
-    padding: 0;
-    margin: 0;
-    color: $text-color;
-    width: 100%;
-    display: flex;
   }
 
   .newsContainer {
@@ -124,18 +119,14 @@ $text-color: #f3f6f9;
       display: flex;
       flex-direction: row;
       background: #5ee782;
-      padding-top: 10px;
 
-      .listImgBLock {
+
+      .listImg {
         display: flex;
         width: 150px;
-
-        .listImg {
-          display: flex;
-          width: 150px;
-          @include hoverEffect;
-        }
+        @include hoverEffect;
       }
+
 
       .listText {
         display: flex;
@@ -192,7 +183,6 @@ $text-color: #f3f6f9;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 20px;
       }
     }
 
@@ -222,7 +212,7 @@ $text-color: #f3f6f9;
         text-align: start;
         font-weight: 700;
         font-size: 25px;
-        margin: 10px 0;
+        margin: 3px 0 0;
         min-height: 60px;
         @include hoverUnderline;
       }
@@ -232,6 +222,7 @@ $text-color: #f3f6f9;
         background: $background-color;
         width: 100%;
         justify-content: end;
+        font-size: 14px;
       }
 
       .centralListNewsBlock {

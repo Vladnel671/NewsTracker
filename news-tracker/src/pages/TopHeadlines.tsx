@@ -15,6 +15,8 @@ const TopHeadlines: React.FC = () => {
     const secondColumnNews = news.slice(5, 8);
     const thirdColumnNews = news.slice(8, 12);
 
+    const firstColumnMultiCategoryNews = news.slice(12, 16)
+
     useEffect(() => {
         if (!news.length) {
             getData()
@@ -30,7 +32,7 @@ const TopHeadlines: React.FC = () => {
                           firstColumnNews={firstColumnNews}
                           secondColumnNews={secondColumnNews}
                           thirdColumnNews={thirdColumnNews}/>
-                <MultiCategoryNews/>
+                <MultiCategoryNews isLoading={isLoading} firstColumnMultiCategoryNews={firstColumnMultiCategoryNews}/>
             </motion.div>
         </>
     );

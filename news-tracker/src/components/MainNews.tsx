@@ -30,21 +30,24 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         </div>
                         <div className={styles.sideListNewsBlock}>
                             {firstColumnNews.slice(1, 4).map((newsItem, index) => (
-                                <a key={index} className={styles.newsLink} href={newsItem?.url} target="_blank"
-                                   rel='noopener noreferrer'>
-                                    <div className={styles.ListItemBlock}>
-                                        <div className={styles.listImgBLock}>
-                                            <LazyImage
-                                                width='150px'
-                                                height='80px'
-                                                src={newsItem.urlToImage}
-                                                alt={newsItem.title}
-                                                className={styles.listImg}
-                                            />
+                                <div key={index}>
+                                    <hr className={styles.horizontalRule}/>
+                                    <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                                       rel='noopener noreferrer'>
+                                        <div className={styles.ListItemBlock}>
+                                            <div className={styles.listImgBLock}>
+                                                <LazyImage
+                                                    width='150px'
+                                                    height='80px'
+                                                    src={newsItem.urlToImage}
+                                                    alt={newsItem.title}
+                                                    className={styles.listImg}
+                                                />
+                                            </div>
+                                            <span className={styles.listText}>{newsItem.title}</span>
                                         </div>
-                                        <span className={styles.listText}>{newsItem.title}</span>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -66,10 +69,11 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         </div>
                         <div className={styles.centralListNewsBlock}>
                             {secondColumnNews.slice(1, 3).map((newsItem, index) => (
-                                <div className={styles.ListItemBlock} key={index}>
-                                    <a className={styles.centralListNewsLink} href={newsItem?.url} target="_blank"
+                                <div key={index}>
+                                    <hr className={styles.horizontalRule}/>
+                                    <a className={styles.newsLink} href={newsItem?.url} target="_blank"
                                        rel='noopener noreferrer'>
-                                        <div className={styles.listImgBLock}>
+                                        <div className={styles.ListItemBlock}>
                                             <LazyImage
                                                 width='150px'
                                                 height='80px'
@@ -77,8 +81,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                                 alt={newsItem.title}
                                                 className={styles.listImg}
                                             />
+                                            <span className={styles.listText}>{newsItem.title}</span>
                                         </div>
-                                        <span className={styles.listText}>{newsItem.title}</span>
                                     </a>
                                 </div>
                             ))}
@@ -99,21 +103,24 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         </div>
                         <div className={styles.sideListNewsBlock}>
                             {thirdColumnNews.slice(1, 4).map((newsItem, index) => (
-                                <a key={index} className={styles.newsLink} href={newsItem?.url} target="_blank"
-                                   rel='noopener noreferrer'>
-                                    <div className={styles.ListItemBlock}>
-                                        <div className={styles.listImgBLock}>
-                                            <LazyImage
-                                                width='150px'
-                                                height='80px'
-                                                src={newsItem.urlToImage}
-                                                alt={newsItem.title}
-                                                className={styles.listImg}
-                                            />
+                                <div key={index}>
+                                    <hr className={styles.horizontalRule}/>
+                                    <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                                       rel='noopener noreferrer'>
+                                        <div className={styles.ListItemBlock}>
+                                            <div className={styles.listImgBLock}>
+                                                <LazyImage
+                                                    width='150px'
+                                                    height='80px'
+                                                    src={newsItem.urlToImage}
+                                                    alt={newsItem.title}
+                                                    className={styles.listImg}
+                                                />
+                                            </div>
+                                            <span className={styles.listText}>{newsItem.title}</span>
                                         </div>
-                                        <span className={styles.listText}>{newsItem.title}</span>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             ))}
                         </div>
                     </div>

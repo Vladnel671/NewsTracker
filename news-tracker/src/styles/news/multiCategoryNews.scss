@@ -12,6 +12,11 @@
     width: 500px;
     min-height: 600px;
     background: dodgerblue;
+    flex-direction: column;
+
+    .firstBlockMultiCategoryMainImg {
+      width: 500px;
+    }
   }
 
   .multiNewsSecondBlock {
