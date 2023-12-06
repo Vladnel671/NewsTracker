@@ -30,9 +30,9 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         </div>
                         <div className={styles.sideListNewsBlock}>
                             {firstColumnNews.slice(1, 4).map((newsItem, index) => (
-                                <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                                <a key={index} className={styles.newsLink} href={newsItem?.url} target="_blank"
                                    rel='noopener noreferrer'>
-                                    <div className={styles.ListItemBlock} key={index}>
+                                    <div className={styles.ListItemBlock}>
                                         <div className={styles.listImgBLock}>
                                             <LazyImage
                                                 width='150px'
@@ -67,7 +67,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         <div className={styles.centralListNewsBlock}>
                             {secondColumnNews.slice(1, 3).map((newsItem, index) => (
                                 <div className={styles.ListItemBlock} key={index}>
-                                    <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                                    <a className={styles.centralListNewsLink} href={newsItem?.url} target="_blank"
                                        rel='noopener noreferrer'>
                                         <div className={styles.listImgBLock}>
                                             <LazyImage
@@ -77,8 +77,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                                 alt={newsItem.title}
                                                 className={styles.listImg}
                                             />
-                                            <span className={styles.listText}>{newsItem.title}</span>
                                         </div>
+                                        <span className={styles.listText}>{newsItem.title}</span>
                                     </a>
                                 </div>
                             ))}
@@ -99,9 +99,9 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         </div>
                         <div className={styles.sideListNewsBlock}>
                             {thirdColumnNews.slice(1, 4).map((newsItem, index) => (
-                                <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                                <a key={index} className={styles.newsLink} href={newsItem?.url} target="_blank"
                                    rel='noopener noreferrer'>
-                                    <div className={styles.ListItemBlock} key={index}>
+                                    <div className={styles.ListItemBlock}>
                                         <div className={styles.listImgBLock}>
                                             <LazyImage
                                                 width='150px'
