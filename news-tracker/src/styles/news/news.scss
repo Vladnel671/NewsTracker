@@ -14,6 +14,8 @@ $text-color: #f3f6f9;
   .horizontalRule {
     margin: 10px 0;
     width: 100%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .newsLink {
@@ -105,7 +107,6 @@ $text-color: #f3f6f9;
     padding-top: 70px;
     justify-content: center;
     min-height: max-content;
-    padding-bottom: 50px;
 
     .newsSkeletonMainBlock {
       display: flex;
@@ -120,13 +121,11 @@ $text-color: #f3f6f9;
       flex-direction: row;
       background: #5ee782;
 
-
       .listImg {
         display: flex;
         width: 150px;
         @include hoverEffect;
       }
-
 
       .listText {
         display: flex;
@@ -223,6 +222,7 @@ $text-color: #f3f6f9;
         width: 100%;
         justify-content: end;
         font-size: 14px;
+        color: #a2a2a2;
       }
 
       .centralListNewsBlock {

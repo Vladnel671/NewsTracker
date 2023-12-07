@@ -7,19 +7,23 @@ import 'react-loading-skeleton/dist/skeleton.css'
 export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className, width, height}) => {
     const [isLoaded, setIsLoaded] = useState(false)
 
+    const imageStyles = isLoaded ? {} : {display: 'none'};
+
     return (
         <LazyLoad>
             <div style={{alignItems: "center", display: "flex"}}>
-                {!isLoaded &&
-                    <Skeleton height={height} width={width}/>}
-                <img
-                    className={className}
-                    src={src}
-                    alt={alt}
-                    onLoad={() => setIsLoaded(true)}
-                    style={isLoaded ? {} : {display: 'none'}}
-                />
+                {isLoaded ? null : <Skeleton height={height} width={width}/>}
+                {src && (
+                    <img
+                        className={className}
+                        src={src}
+                        alt={alt}
+                        onLoad={() => setIsLoaded(true)}
+                        style={imageStyles}
+                    />
+                )}
             </div>
         </LazyLoad>
-    )
+    );
+
 }

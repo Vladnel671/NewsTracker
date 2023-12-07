@@ -14,10 +14,16 @@ const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({firstCo
                                alt={firstColumnMultiCategoryNews[0]?.title}
                                className={styles.firstBlockMultiCategoryMainImg}
                                height='280px'
-                               width='500px'/></a>
+                               width='500px'/>
+                    <h3>{firstColumnMultiCategoryNews[0]?.title}</h3>
+                </a>
+
                 {firstColumnMultiCategoryNews.slice(1, 4).map((news, index) => (
-                    <span key={index}><a key={index} className={styles.newsLink} href={news?.url} target="_blank"
-                                         rel='noopener noreferrer'>{news.title}</a></span>
+                    <div key={index}>
+                        <a key={index} className={styles.newsLink} href={news?.url} target="_blank"
+                           rel='noopener noreferrer'><span className={styles.newsText}>{news?.title}</span>
+                        </a>
+                    </div>
                 ))}
             </div>
             <div className={styles.multiNewsSecondBlock}>

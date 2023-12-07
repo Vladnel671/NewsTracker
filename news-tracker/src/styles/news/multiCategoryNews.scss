@@ -7,6 +7,13 @@
   flex-direction: row;
   margin-top: 70px;
 
+  .newsText {
+    display: flex;
+    min-height: 50px;
+    margin: 10px 0;
+    background: darkslategray;
+  }
+
   .multiNewsFirstBlock {
     display: flex;
     width: 500px;
