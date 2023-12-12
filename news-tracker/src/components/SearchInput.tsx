@@ -2,12 +2,12 @@ import React, {ChangeEvent, useCallback, useState} from 'react'
 import {IconButton, TextField} from "@material-ui/core"
 import {useNavigate} from "react-router-dom"
 import {fetchNewsData} from "../utils/NewsUtils.ts"
-import {setLoadingNews, setNews} from "../store/actions.ts"
 import {useDispatch} from "react-redux"
 import {ALL_NEWS_URL, API_KEY} from "../constant"
 import SearchIcon from "@mui/icons-material/Search"
 import {styled} from '@mui/material'
 import styles from '../styles/main.module.scss'
+import {setLoadingNews, setNews} from "../features/news/newsSlice.ts";
 
 const CustomTextField = styled(TextField)({
     '& .MuiInput-underline:after': {

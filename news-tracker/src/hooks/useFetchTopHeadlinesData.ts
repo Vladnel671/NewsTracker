@@ -1,9 +1,10 @@
 import {useDispatch, useSelector} from "react-redux"
-import {RootState} from "../types/types.ts"
 import {useCallback} from "react"
-import {setLoadingTopHeadlines, setTopHeadlines} from "../store/actions.ts"
+
 import {TOP_HEADLINES_URL} from "../constant"
 import {fetchNewsData} from "../utils/NewsUtils.ts"
+import {setLoadingTopHeadlines, setTopHeadlines} from "../features/news/newsSlice.ts";
+import {RootState} from "../features/news/newsSlice.ts"
 
 export const useFetchTopHeadlinesData = () => {
     const dispatch = useDispatch()

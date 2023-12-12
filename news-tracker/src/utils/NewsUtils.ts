@@ -1,7 +1,7 @@
 import axios from "axios"
 import {INewsData} from "../types/types.ts"
-import {setLoadingNews, setNews} from "../store/actions.ts"
 import {ALL_NEWS_URL, API_KEY} from "../constant"
+import {setLoadingNews, setNews} from "../features/news/newsSlice.ts"
 
 export const fetchNewsData = async (url: string): Promise<INewsData[]> => {
     try {
