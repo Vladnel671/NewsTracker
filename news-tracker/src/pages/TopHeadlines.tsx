@@ -1,37 +1,39 @@
 import React, {useEffect} from 'react'
 import {useSelector} from "react-redux"
-import {RootState} from "../types/types.ts"
-import MainNewsBlock from "../pages/MainNewsBlock.tsx"
+import MainNews from "../components/MainNews.tsx"
 import {motion} from "framer-motion"
-import {fetchTopHeadlinesData} from "../utils/NewsUtils.ts";
+import MultiCategoryNews from "../components/MultiCategoryNews.tsx"
+import {useFetchTopHeadlinesData} from "../hooks/useFetchTopHeadlinesData.ts"
+import {RootState} from "../store/store.ts";
 
 const TopHeadlines: React.FC = () => {
-    const getData = fetchTopHeadlinesData();
 
-    const {data: news, isLoading} = useSelector((state: RootState) => state.topHeadlines)
+    const {data: news, isLoading} = useSelector((state: RootState) => state.news.topHeadlines)
 
-    const firstColumnNews = news.slice(0, 5);
-    const secondColumnNews = news.slice(5, 8);
-    const thirdColumnNews = news.slice(8, 12);
+    const firstColumnNews = news?.slice(0, 5)
+    const secondColumnNews = news?.slice(5, 8)
+    const thirdColumnNews = news?.slice(8, 12)
 
+    const firstColumnMultiCategoryNews = news?.slice(12, 16)
+
+    const fetchData = useFetchTopHeadlinesData()
     useEffect(() => {
-        if (!news.length) {
-            getData()
-        }
-    }, [getData, news.length])
+        fetchData()
+    }, [fetchData])
 
     return (
         <>
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 3}}>
-                <MainNewsBlock isLoading={isLoading}
-                               firstColumnNews={firstColumnNews}
-                               secondColumnNews={secondColumnNews}
-                               thirdColumnNews={thirdColumnNews}/>
+                <MainNews isLoading={isLoading}
+                          firstColumnNews={firstColumnNews}
+                          secondColumnNews={secondColumnNews}
+                          thirdColumnNews={thirdColumnNews}/>
+                <MultiCategoryNews isLoading={isLoading} firstColumnMultiCategoryNews={firstColumnMultiCategoryNews}/>
             </motion.div>
         </>
-    );
-};
+    )
+}
 
 export default TopHeadlines

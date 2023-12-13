@@ -3,16 +3,17 @@ import styles from '../styles/main.module.scss'
 import NewsItem from "../components/NewsItem.tsx"
 import {useSelector} from "react-redux"
 import Masonry from 'react-masonry-css'
-import {INewsData, RootState} from "../types/types.ts"
+import {INewsData} from "../types/types.ts"
 import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
 import {breakpointColumnsObj, PER_PAGE} from "../constant"
 import CustomPagination from "../components/CustomPagination.tsx"
-import {scrollToTop} from "../utils/NewsUtils.ts";
+import {scrollToTop} from "../utils/NewsUtils.ts"
+import {RootState} from "../store/store.ts";
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0)
     const NewsItemMemo = React.memo(NewsItem);
-    const {data: newsData, isLoading} = useSelector((state: RootState) => state.news)
+    const {data: newsData, isLoading} = useSelector((state: RootState) => state.news.news)
 
     const offset = currentPage * PER_PAGE
 
