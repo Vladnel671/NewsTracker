@@ -1,5 +1,10 @@
 import {PaginationProps} from "@mui/material"
 
+export interface INewsState {
+    data: INewsData[]
+    isLoading: boolean
+}
+
 export interface INewsData {
     author: string
     title: string
@@ -7,12 +12,7 @@ export interface INewsData {
     urlToImage: string
     url: string
     publishedAt: string
-    source: { name: string }
-}
-
-export interface INewsState {
-    data: INewsData[]
-    isLoading: boolean
+    source: { id: string; name: string }
 }
 
 export const initialState: { news: INewsState; topHeadlines: INewsState } = {

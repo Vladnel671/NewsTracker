@@ -5,3 +5,4 @@ export const store = configureStore({
         news: newsReducer,
     }
 })
+export type RootState = ReturnType<typeof store.getState>

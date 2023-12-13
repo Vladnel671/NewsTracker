@@ -23,6 +23,3 @@ const newsSlice = createSlice({
 export const {setNews, setLoadingNews, setTopHeadlines, setLoadingTopHeadlines} = newsSlice.actions
 
 export default newsSlice.reducer
-
-export const rootReducer = newsSlice.reducer
-export type RootState = ReturnType<typeof rootReducer>
