@@ -6,7 +6,7 @@ import Masonry from 'react-masonry-css'
 import {INewsData} from "../types/types.ts"
 import MainLoadingScreen from "../components/MainLoadingScreen.tsx"
 import {breakpointColumnsObj, PER_PAGE} from "../constant"
-import CustomPagination from "../components/CustomPagination.tsx"
+import Paginator from "../components/Paginator.tsx"
 import {scrollToTop} from "../utils/NewsUtils.ts"
 import {RootState} from "../store/store.ts";
 
@@ -33,7 +33,7 @@ const AllNews: React.FC = () => {
     return (
         <div className={styles.allNewsBlock}>
 
-            {!newsData.length ? <></> : <CustomPagination
+            {!newsData.length ? <></> : <Paginator
                 count={pageCount}
                 page={currentPage + 1}
                 onChange={handlePageChange}
@@ -45,7 +45,7 @@ const AllNews: React.FC = () => {
             >
                 {currentPageData}
             </Masonry>
-            {!newsData.length ? <></> : <CustomPagination
+            {!newsData.length ? <></> : <Paginator
                 count={pageCount}
                 page={currentPage + 1}
                 onChange={handlePageChange}

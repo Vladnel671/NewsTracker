@@ -1,24 +1,25 @@
 import React from 'react'
-import styles from '../styles/main.module.scss'
-import {MultiCategoryNewsProps} from "../types/types.ts";
-import {LazyImage} from "./LazyImage.tsx";
+import styles from '../../styles/main.module.scss'
+import {MultiCategoryNewsProps} from "../../types/types.ts";
+import {LazyImage} from "../LazyImage.tsx";
 
-const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({firstColumnMultiCategoryNews}) => {
+const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({news}) => {
     return (
         <div className={styles.multiNewsBlock}>
             <div className={styles.multiNews}>
+                <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>BUSINESS</h3>
-                <a className={styles.newsLink} href={firstColumnMultiCategoryNews[0]?.url} target="_blank"
+                <a className={styles.newsLink} href={news[0]?.url} target="_blank"
                    rel='noopener noreferrer'>
-                    <LazyImage src={firstColumnMultiCategoryNews[0]?.urlToImage}
-                               alt={firstColumnMultiCategoryNews[0]?.title}
+                    <LazyImage src={news[0]?.urlToImage}
+                               alt={news[0]?.title}
                                className={styles.MultiCategoryMainImg}
                                height='280px'
                                width='430px'/>
-                    <h3 className={styles.mainNewsTitle}>{firstColumnMultiCategoryNews[0]?.title}</h3>
+                    <h3 className={styles.mainNewsTitle}>{news[0]?.title}</h3>
                 </a>
                 <hr className={styles.horizontalRule}/>
-                {firstColumnMultiCategoryNews.slice(1, 4).map((news, index) => (
+                {news.slice(1, 4).map((news, index) => (
                     <div key={index}>
                         <a key={index} className={styles.newsLink} href={news?.url} target="_blank"
                            rel='noopener noreferrer'><span className={styles.newsText}>{news?.title}</span>
@@ -28,18 +29,19 @@ const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({firstCo
                 ))}
             </div>
             <div className={styles.multiNews}>
+                <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>SCIENCE</h3>
-                <a className={styles.newsLink} href={firstColumnMultiCategoryNews[0]?.url} target="_blank"
+                <a className={styles.newsLink} href={news[0]?.url} target="_blank"
                    rel='noopener noreferrer'>
-                    <LazyImage src={firstColumnMultiCategoryNews[0]?.urlToImage}
-                               alt={firstColumnMultiCategoryNews[0]?.title}
+                    <LazyImage src={news[0]?.urlToImage}
+                               alt={news[0]?.title}
                                className={styles.MultiCategoryMainImg}
                                height='280px'
                                width='430px'/>
-                    <h3 className={styles.mainNewsTitle}>{firstColumnMultiCategoryNews[0]?.title}</h3>
+                    <h3 className={styles.mainNewsTitle}>{news[0]?.title}</h3>
                 </a>
                 <hr className={styles.horizontalRule}/>
-                {firstColumnMultiCategoryNews.slice(1, 4).map((news, index) => (
+                {news.slice(1, 4).map((news, index) => (
                     <div key={index}>
                         <a key={index} className={styles.newsLink} href={news?.url} target="_blank"
                            rel='noopener noreferrer'>
@@ -50,19 +52,20 @@ const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({firstCo
                 ))}
             </div>
             <div className={styles.multiNews}>
+                <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>LIFESTYLE</h3>
-                <a className={styles.newsLink} href={firstColumnMultiCategoryNews[0]?.url} target="_blank"
+                <a className={styles.newsLink} href={news[0]?.url} target="_blank"
                    rel='noopener noreferrer'>
-                    <LazyImage src={firstColumnMultiCategoryNews[0]?.urlToImage}
-                               alt={firstColumnMultiCategoryNews[0]?.title}
+                    <LazyImage src={news[0]?.urlToImage}
+                               alt={news[0]?.title}
                                className={styles.MultiCategoryMainImg}
                                height='280px'
                                width='430px'/>
-                    <h3 className={styles.mainNewsTitle}>{firstColumnMultiCategoryNews[0]?.title}</h3>
+                    <h3 className={styles.mainNewsTitle}>{news[0]?.title}</h3>
                     <hr className={styles.horizontalRule}/>
                 </a>
 
-                {firstColumnMultiCategoryNews.slice(1, 4).map((news, index) => (
+                {news.slice(1, 4).map((news, index) => (
                     <div key={index}>
                         <a key={index} className={styles.newsLink} href={news?.url} target="_blank"
                            rel='noopener noreferrer'>

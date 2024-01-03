@@ -1,10 +1,12 @@
+@import 'mixins';
+
 .multiNewsBlock {
   display: flex;
   justify-content: center;
   align-items: start;
   height: 100%;
   flex-direction: row;
-  margin-top: 70px;
+  margin-top: 50px;
   gap: 20px;
 
   .horizontalRule {
@@ -18,18 +20,20 @@
     display: flex;
     min-height: 30px;
     margin: 10px 0;
+    @include hoverUnderline;
   }
 
   .mainNewsTitle {
     color: #f3f6f9;
     font-size: 20px;
     margin: 5px 0;
+    @include hoverUnderline;
   }
 
   .newsCategoryName {
     color: #f3f6f9;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin: 5px 0 10px;
   }
 
   .multiNews {
@@ -40,6 +44,7 @@
 
     .MultiCategoryMainImg {
       width: 430px;
+      @include hoverEffect;
     }
   }
 }

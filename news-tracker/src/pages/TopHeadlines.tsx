@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {useSelector} from "react-redux"
 import MainNews from "../components/MainNews.tsx"
 import {motion} from "framer-motion"
-import MultiCategoryNews from "../components/MultiCategoryNews.tsx"
+import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
 import {useFetchTopHeadlinesData} from "../hooks/useFetchTopHeadlinesData.ts"
 import {RootState} from "../store/store.ts";
 
@@ -30,7 +30,7 @@ const TopHeadlines: React.FC = () => {
                           firstColumnNews={firstColumnNews}
                           secondColumnNews={secondColumnNews}
                           thirdColumnNews={thirdColumnNews}/>
-                <MultiCategoryNews isLoading={isLoading} firstColumnMultiCategoryNews={firstColumnMultiCategoryNews}/>
+                <MultiCategoryNews isLoading={isLoading} news={firstColumnMultiCategoryNews}/>
             </motion.div>
         </>
     )
