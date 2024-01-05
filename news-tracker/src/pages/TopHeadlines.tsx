@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
-import {useSelector} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import MainNews from "../components/MainNews.tsx"
 import {motion} from "framer-motion"
 import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
-import {useFetchTopHeadlinesData} from "../hooks/useFetchTopHeadlinesData.ts"
 import {RootState} from "../store/store.ts";
+import {fetchTopHeadlines} from "../features/news/newsSlice.ts";
 
 const TopHeadlines: React.FC = () => {
-
+    const dispatch = useDispatch()
     const {data: news, isLoading} = useSelector((state: RootState) => state.news.topHeadlines)
 
     const firstColumnNews = news?.slice(0, 5)
@@ -16,10 +16,9 @@ const TopHeadlines: React.FC = () => {
 
     const firstColumnMultiCategoryNews = news?.slice(12, 16)
 
-    const fetchData = useFetchTopHeadlinesData()
     useEffect(() => {
-        fetchData()
-    }, [fetchData])
+        dispatch(fetchTopHeadlines())
+    }, [dispatch])
 
     return (
         <>
