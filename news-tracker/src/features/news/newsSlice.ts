@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit'
 import {INewsData, initialState} from '../../types/types'
 import {RootState} from "../../store/store.ts";
-import {newsAPI, TOP_HEADLINES_URL} from "../../api/API.ts";
+import {ALL_NEWS_URL, newsAPI, TOP_HEADLINES_URL} from "../../api/API.ts";
 
 const newsSlice = createSlice({
     name: 'news',
@@ -24,8 +24,8 @@ const newsSlice = createSlice({
 
 export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispatch; state: RootState }>(
     'news/fetchTopHeadlines',
-    async (_, { dispatch, getState }) => {
-        const { news } = getState() as RootState;
+    async (_, {dispatch, getState}) => {
+        const {news} = getState() as RootState;
         if (news.topHeadlines.data.length > 0) {
             return;
         }
@@ -41,22 +41,21 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
     }
 );
 
-// export const fetchNewsByCategory = createAsyncThunk(
-//     'news/fetchNewsByCategory',
-//     async (category: string, { dispatch, getState }) => {
-//         const URL = `${ALL_NEWS_URL}&q=${category}`;
-//         try {
-//             dispatch(setLoadingNews(true));
-//             const filteredNews = await fetchNewsData(URL);
-//             dispatch(setNews(filteredNews));
-//             dispatch(setLoadingNews(false));
-//             navigate('/allnews');
-//         } catch (error) {
-//             console.log(error);
-//             dispatch(setLoadingNews(false));
-//         }
-//     }
-// );
+export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
+    'news/fetchNewsByCategory',
+    async (category, {dispatch}) => {
+        const URL = `${ALL_NEWS_URL}&q=${category}`;
+        try {
+            dispatch(setLoadingNews(true));
+            const filteredNews = await newsAPI.fetchNewsData(URL);
+            dispatch(setNews(filteredNews));
+            dispatch(setLoadingNews(false));
+        } catch (error) {
+            console.log(error);
+            dispatch(setLoadingNews(false));
+        }
+    }
+)
 //
 // export const SearchData = (async () => {
 //     if (keyword.trim() === '') {
