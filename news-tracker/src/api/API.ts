@@ -13,7 +13,6 @@ export const instance = axios.create({
 export const newsAPI = {
     fetchNewsData: async (url: string): Promise<INewsData[]> => {
         try {
-            console.log(BASE_URL)
             const response = await instance.get(BASE_URL + url);
             const data = response.data;
             return data.articles.filter((news: INewsData) => {
