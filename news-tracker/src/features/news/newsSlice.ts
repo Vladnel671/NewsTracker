@@ -1,8 +1,7 @@
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit'
 import {INewsData, initialState} from '../../types/types'
 import {RootState} from "../../store/store.ts";
-import axios from "axios";
-import {ALL_NEWS_URL, TOP_HEADLINES_URL} from "../../api/API.ts";
+import {newsAPI, TOP_HEADLINES_URL} from "../../api/API.ts";
 
 const newsSlice = createSlice({
     name: 'news',
@@ -23,20 +22,7 @@ const newsSlice = createSlice({
     },
 });
 
-export const fetchNewsData = async (url: string): Promise<INewsData[]> => {
-    try {
-        const response = await axios.get(url);
-        const data = response.data;
-        return data.articles.filter((news: INewsData) => {
-            return !(news.title === '[Removed]' || news.title.trim() === '');
-        });
-    } catch (error) {
-        console.log('Error executing GET request:', error);
-        throw error;
-    }
-};
-
-export const fetchTopHeadlines = createAsyncThunk(
+export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispatch; state: RootState }>(
     'news/fetchTopHeadlines',
     async (_, { dispatch, getState }) => {
         const { news } = getState() as RootState;
@@ -45,7 +31,7 @@ export const fetchTopHeadlines = createAsyncThunk(
         }
         try {
             dispatch(setLoadingTopHeadlines(true));
-            const filteredNews = await fetchNewsData(TOP_HEADLINES_URL);
+            const filteredNews = await newsAPI.fetchNewsData(TOP_HEADLINES_URL);
             dispatch(setTopHeadlines(filteredNews));
         } catch (error) {
             console.log('Error executing GET request:', error);
@@ -55,41 +41,41 @@ export const fetchTopHeadlines = createAsyncThunk(
     }
 );
 
-export const fetchNewsByCategory = createAsyncThunk(
-    'news/fetchNewsByCategory',
-    async (category: string, { dispatch, getState }) => {
-        const URL = `${ALL_NEWS_URL}&q=${category}`;
-        try {
-            dispatch(setLoadingNews(true));
-            const filteredNews = await fetchNewsData(URL);
-            dispatch(setNews(filteredNews));
-            dispatch(setLoadingNews(false));
-            navigate('/allnews');
-        } catch (error) {
-            console.log(error);
-            dispatch(setLoadingNews(false));
-        }
-    }
-);
-
-export const SearchData = (async () => {
-    if (keyword.trim() === '') {
-        navigate('/allnews')//return
-    }
-
-    navigate('/allnews')
-    const URL = `${ALL_NEWS_URL}&q=${keyword}`
-    try {
-        dispatch(setLoadingNews(true));
-        const filteredNews = await fetchNewsData(URL)
-        dispatch(setNews(filteredNews));
-        dispatch(setLoadingNews(false))
-        setKeyword("")
-    } catch (error) {
-        console.log(error)
-        dispatch(setLoadingNews(false))
-    }
-}, [keyword, dispatch])
+// export const fetchNewsByCategory = createAsyncThunk(
+//     'news/fetchNewsByCategory',
+//     async (category: string, { dispatch, getState }) => {
+//         const URL = `${ALL_NEWS_URL}&q=${category}`;
+//         try {
+//             dispatch(setLoadingNews(true));
+//             const filteredNews = await fetchNewsData(URL);
+//             dispatch(setNews(filteredNews));
+//             dispatch(setLoadingNews(false));
+//             navigate('/allnews');
+//         } catch (error) {
+//             console.log(error);
+//             dispatch(setLoadingNews(false));
+//         }
+//     }
+// );
+//
+// export const SearchData = (async () => {
+//     if (keyword.trim() === '') {
+//         navigate('/allnews')//return
+//     }
+//
+//     navigate('/allnews')
+//     const URL = `${ALL_NEWS_URL}&q=${keyword}`
+//     try {
+//         dispatch(setLoadingNews(true));
+//         const filteredNews = await fetchNewsData(URL)
+//         dispatch(setNews(filteredNews));
+//         dispatch(setLoadingNews(false))
+//         setKeyword("")
+//     } catch (error) {
+//         console.log(error)
+//         dispatch(setLoadingNews(false))
+//     }
+// }, [keyword, dispatch])
 
 export const {setNews, setLoadingNews, setTopHeadlines, setLoadingTopHeadlines} = newsSlice.actions
 

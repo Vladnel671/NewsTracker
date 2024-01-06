@@ -3,11 +3,11 @@ import {useDispatch, useSelector} from "react-redux"
 import MainNews from "../components/MainNews.tsx"
 import {motion} from "framer-motion"
 import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
-import {RootState} from "../store/store.ts";
+import {AppDispatch, RootState} from "../store/store.ts";
 import {fetchTopHeadlines} from "../features/news/newsSlice.ts";
 
 const TopHeadlines: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch: AppDispatch = useDispatch();
     const {data: news, isLoading} = useSelector((state: RootState) => state.news.topHeadlines)
 
     const firstColumnNews = news?.slice(0, 5)
