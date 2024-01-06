@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
-import {IconButton, Menu, MenuItem} from "@material-ui/core"
+import {IconButton, Menu} from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
 import styles from '../../src/styles/main.module.scss'
-import {useDispatch} from "react-redux"
-import {useNavigate} from "react-router-dom"
-import {fetchNewsByCategory} from "../utils/NewsUtils.ts"
+import {fetchNewsByCategory} from "../features/news/newsSlice.ts";
+import {AppDispatch} from "../store/store.ts";
+import {useDispatch} from "react-redux";
+import {MenuItem} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const BurgerMenu: React.FC = () => {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-    const dispatch = useDispatch()
     const navigate = useNavigate()
+    const dispatch: AppDispatch = useDispatch();
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget)
@@ -21,7 +23,8 @@ const BurgerMenu: React.FC = () => {
 
     const handleMenuItemClick = (category: string) => {
         handleClose()
-        fetchNewsByCategory(category, dispatch, navigate)
+        dispatch(fetchNewsByCategory(category))
+        navigate('/allnews');
     }
 
     return (

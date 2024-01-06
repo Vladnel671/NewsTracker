@@ -6,7 +6,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import PaginationItem from '@mui/material/PaginationItem'
 
-const CustomPagination: React.FC<CustomPaginationProps> = ({ count, page, onChange }) => (
+const Paginator: React.FC<CustomPaginationProps> = ({ count, page, onChange }) => (
     <Pagination
         className={styles.pagination}
         count={count}
@@ -42,4 +42,4 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({ count, page, onChan
     />
 );
 
-export default CustomPagination
+export default Paginator

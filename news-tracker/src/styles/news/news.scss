@@ -107,6 +107,7 @@ $text-color: #f3f6f9;
     padding-top: 70px;
     justify-content: center;
     min-height: max-content;
+    gap: 20px;
 
     .newsSkeletonMainBlock {
       display: flex;
@@ -119,7 +120,7 @@ $text-color: #f3f6f9;
       width: 100%;
       display: flex;
       flex-direction: row;
-      background: #5ee782;
+      //background: #5ee782;
 
       .listImg {
         display: flex;
@@ -139,7 +140,7 @@ $text-color: #f3f6f9;
     .sideBlock {
       display: flex;
       width: 350px;
-      background: chartreuse;
+      //background: chartreuse;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
@@ -150,14 +151,14 @@ $text-color: #f3f6f9;
       .sideColumnMainNewsBlock {
         display: flex;
         width: 100%;
-        background: chocolate;
+        //background: chocolate;
         flex-direction: column;
         justify-content: space-between;
 
         .sideColumnMainNewsImg {
           display: flex;
           width: 350px;
-          background: aqua;
+          //background: aqua;
           @include hoverEffect;
           min-height: 190px;
         }
@@ -165,7 +166,7 @@ $text-color: #f3f6f9;
         .sideColumnMainNewsText {
           display: flex;
           width: 100%;
-          background: crimson;
+          //background: crimson;
           padding-top: 5px;
           text-align: start;
           font-size: 25px;
@@ -178,7 +179,7 @@ $text-color: #f3f6f9;
       .sideListNewsBlock {
         display: flex;
         width: 100%;
-        background: darkviolet;
+       // background: darkviolet;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -188,17 +189,15 @@ $text-color: #f3f6f9;
     .centralBlock {
       display: flex;
       width: 600px;
-      margin-left: 20px;
-      margin-right: 20px;
       flex-direction: column;
       align-items: center;
       color: $text-color;
-      background: #233632;
+      //background: #233632;
       min-height: min-content;
 
       .centralImg {
         display: flex;
-        background: #e3ba1d;
+        //background: #e3ba1d;
         width: 600px;
         @include hoverEffect;
         min-height: 330px;
@@ -207,7 +206,7 @@ $text-color: #f3f6f9;
       .centralText {
         display: flex;
         width: 100%;
-        background: indianred;
+        //background: indianred;
         text-align: start;
         font-weight: 700;
         font-size: 25px;
@@ -227,7 +226,7 @@ $text-color: #f3f6f9;
 
       .centralListNewsBlock {
         width: 100%;
-        background: hotpink;
+        //background: hotpink;
         display: flex;
         flex-direction: column;
       }

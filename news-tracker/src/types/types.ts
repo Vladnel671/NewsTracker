@@ -48,6 +48,6 @@ export interface MainNewsBlockProps {
 }
 
 export interface MultiCategoryNewsProps {
-    firstColumnMultiCategoryNews: INewsData[]
+    news: INewsData[]
     isLoading: boolean
 }
