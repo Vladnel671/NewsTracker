@@ -56,25 +56,21 @@ export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Di
         }
     }
 )
-//
-// export const SearchData = (async () => {
-//     if (keyword.trim() === '') {
-//         navigate('/allnews')//return
-//     }
-//
-//     navigate('/allnews')
-//     const URL = `${ALL_NEWS_URL}&q=${keyword}`
-//     try {
-//         dispatch(setLoadingNews(true));
-//         const filteredNews = await fetchNewsData(URL)
-//         dispatch(setNews(filteredNews));
-//         dispatch(setLoadingNews(false))
-//         setKeyword("")
-//     } catch (error) {
-//         console.log(error)
-//         dispatch(setLoadingNews(false))
-//     }
-// }, [keyword, dispatch])
+
+export const searchNews = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
+    'news/searchNews',
+    async (keyword, {dispatch}) => {
+        const URL = `${ALL_NEWS_URL}&q=${keyword}`
+        try {
+            dispatch(setLoadingNews(true));
+            const filteredNews = await newsAPI.fetchNewsData(URL)
+            dispatch(setNews(filteredNews));
+            dispatch(setLoadingNews(false))
+        } catch (error) {
+            console.log(error)
+            dispatch(setLoadingNews(false))
+        }
+    })
 
 export const {setNews, setLoadingNews, setTopHeadlines, setLoadingTopHeadlines} = newsSlice.actions
 
