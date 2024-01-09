@@ -19,11 +19,13 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         <div className={styles.sideColumnMainNewsBlock}>
                             <a className={styles.newsLink} href={firstColumnNews[0]?.url} target="_blank"
                                rel='noopener noreferrer'>
-                                <LazyImage src={firstColumnNews[0]?.urlToImage}
-                                           alt={firstColumnNews[0]?.title}
-                                           className={styles.sideColumnMainNewsImg}
-                                           height='180px'
-                                           width='350px'/>
+                                <div className={styles.sideImgWrapper}>
+                                    <LazyImage src={firstColumnNews[0]?.urlToImage}
+                                               alt={firstColumnNews[0]?.title}
+                                               className={styles.sideColumnMainNewsImg}
+                                               height='180px'
+                                               width='350px'/>
+                                </div>
                                 <span className={styles.sideColumnMainNewsText}>
                         {firstColumnNews[0]?.title}
                     </span></a>
@@ -55,12 +57,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         <div className={styles.centralNewsBlock}>
                             <a className={styles.newsLink} href={secondColumnNews[0]?.url} target="_blank"
                                rel='noopener noreferrer'>
-                                <LazyImage
-                                    width='600px'
-                                    height='330px'
-                                    src={secondColumnNews[0]?.urlToImage}
-                                    alt={secondColumnNews[0]?.title}
-                                    className={styles.centralImg}/>
+                                <div className={styles.centralImgWrapper}>
+                                    <LazyImage
+                                        width='600px'
+                                        height='330px'
+                                        src={secondColumnNews[0]?.urlToImage}
+                                        alt={secondColumnNews[0]?.title}
+                                        className={styles.centralImg}/>
+                                </div>
                                 <span className={styles.centralNewsAuthor}>
   {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
                     </span>
@@ -92,13 +96,15 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         <div className={styles.sideColumnMainNewsBlock}>
                             <a className={styles.newsLink} href={thirdColumnNews[0]?.url} target="_blank"
                                rel='noopener noreferrer'>
-                                <LazyImage
-                                    height='180px'
-                                    width='350px'
-                                    src={thirdColumnNews[0]?.urlToImage}
-                                    alt={thirdColumnNews[0]?.title}
-                                    className={styles.sideColumnMainNewsImg}
-                                />
+                                <div className={styles.sideImgWrapper}>
+                                    <LazyImage
+                                        height='180px'
+                                        width='350px'
+                                        src={thirdColumnNews[0]?.urlToImage}
+                                        alt={thirdColumnNews[0]?.title}
+                                        className={styles.sideColumnMainNewsImg}
+                                    />
+                                </div>
                                 <span className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span></a>
                         </div>
                         <div className={styles.sideListNewsBlock}>

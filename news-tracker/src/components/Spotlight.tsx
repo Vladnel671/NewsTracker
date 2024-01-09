@@ -10,8 +10,8 @@ const Spotlight: React.FC = () => {
             <div className={styles.spotlightWrapper}>
                 <div className={styles.spotlightItem}>
                     <div>
-                        <div>Title2</div>
-                        <div>Description2</div>
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, tempora.</div>
                     </div>
                     <div className={styles.spotlightImgWrapper}>
                         <img className={styles.spotlightImg}
@@ -21,8 +21,8 @@ const Spotlight: React.FC = () => {
                 </div>
                 <div className={styles.spotlightItem}>
                     <div>
-                        <div>Title2</div>
-                        <div>Description2</div>
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, reiciendis.</div>
                     </div>
                     <div className={styles.spotlightImgWrapper}>
                         <img className={styles.spotlightImg}

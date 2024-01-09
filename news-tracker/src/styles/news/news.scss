@@ -155,12 +155,16 @@ $text-color: #f3f6f9;
         flex-direction: column;
         justify-content: space-between;
 
-        .sideColumnMainNewsImg {
-          display: flex;
-          width: 350px;
-          //background: aqua;
-          @include hoverEffect;
+        .sideImgWrapper {
           min-height: 190px;
+
+          .sideColumnMainNewsImg {
+            display: flex;
+            width: 350px;
+            //background: aqua;
+            @include hoverEffect;
+            min-height: 190px;
+          }
         }
 
         .sideColumnMainNewsText {
@@ -179,7 +183,7 @@ $text-color: #f3f6f9;
       .sideListNewsBlock {
         display: flex;
         width: 100%;
-       // background: darkviolet;
+        // background: darkviolet;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -193,14 +197,18 @@ $text-color: #f3f6f9;
       align-items: center;
       color: $text-color;
       //background: #233632;
-      min-height: min-content;
+      min-height: 100%;
 
-      .centralImg {
-        display: flex;
-        //background: #e3ba1d;
-        width: 600px;
-        @include hoverEffect;
+      .centralImgWrapper {
         min-height: 330px;
+
+        .centralImg {
+          display: flex;
+          //background: #e3ba1d;
+          width: 600px;
+          @include hoverEffect;
+          min-height: 330px;
+        }
       }
 
       .centralText {
