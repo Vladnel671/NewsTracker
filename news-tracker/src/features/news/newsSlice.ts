@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit'
 import {INewsData, initialState} from '../../types/types'
 import {RootState} from "../../store/store.ts";
-import {ALL_NEWS_URL, newsAPI, TOP_HEADLINES_URL} from "../../api/API.ts";
+import {newsAPI} from "../../api/API.ts";
 
 const newsSlice = createSlice({
     name: 'news',
@@ -31,7 +31,7 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
         }
         try {
             dispatch(setLoadingTopHeadlines(true));
-            const filteredNews = await newsAPI.fetchNewsData(TOP_HEADLINES_URL);
+            const filteredNews = await newsAPI.fetchNewsData();
             dispatch(setTopHeadlines(filteredNews));
         } catch (error) {
             console.log('Error executing GET request:', error);
@@ -43,11 +43,11 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
 
 export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
     'news/fetchNewsByCategory',
-    async (category, {dispatch}) => {
-        const URL = `${ALL_NEWS_URL}&q=${category}`;
+    async (_, {dispatch}) => {
+        //const URL = `${ALL_NEWS_URL}&q=${category}`;
         try {
             dispatch(setLoadingNews(true));
-            const filteredNews = await newsAPI.fetchNewsData(URL);
+            const filteredNews = await newsAPI.fetchNewsData();
             dispatch(setNews(filteredNews));
             dispatch(setLoadingNews(false));
         } catch (error) {
@@ -59,11 +59,11 @@ export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Di
 
 export const searchNews = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
     'news/searchNews',
-    async (keyword, {dispatch}) => {
-        const URL = `${ALL_NEWS_URL}&q=${keyword}`
+    async (_, {dispatch}) => {
+        //const URL = `${ALL_NEWS_URL}&q=${keyword}`
         try {
             dispatch(setLoadingNews(true));
-            const filteredNews = await newsAPI.fetchNewsData(URL)
+            const filteredNews = await newsAPI.fetchNewsData()
             dispatch(setNews(filteredNews));
             dispatch(setLoadingNews(false))
         } catch (error) {
