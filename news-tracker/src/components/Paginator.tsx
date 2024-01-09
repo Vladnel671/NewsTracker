@@ -38,6 +38,9 @@ const Paginator: React.FC<CustomPaginationProps> = ({ count, page, onChange }) =
             "& .MuiPaginationItem-icon": {
                 color: '#cccccc',
             },
+            "& .MuiPaginationItem-ellipsis": {
+                color: '#cccccc',
+            },
         }}
     />
 );
