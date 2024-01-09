@@ -44,7 +44,6 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
 export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
     'news/fetchNewsByCategory',
     async (_, {dispatch}) => {
-        //const URL = `${ALL_NEWS_URL}&q=${category}`;
         try {
             dispatch(setLoadingNews(true));
             const filteredNews = await newsAPI.fetchNewsData(ALL_NEWS_URL);
@@ -60,7 +59,6 @@ export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Di
 export const searchNews = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
     'news/searchNews',
     async (_, {dispatch}) => {
-        //const URL = `${ALL_NEWS_URL}&q=${keyword}`
         try {
             dispatch(setLoadingNews(true));
             const filteredNews = await newsAPI.fetchNewsData(ALL_NEWS_URL)
