@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit'
 import {INewsData, initialState} from '../../types/types'
 import {RootState} from "../../store/store.ts";
-import {newsAPI} from "../../api/API.ts";
+import {ALL_NEWS_URL, newsAPI, TOP_HEADLINES} from "../../api/API.ts";
 
 const newsSlice = createSlice({
     name: 'news',
@@ -31,7 +31,7 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
         }
         try {
             dispatch(setLoadingTopHeadlines(true));
-            const filteredNews = await newsAPI.fetchNewsData();
+            const filteredNews = await newsAPI.fetchNewsData(TOP_HEADLINES);
             dispatch(setTopHeadlines(filteredNews));
         } catch (error) {
             console.log('Error executing GET request:', error);
@@ -47,7 +47,7 @@ export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Di
         //const URL = `${ALL_NEWS_URL}&q=${category}`;
         try {
             dispatch(setLoadingNews(true));
-            const filteredNews = await newsAPI.fetchNewsData();
+            const filteredNews = await newsAPI.fetchNewsData(ALL_NEWS_URL);
             dispatch(setNews(filteredNews));
             dispatch(setLoadingNews(false));
         } catch (error) {
@@ -63,7 +63,7 @@ export const searchNews = createAsyncThunk<void, string, { dispatch: Dispatch; s
         //const URL = `${ALL_NEWS_URL}&q=${keyword}`
         try {
             dispatch(setLoadingNews(true));
-            const filteredNews = await newsAPI.fetchNewsData()
+            const filteredNews = await newsAPI.fetchNewsData(ALL_NEWS_URL)
             dispatch(setNews(filteredNews));
             dispatch(setLoadingNews(false))
         } catch (error) {
