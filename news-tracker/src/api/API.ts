@@ -1,9 +1,7 @@
 import axios from "axios";
 import {INewsData} from "../types/types.ts";
 
-export const BASE_URL = import.meta.env.VITE_APP_BASE_URL
-export const TOP_HEADLINES_URL = import.meta.env.VITE_APP_TOP_HEADLINES_URL
-export const ALL_NEWS_URL = import.meta.env.VITE_APP_ALL_NEWS_URL
+export const BASE_URL = 'https://run.mocky.io/v3/0f6c23c2-a948-4914-aabe-bad66d52dbf3'
 
 export const instance = axios.create({
     baseURL: BASE_URL,
@@ -11,11 +9,12 @@ export const instance = axios.create({
 });
 
 export const newsAPI = {
-    fetchNewsData: async (url: string): Promise<INewsData[]> => {
+    fetchNewsData: async (BASE_URL: string): Promise<INewsData[]> => {
         try {
-            const response = await instance.get(BASE_URL + url);
+            const response = await instance.get(BASE_URL);
+            console.log(response)
             const data = response.data;
-            return data.articles.filter((news: INewsData) => {
+            return data.filter((news: INewsData) => {
                 return !(news.title === '[Removed]' || news.title.trim() === '');
             });
         } catch (error) {
