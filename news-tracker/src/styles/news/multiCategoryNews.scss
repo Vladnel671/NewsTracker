@@ -23,7 +23,12 @@
     @include hoverUnderline;
   }
 
+  .multiNewsListItem {
+    min-height: 64px;
+  }
+
   .mainNewsTitle {
+    min-height: 48px;
     color: #f3f6f9;
     font-size: 20px;
     margin: 5px 0;
