@@ -4,6 +4,7 @@
 @import "footer/footer";
 @import "news/multiCategoryNews";
 @import "news/spotlight";
+
 * {
   margin: 0;
   padding: 0;
@@ -15,5 +16,6 @@ body {
     display: none;
   }
 
+  background: #101418;
   -ms-overflow-style: none;
 }

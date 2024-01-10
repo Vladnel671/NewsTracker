@@ -122,10 +122,14 @@ $text-color: #f3f6f9;
       flex-direction: row;
       //background: #5ee782;
 
-      .listImg {
-        display: flex;
-        width: 150px;
-        @include hoverEffect;
+      .listImgBLock {
+        min-height: 80px;
+
+        .listImg {
+          display: flex;
+          width: 150px;
+          @include hoverEffect;
+        }
       }
 
       .listText {
@@ -181,9 +185,10 @@ $text-color: #f3f6f9;
       }
 
       .sideListNewsBlock {
+        min-height: 300px;
         display: flex;
         width: 100%;
-        // background: darkviolet;
+        //background: darkviolet;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -233,6 +238,7 @@ $text-color: #f3f6f9;
       }
 
       .centralListNewsBlock {
+        min-height: 210px;
         width: 100%;
         //background: hotpink;
         display: flex;

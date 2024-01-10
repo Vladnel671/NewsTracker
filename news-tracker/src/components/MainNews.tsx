@@ -78,13 +78,15 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                     <a className={styles.newsLink} href={newsItem?.url} target="_blank"
                                        rel='noopener noreferrer'>
                                         <div className={styles.ListItemBlock}>
-                                            <LazyImage
-                                                width='150px'
-                                                height='80px'
-                                                src={newsItem.urlToImage}
-                                                alt={newsItem.title}
-                                                className={styles.listImg}
-                                            />
+                                            <div className={styles.listImgBLock}>
+                                                <LazyImage
+                                                    width='150px'
+                                                    height='80px'
+                                                    src={newsItem.urlToImage}
+                                                    alt={newsItem.title}
+                                                    className={styles.listImg}
+                                                />
+                                            </div>
                                             <span className={styles.listText}>{newsItem.title}</span>
                                         </div>
                                     </a>

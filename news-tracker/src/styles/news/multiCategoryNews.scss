@@ -42,9 +42,13 @@
     min-height: 600px;
     flex-direction: column;
 
-    .MultiCategoryMainImg {
-      width: 430px;
-      @include hoverEffect;
+    .multiNewsImgWrapper {
+      min-height: 210px;
+
+      .MultiCategoryMainImg {
+        width: 430px;
+        @include hoverEffect;
+      }
     }
   }
 }

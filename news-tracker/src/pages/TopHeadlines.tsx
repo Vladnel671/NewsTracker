@@ -5,7 +5,6 @@ import {motion} from "framer-motion"
 import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
 import {AppDispatch, RootState} from "../store/store.ts";
 import {fetchTopHeadlines} from "../features/news/newsSlice.ts";
-import Spotlight from "../components/Spotlight.tsx";
 
 const TopHeadlines: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -15,7 +14,7 @@ const TopHeadlines: React.FC = () => {
     const secondColumnNews = news?.slice(5, 8)
     const thirdColumnNews = news?.slice(8, 12)
 
-    const firstColumnMultiCategoryNews = news?.slice(12, 16)
+    const firstColumnMultiCategoryNews = news?.slice(12, 30)
 
     useEffect(() => {
         dispatch(fetchTopHeadlines())
@@ -31,7 +30,6 @@ const TopHeadlines: React.FC = () => {
                           secondColumnNews={secondColumnNews}
                           thirdColumnNews={thirdColumnNews}/>
                 <MultiCategoryNews isLoading={isLoading} news={firstColumnMultiCategoryNews}/>
-                <Spotlight/>
             </motion.div>
         </>
     )
