@@ -3,19 +3,24 @@
   background: darkkhaki;
   height: 100%;
   justify-content: center;
-
+  padding-top: 10px;
   flex-direction: column;
   align-items: center;
+  color: #f3f6f9;
 
   .titleWrapper {
     align-items: start;
     background: darkgreen;
 
     .spotlightTitle {
-      color: #f3f6f9;
-      font-size: 16px;
+      font-size: 20px;
       margin: 5px 0 10px;
     }
+  }
+
+  .wrapper {
+    align-items: center;
+    width: 1340px;
   }
 
   .spotlightWrapper {
@@ -32,7 +37,8 @@
     justify-content: space-between;
 
     .spotlightImgWrapper {
-      width: 400px;
+      width: 500px;
+      background: crimson;
 
       .spotlightImg {
         width: 100%;

@@ -5,8 +5,12 @@ import {motion} from "framer-motion"
 import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
 import {AppDispatch, RootState} from "../store/store.ts";
 import {fetchTopHeadlines} from "../features/news/newsSlice.ts";
+import Spotlight from "../components/Spotlight.tsx";
+import {scrollToTop} from "../utils/NewsUtils.ts";
+import InCaseYouMissedIt from "../components/InCaseYouMissedIt.tsx";
 
 const TopHeadlines: React.FC = () => {
+    scrollToTop()
     const dispatch: AppDispatch = useDispatch();
     const {data: news, isLoading} = useSelector((state: RootState) => state.news.topHeadlines)
 
@@ -30,6 +34,8 @@ const TopHeadlines: React.FC = () => {
                           secondColumnNews={secondColumnNews}
                           thirdColumnNews={thirdColumnNews}/>
                 <MultiCategoryNews isLoading={isLoading} news={firstColumnMultiCategoryNews}/>
+                <Spotlight/>
+                <InCaseYouMissedIt/>
             </motion.div>
         </>
     )

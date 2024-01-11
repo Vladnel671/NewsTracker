@@ -45,7 +45,7 @@ const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({news}) 
                     <h3 className={styles.mainNewsTitle}>{news[1]?.title}</h3>
                 </a>
                 <hr className={styles.horizontalRule}/>
-                {news.slice(1, 4).map((news, index) => (
+                {news.slice(4, 7).map((news, index) => (
                     <div key={index}>
                         <a key={index} className={styles.newsLink} href={news?.url} target="_blank"
                            rel='noopener noreferrer'>
@@ -71,7 +71,7 @@ const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({news}) 
                     <hr className={styles.horizontalRule}/>
                 </a>
 
-                {news.slice(1, 4).map((news, index) => (
+                {news.slice(2, 5).map((news, index) => (
                     <div key={index}>
                         <a key={index} className={styles.newsLink} href={news?.url} target="_blank"
                            rel='noopener noreferrer'>
