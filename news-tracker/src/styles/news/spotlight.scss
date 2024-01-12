@@ -2,8 +2,7 @@
   display: flex;
   background: darkkhaki;
   height: 100%;
-  justify-content: center;
-  padding-top: 10px;
+  justify-content: start;
   flex-direction: column;
   align-items: center;
   color: #f3f6f9;
@@ -13,7 +12,6 @@
     background: darkgreen;
 
     .spotlightTitle {
-      font-size: 20px;
       margin: 5px 0 10px;
     }
   }

@@ -12,8 +12,9 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 const InCaseYouMissedIt: React.FC = () => {
     return (
         <div className={styles.inCaseYouMissedItBlock}>
-            <div className={styles.wrapper}>
-                <h3>IN CASE YOU MISSED IT</h3>
+            <div className={styles.inCaseYouMissedWrapper}>
+                <h3 className={styles.title}>IN CASE YOU MISSED IT</h3>
+                <hr className={styles.horizontalRule}/>
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={50}
