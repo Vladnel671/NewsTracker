@@ -1,24 +1,25 @@
 import React, {useEffect} from 'react'
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import MainNews from "../components/MainNews.tsx"
 import {motion} from "framer-motion"
 import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
-import {AppDispatch, RootState} from "../store/store.ts";
+import {AppDispatch} from "../store/store.ts";
 import {fetchTopHeadlines} from "../features/news/newsSlice.ts";
 import Spotlight from "../components/Spotlight.tsx";
 import {scrollToTop} from "../utils/NewsUtils.ts";
 import InCaseYouMissedIt from "../components/InCaseYouMissedIt.tsx";
+import {TOP_HEADLINES, useFetchNewsDataQuery} from "../api/API.ts";
 
 const TopHeadlines: React.FC = () => {
-    scrollToTop()
     const dispatch: AppDispatch = useDispatch();
-    const {data: news, isLoading} = useSelector((state: RootState) => state.news.topHeadlines)
+    const {data: news, isLoading} = useFetchNewsDataQuery(TOP_HEADLINES);
+    scrollToTop()
 
-    const firstColumnNews = news?.slice(0, 5)
-    const secondColumnNews = news?.slice(5, 8)
-    const thirdColumnNews = news?.slice(8, 12)
+    const firstColumnNews = news?.slice(0, 5) || []
+    const secondColumnNews = news?.slice(5, 8) || []
+    const thirdColumnNews = news?.slice(8, 12) || []
 
-    const firstColumnMultiCategoryNews = news?.slice(12, 30)
+    const firstColumnMultiCategoryNews = news?.slice(12, 30)|| []
 
     useEffect(() => {
         dispatch(fetchTopHeadlines())
