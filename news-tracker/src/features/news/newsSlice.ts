@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit'
 import {INewsData, initialState} from '../../types/types'
 import {RootState} from "../../store/store.ts";
-import {ALL_NEWS_URL, api, TOP_HEADLINES} from "../../api/API.ts";
+import {ALL_NEWS_URL, api, TOP_HEADLINES, useFetchNewsDataQuery} from "../../api/API.ts";
 
 const newsSlice = createSlice({
     name: 'news',
@@ -24,13 +24,12 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
             return;
         }
         try {
-            const {data: filteredNews} = await api.useFetchNewsDataQuery(TOP_HEADLINES);
-            if (filteredNews) {
-                dispatch(setTopHeadlines(filteredNews));
+            const response = await useFetchNewsDataQuery(TOP_HEADLINES);
+            if (response.data) {
+                dispatch(setTopHeadlines(response.data));
             }
         } catch (error) {
             console.log('Error executing GET request:', error);
-        } finally {
         }
     }
 );

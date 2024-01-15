@@ -12,9 +12,11 @@ import {ALL_NEWS_URL, useFetchNewsDataQuery} from "../api/API.ts";
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const NewsItemMemo = React.memo(NewsItem);
-    const {data: newsData, isLoading} = useFetchNewsDataQuery(ALL_NEWS_URL);
+    const {data: newsData, isLoading, error } = useFetchNewsDataQuery(ALL_NEWS_URL);
 
-    if (!newsData) return <Loader/>
+    if (isLoading) return <Loader/>
+    if (!newsData) return <div>Missing news!</div>
+    if (error) return <div>Error!</div>
 
     const offset = currentPage * PER_PAGE;
 

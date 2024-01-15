@@ -21,9 +21,8 @@ const InCaseYouMissedIt: React.FC = () => {
                     slidesPerView={3}
                     navigation
                     pagination={{clickable: true}}
-                    scrollbar={{draggable: true}}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
+                    scrollbar={{draggable: true}
+                    }
                 >
                     <SwiperSlide>
                         <div className={styles.ImgWrapper}>
