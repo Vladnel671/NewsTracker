@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from '../../styles/main.module.scss'
-import {MultiCategoryNewsProps} from "../../types/types.ts";
+import {INewsState} from "../../types/types.ts";
 import {LazyImage} from "../LazyImage.tsx";
 
-const MultiCategoryNews: React.FC<MultiCategoryNewsProps> = React.memo(({news}) => {
+const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
     return (
         <div className={styles.multiNewsBlock}>
             <div className={styles.multiNews}>

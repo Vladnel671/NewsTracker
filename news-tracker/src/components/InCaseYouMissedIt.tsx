@@ -17,7 +17,7 @@ const InCaseYouMissedIt: React.FC = () => {
                 <hr className={styles.horizontalRule}/>
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    spaceBetween={50}
+                    spaceBetween={200}
                     slidesPerView={3}
                     navigation
                     pagination={{clickable: true}}

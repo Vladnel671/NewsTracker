@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 import {INewsData} from "../types/types.ts"
 import {formatDate} from "../constant"
 
-const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => {
+const NewsItem: React.FC<{ news: INewsData }> = ({news}) => {
 
     const {source, publishedAt, title, urlToImage, author, description, url} = news
 

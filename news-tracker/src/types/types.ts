@@ -1,8 +1,8 @@
 import {PaginationProps} from "@mui/material"
 
 export interface INewsState {
-    data: INewsData[]
-    isLoading: boolean
+    news: INewsData[],
+    isLoading?: boolean
 }
 
 export interface INewsData {
@@ -15,14 +15,12 @@ export interface INewsData {
     source: { id: string; name: string }
 }
 
-export const initialState: { news: INewsState; topHeadlines: INewsState } = {
-    news: {
-        data: [],
-        isLoading: false
+export const initialState: { allNews: INewsState; topHeadlines: INewsState } = {
+    allNews: {
+        news: []
     },
     topHeadlines: {
-        data: [],
-        isLoading: false
+        news: []
     }
 }
 
@@ -44,10 +42,5 @@ export interface MainNewsBlockProps {
     firstColumnNews: INewsData[]
     secondColumnNews: INewsData[]
     thirdColumnNews: INewsData[]
-    isLoading: boolean
-}
-
-export interface MultiCategoryNewsProps {
-    news: INewsData[]
     isLoading: boolean
 }
