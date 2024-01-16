@@ -1,10 +1,11 @@
-@import 'fonts/fonts';
-@import "header/header";
-@import "news/news";
-@import "footer/footer";
-@import "news/multiCategoryNews";
-@import "news/spotlight";
-@import "news/inCaseYouMissedIt";
+@import "./fonts/fonts",
+"./header/header",
+"./news/news",
+"./footer/footer",
+"./news/multiCategoryNews",
+"./news/spotlight",
+"./news/inCaseYouMissedIt",
+"./news/normalize";
 
 * {
   margin: 0;

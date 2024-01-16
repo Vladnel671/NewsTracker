@@ -58,8 +58,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                 width='600px'
                                 height='330px'
                                 src={secondColumnNews[0]?.urlToImage}
-                                alt={secondColumnNews[0]?.title}
-                                className={styles.centralImg}/>
+                                alt={secondColumnNews[0]?.title}/>
                         </div>
                         <span className={styles.centralNewsAuthor}>
   {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
@@ -80,7 +79,6 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                             height='80px'
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
-                                            className={styles.listImg}
                                         />
                                     </div>
                                     <span className={styles.listText}>{newsItem.title}</span>
@@ -100,7 +98,6 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                 width='350px'
                                 src={thirdColumnNews[0]?.urlToImage}
                                 alt={thirdColumnNews[0]?.title}
-                                className={styles.sideColumnMainNewsImg}
                             />
                         </div>
                         <span className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span></a>
@@ -118,7 +115,6 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                             height='80px'
                                             src={newsItem.urlToImage}
                                             alt={newsItem.title}
-                                            className={styles.listImg}
                                         />
                                     </div>
                                     <span className={styles.listText}>{newsItem.title}</span>

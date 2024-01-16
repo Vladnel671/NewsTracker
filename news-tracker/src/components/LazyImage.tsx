@@ -4,7 +4,7 @@ import {ILazyImageProps} from "../types/types.ts"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className, width, height}) => {
+export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, width, height}) => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     const imageStyles = isLoaded ? {} : {display: 'none'};
@@ -15,7 +15,6 @@ export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, className, width
                 {isLoaded ? null : <Skeleton height={height} width={width}/>}
                 {src && (
                     <img
-                        className={className}
                         src={src}
                         alt={alt}
                         onLoad={() => setIsLoaded(true)}

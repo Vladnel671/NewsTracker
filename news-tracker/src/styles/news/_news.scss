@@ -43,15 +43,8 @@ $text-color: #f3f6f9;
       width: 100%;
       align-items: center;
       justify-content: center;
-
-      .newsPicture {
-        display: flex;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: auto;
-        @include hoverEffect;
-      }
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     .AuthorBlock,
@@ -124,13 +117,8 @@ $text-color: #f3f6f9;
       //background: #5ee782;
 
       .listImgBLock {
-        min-height: 80px;
-        min-width: 150px;
-        .listImg {
-          display: flex;
-          width: 150px;
-          @include hoverEffect;
-        }
+        max-width: 150px;
+        margin: 0 auto;
       }
 
       .listText {
@@ -161,15 +149,8 @@ $text-color: #f3f6f9;
         justify-content: space-between;
 
         .sideImgWrapper {
-          min-height: 190px;
-
-          .sideColumnMainNewsImg {
-            display: flex;
-            width: 350px;
-            //background: aqua;
-            @include hoverEffect;
-            min-height: 190px;
-          }
+          max-width: 350px;
+          margin: 0 auto;
         }
 
         .sideColumnMainNewsText {
@@ -206,15 +187,8 @@ $text-color: #f3f6f9;
       min-height: 100%;
 
       .centralImgWrapper {
-        min-height: 330px;
-
-        .centralImg {
-          display: flex;
-          //background: #e3ba1d;
-          width: 600px;
-          @include hoverEffect;
-          min-height: 330px;
-        }
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .centralText {

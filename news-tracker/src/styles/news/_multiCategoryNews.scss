@@ -49,11 +49,7 @@
 
     .multiNewsImgWrapper {
       min-height: 210px;
-
-      .MultiCategoryMainImg {
-        width: 430px;
-        @include hoverEffect;
-      }
+      width: 430px;
     }
   }
 }
