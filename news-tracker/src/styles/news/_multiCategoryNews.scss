@@ -6,7 +6,7 @@
   align-items: start;
   height: 100%;
   flex-direction: row;
-  margin-top: 50px;
+  margin-top: 20px;
   gap: 20px;
 
   .horizontalRule {
@@ -44,7 +44,7 @@
   .multiNews {
     display: flex;
     width: 430px;
-    min-height: 600px;
+    min-height: 500px;
     flex-direction: column;
 
     .multiNewsImgWrapper {

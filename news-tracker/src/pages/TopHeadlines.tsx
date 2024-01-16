@@ -39,8 +39,8 @@ const TopHeadlines: React.FC = () => {
                       secondColumnNews={secondColumnNews}
                       thirdColumnNews={thirdColumnNews}/>
             <MultiCategoryNews isLoading={isLoading} news={firstColumnMultiCategoryNews}/>
-            <Spotlight/>
             <InCaseYouMissedIt/>
+            <Spotlight/>
         </motion.div>
     )
 }

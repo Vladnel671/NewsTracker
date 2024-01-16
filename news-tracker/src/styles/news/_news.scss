@@ -3,6 +3,13 @@ $text-color: #f3f6f9;
 
 @import 'mixins';
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  @include hoverEffect;
+}
+
 .mainBlock {
   display: flex;
   flex-direction: column;
