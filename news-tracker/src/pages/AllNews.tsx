@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styles from '../styles/main.module.scss'
-import NewsItem from "../components/NewsItem.tsx"
+import AllNewsItem from "../components/AllNewsItem.tsx"
 import Masonry from 'react-masonry-css'
 import {INewsData} from "../types/types.ts"
 import Loader from "../components/Loader.tsx"
@@ -11,7 +11,7 @@ import {ALL_NEWS_URL, useFetchNewsDataQuery} from "../api/API.ts";
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const NewsItemMemo = React.memo(NewsItem);
+    const NewsItemMemo = React.memo(AllNewsItem);
     const {data: newsData, isLoading, error } = useFetchNewsDataQuery(ALL_NEWS_URL);
 
     if (isLoading) return <Loader/>

@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 import {INewsData} from "../types/types.ts"
 import {formatDate} from "../constant"
 
-const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => {
+const AllNewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => {
 
     const {source, publishedAt, title, urlToImage, author, description, url} = news
 
@@ -37,4 +37,4 @@ const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => 
     )
 };
 
-export default NewsItem
+export default AllNewsItem

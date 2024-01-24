@@ -20,7 +20,7 @@ const CustomTextField = styled(TextField)({
     },
 })
 
-const SearchInput: React.FC = () => {
+const NewsSearch: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
     const [keyword, setKeyword] = useState<string>('')
     const navigate = useNavigate()
@@ -60,4 +60,4 @@ const SearchInput: React.FC = () => {
     );
 };
 
-export default SearchInput
+export default NewsSearch
