@@ -7,6 +7,7 @@ import {AppDispatch} from "../store/store.ts";
 import {useDispatch} from "react-redux";
 import {MenuItem} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+import {scrollToTop} from "../utils/NewsUtils.ts";
 
 const BurgerMenu: React.FC = () => {
     const navigate = useNavigate()
@@ -25,6 +26,7 @@ const BurgerMenu: React.FC = () => {
         handleClose()
         dispatch(fetchNewsByCategory(category))
         navigate('/allnews');
+        scrollToTop()
     }
 
     return (

@@ -1,7 +1,7 @@
 export const breakpointColumnsObj = {
     default: 3,
-    1250: 2,
-    830: 1
+    1260: 2,
+    840: 1
 };
 
 export const PER_PAGE = 10

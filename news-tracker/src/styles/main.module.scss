@@ -1,8 +1,12 @@
-@import 'fonts/fonts';
-@import "header/header";
-@import "news/news";
-@import "footer/footer";
-@import "news/multiCategoryNews";
+@import "./fonts/fonts",
+"./header/header",
+"./news/news",
+"./footer/footer",
+"./news/multiCategoryNews",
+"./news/spotlight",
+"./news/inCaseYouMissedIt",
+"./news/normalize";
+@import './news/mixins';
 
 * {
   margin: 0;
@@ -15,5 +19,6 @@ body {
     display: none;
   }
 
+  background: #101418;
   -ms-overflow-style: none;
 }

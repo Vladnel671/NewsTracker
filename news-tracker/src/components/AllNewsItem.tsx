@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 import {INewsData} from "../types/types.ts"
 import {formatDate} from "../constant"
 
-const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => {
+const AllNewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => {
 
     const {source, publishedAt, title, urlToImage, author, description, url} = news
 
@@ -24,8 +24,7 @@ const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => 
                     <span className={styles.titleBlock}>{title}</span>
                     {urlToImage &&
                         <div className={styles.newsPictureContainer}>
-                            <LazyImage className={styles.newsPicture}
-                                       src={urlToImage}
+                            <LazyImage src={urlToImage}
                                        alt={title}
                                        height='180px'
                                        width='360px'/>
@@ -38,4 +37,4 @@ const NewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) => 
     )
 };
 
-export default NewsItem
+export default AllNewsItem

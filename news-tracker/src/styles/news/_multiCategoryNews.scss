@@ -6,7 +6,7 @@
   align-items: start;
   height: 100%;
   flex-direction: row;
-  margin-top: 50px;
+  margin-top: 20px;
   gap: 20px;
 
   .horizontalRule {
@@ -23,7 +23,12 @@
     @include hoverUnderline;
   }
 
+  .multiNewsListItem {
+    min-height: 64px;
+  }
+
   .mainNewsTitle {
+    min-height: 48px;
     color: #f3f6f9;
     font-size: 20px;
     margin: 5px 0;
@@ -39,12 +44,12 @@
   .multiNews {
     display: flex;
     width: 430px;
-    min-height: 600px;
+    min-height: 500px;
     flex-direction: column;
 
-    .MultiCategoryMainImg {
+    .multiNewsImgWrapper {
+      min-height: 210px;
       width: 430px;
-      @include hoverEffect;
     }
   }
 }

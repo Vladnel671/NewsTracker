@@ -3,6 +3,13 @@ $text-color: #f3f6f9;
 
 @import 'mixins';
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  @include hoverEffect;
+}
+
 .mainBlock {
   display: flex;
   flex-direction: column;
@@ -43,15 +50,8 @@ $text-color: #f3f6f9;
       width: 100%;
       align-items: center;
       justify-content: center;
-
-      .newsPicture {
-        display: flex;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: auto;
-        @include hoverEffect;
-      }
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     .AuthorBlock,
@@ -114,6 +114,7 @@ $text-color: #f3f6f9;
       width: 100%;
       justify-content: center;
       flex-direction: row;
+      height: 100vh;
     }
 
     .ListItemBlock {
@@ -122,10 +123,9 @@ $text-color: #f3f6f9;
       flex-direction: row;
       //background: #5ee782;
 
-      .listImg {
-        display: flex;
-        width: 150px;
-        @include hoverEffect;
+      .listImgBLock {
+        max-width: 150px;
+        margin: 0 auto;
       }
 
       .listText {
@@ -155,12 +155,9 @@ $text-color: #f3f6f9;
         flex-direction: column;
         justify-content: space-between;
 
-        .sideColumnMainNewsImg {
-          display: flex;
-          width: 350px;
-          //background: aqua;
-          @include hoverEffect;
-          min-height: 190px;
+        .sideImgWrapper {
+          max-width: 350px;
+          margin: 0 auto;
         }
 
         .sideColumnMainNewsText {
@@ -177,9 +174,10 @@ $text-color: #f3f6f9;
       }
 
       .sideListNewsBlock {
+        min-height: 300px;
         display: flex;
         width: 100%;
-       // background: darkviolet;
+        //background: darkviolet;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -193,14 +191,11 @@ $text-color: #f3f6f9;
       align-items: center;
       color: $text-color;
       //background: #233632;
-      min-height: min-content;
+      min-height: 100%;
 
-      .centralImg {
-        display: flex;
-        //background: #e3ba1d;
-        width: 600px;
-        @include hoverEffect;
-        min-height: 330px;
+      .centralImgWrapper {
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .centralText {
@@ -225,6 +220,7 @@ $text-color: #f3f6f9;
       }
 
       .centralListNewsBlock {
+        min-height: 210px;
         width: 100%;
         //background: hotpink;
         display: flex;

@@ -1,24 +1,18 @@
 import {createAsyncThunk, createSlice, Dispatch, PayloadAction} from '@reduxjs/toolkit'
 import {INewsData, initialState} from '../../types/types'
 import {RootState} from "../../store/store.ts";
-import {ALL_NEWS_URL, newsAPI, TOP_HEADLINES_URL} from "../../api/API.ts";
+import {ALL_NEWS_URL, api, TOP_HEADLINES, useFetchNewsDataQuery} from "../../api/API.ts";
 
 const newsSlice = createSlice({
     name: 'news',
     initialState,
     reducers: {
         setNews: (state, action: PayloadAction<INewsData[]>) => {
-            state.news.data = action.payload
-        },
-        setLoadingNews: (state, action: PayloadAction<boolean>) => {
-            state.news.isLoading = action.payload
+            state.allNews.news = action.payload
         },
         setTopHeadlines: (state, action: PayloadAction<INewsData[]>) => {
-            state.topHeadlines.data = action.payload
-        },
-        setLoadingTopHeadlines: (state, action: PayloadAction<boolean>) => {
-            state.topHeadlines.isLoading = action.payload
-        },
+            state.topHeadlines.news = action.payload
+        }
     },
 });
 
@@ -26,52 +20,47 @@ export const fetchTopHeadlines = createAsyncThunk<void, void, { dispatch: Dispat
     'news/fetchTopHeadlines',
     async (_, {dispatch, getState}) => {
         const {news} = getState() as RootState;
-        if (news.topHeadlines.data.length > 0) {
+        if (news.topHeadlines.news.length > 0) {
             return;
         }
         try {
-            dispatch(setLoadingTopHeadlines(true));
-            const filteredNews = await newsAPI.fetchNewsData(TOP_HEADLINES_URL);
-            dispatch(setTopHeadlines(filteredNews));
+            const response = await useFetchNewsDataQuery(TOP_HEADLINES);
+            if (response.data) {
+                dispatch(setTopHeadlines(response.data));
+            }
         } catch (error) {
             console.log('Error executing GET request:', error);
-        } finally {
-            dispatch(setLoadingTopHeadlines(false));
         }
     }
 );
 
 export const fetchNewsByCategory = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
     'news/fetchNewsByCategory',
-    async (category, {dispatch}) => {
-        const URL = `${ALL_NEWS_URL}&q=${category}`;
+    async (_, {dispatch}) => {
         try {
-            dispatch(setLoadingNews(true));
-            const filteredNews = await newsAPI.fetchNewsData(URL);
-            dispatch(setNews(filteredNews));
-            dispatch(setLoadingNews(false));
+            const {data: filteredNews} = await api.useFetchNewsDataQuery(ALL_NEWS_URL);
+            if (filteredNews) {
+                dispatch(setNews(filteredNews));
+            }
         } catch (error) {
             console.log(error);
-            dispatch(setLoadingNews(false));
         }
     }
 )
 
 export const searchNews = createAsyncThunk<void, string, { dispatch: Dispatch; state: RootState }>(
     'news/searchNews',
-    async (keyword, {dispatch}) => {
-        const URL = `${ALL_NEWS_URL}&q=${keyword}`
+    async (_, {dispatch}) => {
         try {
-            dispatch(setLoadingNews(true));
-            const filteredNews = await newsAPI.fetchNewsData(URL)
-            dispatch(setNews(filteredNews));
-            dispatch(setLoadingNews(false))
+            const {data: filteredNews} = await api.useFetchNewsDataQuery(ALL_NEWS_URL);
+            if (filteredNews) {
+                dispatch(setNews(filteredNews));
+            }
         } catch (error) {
             console.log(error)
-            dispatch(setLoadingNews(false))
         }
     })
 
-export const {setNews, setLoadingNews, setTopHeadlines, setLoadingTopHeadlines} = newsSlice.actions
+export const {setNews, setTopHeadlines} = newsSlice.actions
 
 export default newsSlice.reducer

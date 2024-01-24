@@ -1,6 +1,6 @@
 import CircularProgress from "@mui/material/CircularProgress";
 
-function MainLoadingScreen() {
+function Loader() {
     return (
         <div
             style={{
@@ -18,4 +18,4 @@ function MainLoadingScreen() {
     );
 }
 
-export default MainLoadingScreen;
+export default Loader;

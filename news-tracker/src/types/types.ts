@@ -1,30 +1,28 @@
 import {PaginationProps} from "@mui/material"
 
 export interface INewsState {
-    data: INewsData[]
-    isLoading: boolean
+    news: INewsData[];
+    isLoading?: boolean;
 }
 
 export interface INewsData {
-    author: string
-    title: string
-    description: string
-    urlToImage: string
-    url: string
-    publishedAt: string
-    source: { id: string; name: string }
+    author: string;
+    title: string;
+    description: string;
+    urlToImage: string;
+    url: string;
+    publishedAt: string;
+    source: { id: string; name: string };
 }
 
-export const initialState: { news: INewsState; topHeadlines: INewsState } = {
-    news: {
-        data: [],
-        isLoading: false
-    },
+export const initialState = {
+    allNews: {
+        news: []
+    } as INewsState,
     topHeadlines: {
-        data: [],
-        isLoading: false
-    }
-}
+        news: []
+    } as INewsState
+};
 
 export interface ILazyImageProps {
     src: string
@@ -44,10 +42,5 @@ export interface MainNewsBlockProps {
     firstColumnNews: INewsData[]
     secondColumnNews: INewsData[]
     thirdColumnNews: INewsData[]
-    isLoading: boolean
-}
-
-export interface MultiCategoryNewsProps {
-    news: INewsData[]
     isLoading: boolean
 }
