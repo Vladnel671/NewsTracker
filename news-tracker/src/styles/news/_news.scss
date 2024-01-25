@@ -1,12 +1,5 @@
 @import 'mixins';
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  @include hoverEffect;
-}
-
 .mainBlock {
   display: flex;
   flex-direction: column;
@@ -19,6 +12,13 @@ img {
     width: 100%;
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    @include hoverEffect;
   }
 
   .newsLink {

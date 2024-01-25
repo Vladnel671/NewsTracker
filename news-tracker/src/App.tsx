@@ -15,7 +15,9 @@ function App() {
                     initial={{opacity: 0}}
                     animate={{opacity: 3}}>
                     <Header/>
-                    <AppRoutes/>
+                    <main>
+                        <AppRoutes/>
+                    </main>
                     <Footer/>
                 </motion.div>
             </SkeletonTheme>

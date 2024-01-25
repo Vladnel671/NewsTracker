@@ -25,12 +25,8 @@
     margin-bottom: 30px;
   }
 
-  .socialsIconWrapper {
+  .soc1alsIconWrapper {
     width: 30px;
     height: 30px;
-
-    .footerIcon {
-      @include hoverEffect(false);
-    }
   }
 }

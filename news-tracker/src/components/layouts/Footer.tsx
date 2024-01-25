@@ -5,26 +5,26 @@ import twitterIcon from '../../assets/icons/twitter.svg';
 import instagramIcon from '../../assets/icons/instagram.svg';
 import youtubeIcon from '../../assets/icons/youtube.svg';
 
+const socialIcons = [
+    {src: facebookIcon, alt: "facebook-icon"},
+    {src: twitterIcon, alt: "twitter-icon"},
+    {src: instagramIcon, alt: "instagram-icon"},
+    {src: youtubeIcon, alt: "youtube-icon"}
+];
+
 const Footer: React.FC = () => {
     return (
         <footer className={styles.FooterBlock}>
             <h2 className={styles.footerLogo}>NewsTracker</h2>
             <div className={styles.FooterSection}>
-                <div className={styles.socialsIconWrapper}>
-                    <img className={styles.footerIcon} src={facebookIcon} alt="facebook-icon"/>
-                </div>
-                <div className={styles.socialsIconWrapper}>
-                    <img className={styles.footerIcon} src={twitterIcon} alt="twitter-icon"/>
-                </div>
-                <div className={styles.socialsIconWrapper}>
-                    <img className={styles.footerIcon} src={instagramIcon} alt="instagram-icon"/>
-                </div>
-                <div className={styles.socialsIconWrapper}>
-                    <img className={styles.footerIcon} src={youtubeIcon} alt="youtube-icon"/>
-                </div>
+                {socialIcons.map((icon, index) => (
+                    <div className={styles.soc1alsIconWrapper} key={index}>
+                        <img className={styles.footerIcon} src={icon.src} alt={icon.alt}/>
+                    </div>
+                ))}
             </div>
             <div>
-                <p className={styles.copyright}>&copy; {new Date().getFullYear()} Name. All rights reserved.</p>
+                <p className={styles.copyright}>©&nbsp;{new Date().getFullYear()}&nbsp;Name.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
             </div>
         </footer>
     );
