@@ -24,6 +24,7 @@ const InCaseYouMissedIt: React.FC = () => {
                 <h3 className={styles.title}>IN CASE YOU MISSED IT</h3>
                 <hr className={styles.horizontalRule}/>
                 <Swiper
+                    role="listbox"
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={200}
                     slidesPerView={3}
@@ -34,9 +35,9 @@ const InCaseYouMissedIt: React.FC = () => {
                 >
                     {images.map((image, index) => (
                         <SwiperSlide key={index}>
-                            <div className={styles.inCaseYouMissedWrapperImgWrapper}>
-                                <img src={image} alt=""/>
-                            </div>
+                            <article className={styles.inCaseYouMissedWrapperImgWrapper}>
+                                <img src={image} alt={`Slide ${index + 1}`}/>
+                            </article>
                         </SwiperSlide>
                     ))}
                 </Swiper>

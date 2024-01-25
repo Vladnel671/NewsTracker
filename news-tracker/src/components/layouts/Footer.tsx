@@ -16,16 +16,16 @@ const Footer: React.FC = () => {
     return (
         <footer className={styles.FooterBlock}>
             <h2 className={styles.footerLogo}>NewsTracker</h2>
-            <div className={styles.FooterSection}>
+            <nav className={styles.FooterSection}>
                 {socialIcons.map((icon, index) => (
                     <div className={styles.soc1alsIconWrapper} key={index}>
                         <img className={styles.footerIcon} src={icon.src} alt={icon.alt}/>
                     </div>
                 ))}
-            </div>
-            <div>
+            </nav>
+            <address>
                 <p className={styles.copyright}>©&nbsp;{new Date().getFullYear()}&nbsp;Name.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
-            </div>
+            </address>
         </footer>
     );
 };

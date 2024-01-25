@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
     return (
         <header className={styles.HeaderBlock}>
-            <NavLink onClick={scrollToTop} className={styles.HeaderLink} to="/"><h1>NewsTracker</h1>
+            <NavLink onClick={scrollToTop} className={styles.HeaderLink} to="/" role="link"><h1>NewsTracker</h1>
             </NavLink>
             <NewsSearch/>
             <div className={styles.NavBarMain}>
