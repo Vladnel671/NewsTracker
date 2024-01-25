@@ -1,17 +1,15 @@
 .spotlightBlock {
   display: flex;
-  //background: darkkhaki;
   height: 100%;
   justify-content: start;
   flex-direction: column;
   align-items: center;
-  color: #f3f6f9;
+  color: var(--text-color);
   margin-top: 20px;
   margin-bottom: 80px;
 
   .titleWrapper {
     align-items: start;
-    //background: darkgreen;
 
     .spotlightTitle {
       margin: 5px 0 10px;
@@ -32,14 +30,12 @@
   .spotlightItem {
     display: flex;
     width: 650px;
-    //background: darkslategrey;
     flex-direction: row;
     justify-content: space-between;
 
     .spotlightImgWrapper {
       max-width: 500px;
       margin: 0 auto;
-      //background: crimson;
     }
   }
 }

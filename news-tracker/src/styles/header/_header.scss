@@ -11,12 +11,12 @@
   top: 0;
 
   width: 100vw;
-  background-color: rgba(33, 39, 45, 0.90);
+  background-color: var(--header-background-color);
   backdrop-filter: blur(3px);
   z-index: 10000;
 
   .HeaderLink {
-    color: #f3f6f9;
+    color: var(--text-color);
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -36,7 +36,7 @@
     width: 300px;
 
     .BurgerMenuBlock {
-      color: #f3f6f9;
+      color: var(--text-color);
       display: flex;
       padding-left: 10px;
     }

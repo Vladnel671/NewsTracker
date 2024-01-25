@@ -1,7 +1,7 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import styles from '../styles/main.module.scss';
+import styles from '../../styles/main.module.scss';
 
 const SkeletonBlock = ({count = 1}) => (
     <>

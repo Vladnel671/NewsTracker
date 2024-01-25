@@ -2,13 +2,13 @@
 
 .FooterBlock {
   display: flex;
-  background: rgb(0, 0, 0);
+  background: var(--footer-background-color);
   height: 40vh;
   bottom: 0;
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  color: #f3f6f9;
+  color: var(--text-color);
   padding-top: 80px;
 
   .FooterSection {
