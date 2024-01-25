@@ -19,7 +19,7 @@ const InCaseYouMissedIt: React.FC = () => {
     ];
 
     return (
-        <div className={styles.inCaseYouMissedItBlock}>
+        <section className={styles.inCaseYouMissedItBlock}>
             <div className={styles.inCaseYouMissedWrapper}>
                 <h3 className={styles.title}>IN CASE YOU MISSED IT</h3>
                 <hr className={styles.horizontalRule}/>
@@ -41,7 +41,7 @@ const InCaseYouMissedIt: React.FC = () => {
                     ))}
                 </Swiper>
             </div>
-        </div>
+        </section>
     );
 };
 

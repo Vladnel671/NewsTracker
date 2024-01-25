@@ -5,7 +5,7 @@ import {LazyImage} from "../LazyImage.tsx";
 
 const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
     return (
-        <div className={styles.multiNewsBlock}>
+        <section className={styles.multiNewsBlock}>
             <div className={styles.multiNews}>
                 <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>BUSINESS</h3>
@@ -78,7 +78,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 })
 

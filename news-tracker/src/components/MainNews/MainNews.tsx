@@ -10,9 +10,9 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                                                thirdColumnNews,
                                                            }) => {
     return (
-        <div className={styles.topHeadlinesNewsBlock}>
+        <section className={styles.topHeadlinesNewsBlock}>
             <div className={styles.sideBlock}>
-                <div className={styles.sideColumnMainNewsBlock}>
+                <article className={styles.sideColumnMainNewsBlock}>
                     <a className={styles.newsLink} href={firstColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.sideImgWrapper}>
@@ -25,14 +25,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         <span className={styles.sideColumnMainNewsText}>
                         {firstColumnNews[0]?.title}
                     </span></a>
-                </div>
+                </article>
                 <div className={styles.sideListNewsBlock}>
                     {firstColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div key={index}>
                             <hr className={styles.horizontalRule}/>
                             <a className={styles.newsLink} href={newsItem?.url} target="_blank"
                                rel='noopener noreferrer'>
-                                <div className={styles.ListItemBlock}>
+                                <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
                                             width='150px'
@@ -43,14 +43,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                         />
                                     </div>
                                     <span className={styles.listText}>{newsItem.title}</span>
-                                </div>
+                                </article>
                             </a>
                         </div>
                     ))}
                 </div>
             </div>
             <div className={styles.centralBlock}>
-                <div className={styles.centralNewsBlock}>
+                <article className={styles.centralNewsBlock}>
                     <a className={styles.newsLink} href={secondColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.centralImgWrapper}>
@@ -65,14 +65,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                     </span>
                         <span className={styles.centralText}>{secondColumnNews[0]?.title}</span>
                     </a>
-                </div>
+                </article>
                 <div className={styles.centralListNewsBlock}>
                     {secondColumnNews.slice(1, 3).map((newsItem, index) => (
                         <div key={index}>
                             <hr className={styles.horizontalRule}/>
                             <a className={styles.newsLink} href={newsItem?.url} target="_blank"
                                rel='noopener noreferrer'>
-                                <div className={styles.ListItemBlock}>
+                                <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
                                             width='150px'
@@ -82,14 +82,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                         />
                                     </div>
                                     <span className={styles.listText}>{newsItem.title}</span>
-                                </div>
+                                </article>
                             </a>
                         </div>
                     ))}
                 </div>
             </div>
             <div className={styles.sideBlock}>
-                <div className={styles.sideColumnMainNewsBlock}>
+                <article className={styles.sideColumnMainNewsBlock}>
                     <a className={styles.newsLink} href={thirdColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.sideImgWrapper}>
@@ -101,14 +101,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                             />
                         </div>
                         <span className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span></a>
-                </div>
+                </article>
                 <div className={styles.sideListNewsBlock}>
                     {thirdColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div key={index}>
                             <hr className={styles.horizontalRule}/>
                             <a className={styles.newsLink} href={newsItem?.url} target="_blank"
                                rel='noopener noreferrer'>
-                                <div className={styles.ListItemBlock}>
+                                <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
                                         <LazyImage
                                             width='150px'
@@ -118,13 +118,13 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                         />
                                     </div>
                                     <span className={styles.listText}>{newsItem.title}</span>
-                                </div>
+                                </article>
                             </a>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     )
 })
 

@@ -32,7 +32,7 @@ const AllNews: React.FC = () => {
     }
 
     return (
-        <div className={styles.allNewsBlock}>
+        <section className={styles.allNewsBlock}>
             {!newsData.length ? <></> :
                 <Paginator count={pageCount} page={currentPage + 1} onChange={handlePageChange}/>}
             <Masonry breakpointCols={breakpointColumnsObj} className={styles.masonryGrid}
@@ -41,7 +41,7 @@ const AllNews: React.FC = () => {
             </Masonry>
             {!newsData.length ? <></> :
                 <Paginator count={pageCount} page={currentPage + 1} onChange={handlePageChange}/>}
-        </div>
+        </section>
     );
 };
 

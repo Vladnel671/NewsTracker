@@ -3,7 +3,7 @@ import styles from '../../styles/main.module.scss'
 
 const Spotlight: React.FC = () => {
     return (
-        <div className={styles.spotlightBlock}>
+        <section className={styles.spotlightBlock}>
             <div className={styles.wrapper}>
                 <div className={styles.titleWrapper}>
                     <h3 className={styles.spotlightTitle}>SPOTLIGHT</h3>
@@ -32,7 +32,7 @@ const Spotlight: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
