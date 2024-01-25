@@ -8,6 +8,7 @@ import {breakpointColumnsObj, PER_PAGE} from "../constant"
 import Paginator from "../components/Paginator.tsx"
 import {scrollToTop} from "../utils/NewsUtils.ts"
 import {ALL_NEWS_URL, useFetchNewsDataQuery} from "../api/API.ts";
+import Alert from "@mui/material/Alert";
 
 const AllNews: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -15,8 +16,12 @@ const AllNews: React.FC = () => {
     const {data: newsData, isLoading, error } = useFetchNewsDataQuery(ALL_NEWS_URL);
 
     if (isLoading) return <Loader/>
-    if (!newsData) return <div>Missing news!</div>
-    if (error) return <div>Error!</div>
+    if (!newsData) return <Alert variant="filled" severity="info">Missing news!</Alert>
+    if (error) {
+        const errorMessage =
+            'message' in error ? error.message : JSON.stringify(error);
+        return <Alert variant="filled" severity="error">{errorMessage}</Alert>;
+    }
 
     const offset = currentPage * PER_PAGE;
 

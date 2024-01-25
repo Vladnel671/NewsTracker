@@ -26,7 +26,7 @@ const SkeletonBlock = ({count = 1}) => (
 
 const TopHeadlinesSkeleton: React.FC = () => {
     return (
-        <div className={styles.topHeadlinesNewsBlock}>
+        <div className={styles.MainNewsBlock}>
             <div className={styles.newsSkeletonMainBlock}>
                 <div>
                     <SkeletonBlock count={3}/>

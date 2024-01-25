@@ -10,7 +10,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                                                thirdColumnNews,
                                                            }) => {
     return (
-        <section className={styles.topHeadlinesNewsBlock}>
+        <section className={styles.MainNewsBlock}>
             <div className={styles.sideBlock}>
                 <article className={styles.sideColumnMainNewsBlock}>
                     <a className={styles.newsLink} href={firstColumnNews[0]?.url} target="_blank"

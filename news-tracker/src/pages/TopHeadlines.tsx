@@ -10,6 +10,7 @@ import {scrollToTop} from "../utils/NewsUtils.ts";
 import InCaseYouMissedIt from "../components/InCaseYouMissedIt/InCaseYouMissedIt.tsx";
 import {TOP_HEADLINES, useFetchNewsDataQuery} from "../api/API.ts";
 import TopHeadlinesSkeleton from "../components/MainNews/TopHeadlinesSkeleton.tsx";
+import Alert from '@mui/material/Alert';
 
 const TopHeadlines: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -27,8 +28,12 @@ const TopHeadlines: React.FC = () => {
     }, [dispatch])
 
     if (isLoading) return <TopHeadlinesSkeleton/>
-    if (!news) return <div>Missing news!</div>
-    if (error) return <div>Error!</div>
+    if (news) return <Alert variant="filled" severity="info">Missing news!</Alert>
+    if (error) {
+        const errorMessage =
+            'message' in error ? error.message : JSON.stringify(error);
+        return <Alert variant="filled" severity="error">{errorMessage}</Alert>;
+    }
 
     return (
         <motion.div
