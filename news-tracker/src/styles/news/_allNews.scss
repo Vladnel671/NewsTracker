@@ -6,46 +6,73 @@
   justify-content: start;
   align-items: center;
 
+  .allNewsLink {
+    text-decoration: none;
+    height: min-content;
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    width: 100%;
+  }
+
   .newsContainer {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    background: #14191f;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
+    max-width: 380px;
+    background: var(--header-background-color);
     height: min-content;
     word-wrap: break-word;
+    border-radius: 30px;
+    overflow-x: hidden;
+    border: 1px solid #4b4b4b;
+    margin-bottom: 30px;
+
 
     .newsPictureContainer {
       display: flex;
       width: 100%;
       align-items: center;
       justify-content: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #4b4b4b;
     }
 
     .AuthorBlock,
     .titleBlock,
     .descriptionBlock,
-    .newsLink,
     .sourceNamePublishedBlock {
       color: var(--text-color);
+      padding: 0 20px;
+    }
+
+    .titleBlock {
+      display: flex;
+      padding-top: 10px;
+      margin-bottom: 20px;
     }
 
     .AuthorBlock {
-      padding-top: 5px;
-      padding-bottom: 10px;
+      padding-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .publishedAt {
+      display: flex;
+      justify-content: space-between;
     }
 
     .descriptionBlock {
-      width: 350px;
+      width: 100%;
     }
 
-    .sourceNamePublishedBlock {
+    .AuthorAndPublishedAtBlock {
       display: flex;
       justify-content: space-between;
+      padding: 20px 20px 0;
+      margin-bottom: 40px;
+    }
+
+    .sourceNameBlock {
       padding-bottom: 10px;
     }
   }
@@ -58,5 +85,11 @@
     width: 700px;
     margin: 20px 0;
     align-items: center;
+  }
+
+  .masonryGrid {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
   }
 }

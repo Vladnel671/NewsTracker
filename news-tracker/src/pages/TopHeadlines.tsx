@@ -28,7 +28,7 @@ const TopHeadlines: React.FC = () => {
     }, [dispatch])
 
     if (isLoading) return <TopHeadlinesSkeleton/>
-    if (news) return <Alert variant="filled" severity="info">Missing news!</Alert>
+    if (!news) return <Alert variant="filled" severity="info">Missing news!</Alert>
     if (error) {
         const errorMessage =
             'message' in error ? error.message : JSON.stringify(error);

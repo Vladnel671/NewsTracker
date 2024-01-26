@@ -18,7 +18,7 @@
 :root {
   --main-color: #101418;
   --text-color: #ffffff;
-  --footer-background-color: #000000;
+  --footer-background-color: rgba(33, 39, 45, 0.90);
   --header-background-color: rgba(33, 39, 45, 0.90);
 }
 
@@ -26,6 +26,11 @@ body {
   &::-webkit-scrollbar {
     display: none;
   }
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: 'Roboto Condensed', sans-serif;
+  min-height: 100vh;
 
   background: var(--main-color);
   -ms-overflow-style: none;

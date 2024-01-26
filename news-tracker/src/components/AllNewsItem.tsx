@@ -14,14 +14,8 @@ const AllNewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) 
             initial={{opacity: 0}}
             animate={{opacity: 3}}>
             <article className={styles.newsContainer} key={title}>
-                <a className={styles.newsLink} href={url} target="_blank" rel='noopener noreferrer'>
-                    <div className={styles.sourceNamePublishedBlock}>
-                        <h4 className={styles.source}>{source?.name}</h4>
-                        <div className={styles.publishedAt}>
-                            <time dateTime={publishedAt}>{formatDate(publishedAt)}</time>
-                        </div>
-                    </div>
-                    <span className={styles.titleBlock}>{title}</span>
+                <a draggable={false} className={styles.allNewsLink} href={url} target="_blank"
+                   rel='noopener noreferrer'>
                     {urlToImage &&
                         <div className={styles.newsPictureContainer}>
                             <LazyImage src={urlToImage}
@@ -30,8 +24,16 @@ const AllNewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) 
                                        width='360px'/>
                         </div>}
                 </a>
-                {author && <span className={styles.AuthorBlock}>Author: {author}</span>}
+                <div className={styles.sourceNamePublishedBlock}>
+                    <div className={styles.publishedAt}>
+                        <h4 className={styles.source}>{source?.name}</h4>
+                        <time dateTime={publishedAt}>{formatDate(publishedAt)}</time>
+                    </div>
+                </div>
+                <span className={styles.titleBlock}>{title}</span>
+
                 {description && <span className={styles.descriptionBlock}>{description}</span>}
+                {author && <span className={styles.AuthorBlock}>Author: {author}</span>}
             </article>
         </motion.div>
     )

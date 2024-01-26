@@ -15,6 +15,7 @@ export const LazyImage: React.FC<ILazyImageProps> = ({src, alt, width, height}) 
                 {isLoaded ? null : <Skeleton height={height} width={width}/>}
                 {src && (
                     <img
+                        draggable={false}
                         src={src}
                         alt={alt}
                         onLoad={() => setIsLoaded(true)}

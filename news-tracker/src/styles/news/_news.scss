@@ -1,12 +1,5 @@
 @import 'mixins';
 
-.mainBlock {
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  font-family: 'Roboto Condensed', sans-serif;
-  min-height: 100vh;
-
   .horizontalRule {
     margin: 10px 0;
     width: 100%;
@@ -37,7 +30,7 @@
     flex-direction: row;
     padding-top: 70px;
     justify-content: center;
-    min-height: max-content;
+    min-height: 100vh;
     gap: 20px;
 
     .newsSkeletonMainBlock {
@@ -150,12 +143,6 @@
       }
     }
   }
-
-  .masonryGrid {
-    display: flex;
-    flex-direction: row;
-  }
-}
 
 @media (max-width: 1349px) {
   .MainNewsBlock {
