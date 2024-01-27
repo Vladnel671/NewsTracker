@@ -11,22 +11,24 @@ const Spotlight: React.FC = () => {
                 <hr className={styles.horizontalRule}/>
                 <div className={styles.spotlightWrapper}>
                     <article className={styles.spotlightItem}>
-                        <div>
+                        <a className={styles.newsLink}>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, tempora.</div>
-                        </div>
+                        </a>
                         <div className={styles.spotlightImgWrapper}>
-                            <img src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
+                            <img draggable={false} className={styles.imageHover}
+                                 src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
                                  alt=""/>
                         </div>
                     </article>
                     <article className={styles.spotlightItem}>
-                        <div>
+                        <a className={styles.newsLink}>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, reiciendis.</div>
-                        </div>
+                        </a>
                         <div className={styles.spotlightImgWrapper}>
-                            <img src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
+                            <img draggable={false} className={styles.imageHover}
+                                 src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
                                  alt=""/>
                         </div>
                     </article>

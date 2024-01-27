@@ -20,20 +20,18 @@ const AllNewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) 
                         <div className={styles.newsPictureContainer}>
                             <LazyImage src={urlToImage}
                                        alt={title}
-                                       height='180px'
+                                       height='100%'
                                        width='360px'/>
                         </div>}
                 </a>
-                <div className={styles.sourceNamePublishedBlock}>
-                    <div className={styles.publishedAt}>
-                        <h4 className={styles.source}>{source?.name}</h4>
-                        <time dateTime={publishedAt}>{formatDate(publishedAt)}</time>
+                <div>
+                    <span className={styles.titleBlock}>{title}</span>
+                    {description && <span className={styles.descriptionBlock}>{description}</span>}
+                    <div className={styles.sourceNamePublishedBlock}>
+                        <h4 className={styles.source}>{source?.name},{author && <span className={styles.AuthorBlock}>{author}</span>}</h4>
+                        <time className={styles.publishedAt} dateTime={publishedAt}>{formatDate(publishedAt)}</time>
                     </div>
                 </div>
-                <span className={styles.titleBlock}>{title}</span>
-
-                {description && <span className={styles.descriptionBlock}>{description}</span>}
-                {author && <span className={styles.AuthorBlock}>Author: {author}</span>}
             </article>
         </motion.div>
     )

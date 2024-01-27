@@ -8,7 +8,7 @@
 
   .allNewsLink {
     text-decoration: none;
-    height: min-content;
+    min-height: 180px;
     padding: 0;
     margin: 0;
     color: var(--text-color);
@@ -18,23 +18,23 @@
   .newsContainer {
     display: flex;
     flex-direction: column;
-    max-width: 380px;
+    max-width: 360px;
     background: var(--header-background-color);
     height: min-content;
     word-wrap: break-word;
     border-radius: 30px;
     overflow-x: hidden;
-    border: 1px solid #4b4b4b;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 30px;
 
 
     .newsPictureContainer {
+      min-height: 180px;
       display: flex;
-      width: 100%;
+      max-width: 360px;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #4b4b4b;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .AuthorBlock,
@@ -49,20 +49,23 @@
       display: flex;
       padding-top: 10px;
       margin-bottom: 20px;
+      font-size: 20px;
     }
 
     .AuthorBlock {
       padding-top: 20px;
       margin-bottom: 30px;
+      font-size: 14px;
     }
 
-    .publishedAt {
+    .sourceNamePublishedBlock {
       display: flex;
       justify-content: space-between;
+      font-size: 14px;
+      padding-top: 20px;
     }
 
     .descriptionBlock {
-      width: 100%;
     }
 
     .AuthorAndPublishedAtBlock {
@@ -72,8 +75,9 @@
       margin-bottom: 40px;
     }
 
-    .sourceNameBlock {
+    .source {
       padding-bottom: 10px;
+      font-size: 15px;
     }
   }
 
@@ -83,7 +87,7 @@
     flex-direction: row;
     justify-content: center;
     width: 700px;
-    margin: 20px 0;
+    padding: 40px 0;
     align-items: center;
   }
 

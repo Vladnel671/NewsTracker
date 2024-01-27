@@ -13,7 +13,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
         <section className={styles.MainNewsBlock}>
             <div className={styles.sideBlock}>
                 <article className={styles.sideColumnMainNewsBlock}>
-                    <a className={styles.newsLink} href={firstColumnNews[0]?.url} target="_blank"
+                    <a draggable={false} className={styles.newsLink} href={firstColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.sideImgWrapper}>
                             <LazyImage src={firstColumnNews[0]?.urlToImage}
@@ -22,7 +22,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                        height='180px'
                                        width='350px'/>
                         </div>
-                        <span className={styles.sideColumnMainNewsText}>
+                        <span draggable={false} className={styles.sideColumnMainNewsText}>
                         {firstColumnNews[0]?.title}
                     </span></a>
                 </article>
@@ -30,7 +30,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                     {firstColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div key={index}>
                             <hr className={styles.horizontalRule}/>
-                            <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                            <a draggable={false} className={styles.newsLink} href={newsItem?.url} target="_blank"
                                rel='noopener noreferrer'>
                                 <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
@@ -42,7 +42,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                             className={styles.listImg}
                                         />
                                     </div>
-                                    <span className={styles.listText}>{newsItem.title}</span>
+                                    <span draggable={false} className={styles.listText}>{newsItem.title}</span>
                                 </article>
                             </a>
                         </div>
@@ -51,7 +51,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
             </div>
             <div className={styles.centralBlock}>
                 <article className={styles.centralNewsBlock}>
-                    <a className={styles.newsLink} href={secondColumnNews[0]?.url} target="_blank"
+                    <a draggable={false} className={styles.newsLink} href={secondColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.centralImgWrapper}>
                             <LazyImage
@@ -63,14 +63,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                         <span className={styles.centralNewsAuthor}>
   {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
                     </span>
-                        <span className={styles.centralText}>{secondColumnNews[0]?.title}</span>
+                        <span draggable={false} className={styles.centralText}>{secondColumnNews[0]?.title}</span>
                     </a>
                 </article>
                 <div className={styles.centralListNewsBlock}>
                     {secondColumnNews.slice(1, 3).map((newsItem, index) => (
                         <div key={index}>
                             <hr className={styles.horizontalRule}/>
-                            <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                            <a draggable={false} className={styles.newsLink} href={newsItem?.url} target="_blank"
                                rel='noopener noreferrer'>
                                 <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
@@ -81,7 +81,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                             alt={newsItem.title}
                                         />
                                     </div>
-                                    <span className={styles.listText}>{newsItem.title}</span>
+                                    <span draggable={false} className={styles.listText}>{newsItem.title}</span>
                                 </article>
                             </a>
                         </div>
@@ -90,7 +90,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
             </div>
             <div className={styles.sideBlock}>
                 <article className={styles.sideColumnMainNewsBlock}>
-                    <a className={styles.newsLink} href={thirdColumnNews[0]?.url} target="_blank"
+                    <a draggable={false} className={styles.newsLink} href={thirdColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.sideImgWrapper}>
                             <LazyImage
@@ -100,13 +100,14 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                 alt={thirdColumnNews[0]?.title}
                             />
                         </div>
-                        <span className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span></a>
+                        <span draggable={false}
+                              className={styles.sideColumnMainNewsText}>{thirdColumnNews[0]?.title}</span></a>
                 </article>
                 <div className={styles.sideListNewsBlock}>
                     {thirdColumnNews.slice(1, 4).map((newsItem, index) => (
                         <div key={index}>
                             <hr className={styles.horizontalRule}/>
-                            <a className={styles.newsLink} href={newsItem?.url} target="_blank"
+                            <a draggable={false} className={styles.newsLink} href={newsItem?.url} target="_blank"
                                rel='noopener noreferrer'>
                                 <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
@@ -117,7 +118,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                             alt={newsItem.title}
                                         />
                                     </div>
-                                    <span className={styles.listText}>{newsItem.title}</span>
+                                    <span draggable={false} className={styles.listText}>{newsItem.title}</span>
                                 </article>
                             </a>
                         </div>

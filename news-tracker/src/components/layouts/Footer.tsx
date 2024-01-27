@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             <nav className={styles.FooterSection}>
                 {socialIcons.map((icon, index) => (
                     <div className={styles.soc1alsIconWrapper} key={index}>
-                        <img className={styles.footerIcon} src={icon.src} alt={icon.alt}/>
+                        <img draggable={false} className={styles.footerIcon} src={icon.src} alt={icon.alt}/>
                     </div>
                 ))}
             </nav>
