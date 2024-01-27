@@ -6,6 +6,50 @@
   justify-content: start;
   align-items: center;
 
+  .titleBlock {
+    display: flex;
+    padding: 20px 20px 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .allNewsItemText {
+    display: flex;
+    padding: 0 20px 20px;
+    color: var(--text-color);
+    flex-direction: column;
+
+    .AuthorBlock {
+      font-size: 14px;
+      flex-wrap: nowrap;
+    }
+
+    .sourceNamePublishedBlock {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      padding-top: 20px;
+      flex-wrap: wrap;
+
+      .publishedAt {
+        color: #a2a2a2;
+        display: flex;
+      }
+    }
+
+    .descriptionBlock {
+      text-align: start;
+    }
+
+    .source {
+      align-items: center;
+      display: flex;
+      padding-bottom: 15px;
+      font-size: 15px;
+      color: #a2a2a2;
+    }
+  }
+
   .allNewsLink {
     text-decoration: none;
     padding: 0;
@@ -19,13 +63,12 @@
     flex-direction: column;
     max-width: 360px;
     background: var(--header-background-color);
-    height: min-content;
+    height: max-content;
     word-wrap: break-word;
     border-radius: 30px;
     overflow-x: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 30px;
-
 
     .newsPictureContainer {
       min-height: 180px;
@@ -35,48 +78,11 @@
       justify-content: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+  }
 
-    .AuthorBlock,
-    .titleBlock,
-    .descriptionBlock,
-    .sourceNamePublishedBlock {
-      color: var(--text-color);
-      padding: 0 20px;
-    }
-
-    .titleBlock {
-      display: flex;
-      padding-top: 20px;
-      margin-bottom: 20px;
-      font-size: 20px;
-    }
-
-    .AuthorBlock {
-      padding-top: 20px;
-      font-size: 14px;
-    }
-
-    .sourceNamePublishedBlock {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      padding-top: 20px;
-    }
-
-    .descriptionBlock {
-    }
-
-    .AuthorAndPublishedAtBlock {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 20px 0;
-      margin-bottom: 40px;
-    }
-
-    .source {
-      padding-bottom: 10px;
-      font-size: 15px;
-    }
+  .newsContainer:hover {
+    transition: 0.1s ease-in;
+    background: #171d23;
   }
 
   .pagination {

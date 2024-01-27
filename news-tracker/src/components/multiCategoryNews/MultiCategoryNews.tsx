@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/main.module.scss'
 import {INewsState} from "../../types/types.ts";
-import {LazyImage} from "../LazyImage.tsx";
+import {LazyImage} from "../shared/lazyImage/LazyImage.tsx";
 
 const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
     return (
@@ -13,10 +13,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                     <a draggable={false} className={styles.newsLink} href={news[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.multiNewsImgWrapper}>
-                            <LazyImage src={news[0]?.urlToImage}
-                                       alt={news[0]?.title}
-                                       height='270px'
-                                       width='430px'/>
+                            <LazyImage src={news[0]?.urlToImage} alt={news[0]?.title}/>
                         </div>
                         <h3 draggable={false} className={styles.mainNewsTitle}>{news[0]?.title}</h3>
                     </a>
@@ -38,10 +35,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                     <a draggable={false} className={styles.newsLink} href={news[1]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.multiNewsImgWrapper}>
-                            <LazyImage src={news[1]?.urlToImage}
-                                       alt={news[1]?.title}
-                                       height='270px'
-                                       width='430px'/>
+                            <LazyImage src={news[1]?.urlToImage} alt={news[1]?.title}/>
                         </div>
                         <h3 draggable={false} className={styles.mainNewsTitle}>{news[1]?.title}</h3>
                     </a>
@@ -64,10 +58,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                     <a draggable={false} className={styles.newsLink} href={news[3]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.multiNewsImgWrapper}>
-                            <LazyImage src={news[3]?.urlToImage}
-                                       alt={news[3]?.title}
-                                       height='270px'
-                                       width='430px'/>
+                            <LazyImage src={news[3]?.urlToImage} alt={news[3]?.title}/>
                         </div>
                         <h3 draggable={false} className={styles.mainNewsTitle}>{news[3]?.title}</h3>
                         <hr className={styles.horizontalRule}/>

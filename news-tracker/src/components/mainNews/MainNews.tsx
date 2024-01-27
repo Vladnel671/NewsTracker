@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../../styles/main.module.scss"
 import {MainNewsBlockProps} from "../../types/types.ts"
-import {LazyImage} from "../LazyImage.tsx"
+import {LazyImage} from "../shared/lazyImage/LazyImage.tsx"
 import {regex} from "../../constant";
 
 const MainNews: React.FC<MainNewsBlockProps> = React.memo(({

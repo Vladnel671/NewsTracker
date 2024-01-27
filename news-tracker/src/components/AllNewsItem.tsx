@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/main.module.scss'
-import {LazyImage} from "./LazyImage.tsx"
+import {LazyImage} from "./shared/lazyImage/LazyImage.tsx"
 import {motion} from "framer-motion"
 import {INewsData} from "../types/types.ts"
 import {formatDate} from "../constant"
@@ -24,11 +24,11 @@ const AllNewsItem: React.FC<{ news: INewsData, isLoading: boolean }> = ({news}) 
 
                     <span className={styles.titleBlock}>{title}</span>
                 </a>
-                <div>
+                <div className={styles.allNewsItemText}>
                     {description && <span className={styles.descriptionBlock}>{description}</span>}
                     <div className={styles.sourceNamePublishedBlock}>
-                        <h4 className={styles.source}>{source?.name},{author &&
-                            <span className={styles.AuthorBlock}>{author}</span>}</h4>
+                        <h4 className={styles.source}>{source?.name}{author &&
+                            <span className={styles.AuthorBlock}>,&nbsp;{author}</span>}</h4>
                         <time className={styles.publishedAt} dateTime={publishedAt}>{formatDate(publishedAt)}</time>
                     </div>
                 </div>

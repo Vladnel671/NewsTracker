@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react'
 import {useDispatch} from "react-redux"
-import MainNews from "../components/MainNews/MainNews.tsx"
+import MainNews from "../components/mainNews/MainNews.tsx"
 import {motion} from "framer-motion"
-import MultiCategoryNews from "../components/MultiCategoryNews/MultiCategoryNews.tsx"
+import MultiCategoryNews from "../components/multiCategoryNews/MultiCategoryNews.tsx"
 import {AppDispatch} from "../store/store.ts";
 import {fetchTopHeadlines} from "../features/news/newsSlice.ts";
-import Spotlight from "../components/Spotlight/Spotlight.tsx";
+import Spotlight from "../components/spotlight/Spotlight.tsx";
 import {scrollToTop} from "../utils/NewsUtils.ts";
-import InCaseYouMissedIt from "../components/InCaseYouMissedIt/InCaseYouMissedIt.tsx";
+import InCaseYouMissedIt from "../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx";
 import {TOP_HEADLINES, useFetchNewsDataQuery} from "../api/API.ts";
-import TopHeadlinesSkeleton from "../components/MainNews/TopHeadlinesSkeleton.tsx";
+import TopHeadlinesSkeleton from "../components/TopHeadlinesSkeleton.tsx";
 import Alert from '@mui/material/Alert';
 
 const TopHeadlines: React.FC = () => {
