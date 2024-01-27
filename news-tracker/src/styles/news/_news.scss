@@ -31,7 +31,7 @@
   flex-direction: row;
   padding-top: 70px;
   justify-content: center;
-  min-height: 100vh;
+  min-height: max-content;
   gap: 20px;
 
   .newsSkeletonMainBlock {
@@ -50,7 +50,6 @@
     .listImgBLock {
       max-width: 150px;
       margin: 0 auto;
-      overflow-x: hidden;
     }
 
     .listText {

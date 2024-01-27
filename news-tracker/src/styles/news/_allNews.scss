@@ -23,16 +23,17 @@
     word-wrap: break-word;
     border-radius: 30px;
     overflow-x: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 30px;
 
 
     .newsPictureContainer {
+      min-height: 180px;
       display: flex;
       max-width: 360px;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .AuthorBlock,
@@ -45,14 +46,13 @@
 
     .titleBlock {
       display: flex;
-      padding-top: 10px;
+      padding-top: 20px;
       margin-bottom: 20px;
       font-size: 20px;
     }
 
     .AuthorBlock {
       padding-top: 20px;
-      margin-bottom: 30px;
       font-size: 14px;
     }
 

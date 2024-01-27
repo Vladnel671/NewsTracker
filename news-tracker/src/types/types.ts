@@ -27,9 +27,6 @@ export const initialState = {
 export interface ILazyImageProps {
     src: string
     alt: string
-    className?: string
-    width?: string
-    height?: string
 }
 
 export interface CustomPaginationProps extends PaginationProps {

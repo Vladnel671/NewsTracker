@@ -16,11 +16,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                     <a draggable={false} className={styles.newsLink} href={firstColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.sideImgWrapper}>
-                            <LazyImage src={firstColumnNews[0]?.urlToImage}
-                                       alt={firstColumnNews[0]?.title}
-                                       className={styles.sideColumnMainNewsImg}
-                                       height='180px'
-                                       width='350px'/>
+                            <LazyImage src={firstColumnNews[0]?.urlToImage} alt={firstColumnNews[0]?.title}/>
                         </div>
                         <span draggable={false} className={styles.sideColumnMainNewsText}>
                         {firstColumnNews[0]?.title}
@@ -34,12 +30,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                rel='noopener noreferrer'>
                                 <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
-                                        <LazyImage
-                                            width='150px'
-                                            height='80px'
-                                            src={newsItem.urlToImage}
-                                            alt={newsItem.title}
-                                            className={styles.listImg}
+                                        <LazyImage src={newsItem.urlToImage} alt={newsItem.title}
                                         />
                                     </div>
                                     <span draggable={false} className={styles.listText}>{newsItem.title}</span>
@@ -54,11 +45,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                     <a draggable={false} className={styles.newsLink} href={secondColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.centralImgWrapper}>
-                            <LazyImage
-                                width='600px'
-                                height='330px'
-                                src={secondColumnNews[0]?.urlToImage}
-                                alt={secondColumnNews[0]?.title}/>
+                            <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}/>
                         </div>
                         <span className={styles.centralNewsAuthor}>
   {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
@@ -74,11 +61,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                rel='noopener noreferrer'>
                                 <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
-                                        <LazyImage
-                                            width='150px'
-                                            height='80px'
-                                            src={newsItem.urlToImage}
-                                            alt={newsItem.title}
+                                        <LazyImage src={newsItem.urlToImage} alt={newsItem.title}
                                         />
                                     </div>
                                     <span draggable={false} className={styles.listText}>{newsItem.title}</span>
@@ -93,11 +76,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                     <a draggable={false} className={styles.newsLink} href={thirdColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
                         <div className={styles.sideImgWrapper}>
-                            <LazyImage
-                                height='180px'
-                                width='350px'
-                                src={thirdColumnNews[0]?.urlToImage}
-                                alt={thirdColumnNews[0]?.title}
+                            <LazyImage src={thirdColumnNews[0]?.urlToImage} alt={thirdColumnNews[0]?.title}
                             />
                         </div>
                         <span draggable={false}
@@ -111,11 +90,7 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                rel='noopener noreferrer'>
                                 <article className={styles.ListItemBlock}>
                                     <div className={styles.listImgBLock}>
-                                        <LazyImage
-                                            width='150px'
-                                            height='80px'
-                                            src={newsItem.urlToImage}
-                                            alt={newsItem.title}
+                                        <LazyImage src={newsItem.urlToImage} alt={newsItem.title}
                                         />
                                     </div>
                                     <span draggable={false} className={styles.listText}>{newsItem.title}</span>
