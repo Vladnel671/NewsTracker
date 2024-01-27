@@ -15,7 +15,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                         <div className={styles.multiNewsImgWrapper}>
                             <LazyImage src={news[0]?.urlToImage}
                                        alt={news[0]?.title}
-                                       height='280px'
+                                       height='270px'
                                        width='430px'/>
                         </div>
                         <h3 draggable={false} className={styles.mainNewsTitle}>{news[0]?.title}</h3>
@@ -40,7 +40,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                         <div className={styles.multiNewsImgWrapper}>
                             <LazyImage src={news[1]?.urlToImage}
                                        alt={news[1]?.title}
-                                       height='280px'
+                                       height='270px'
                                        width='430px'/>
                         </div>
                         <h3 draggable={false} className={styles.mainNewsTitle}>{news[1]?.title}</h3>
@@ -66,7 +66,7 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                         <div className={styles.multiNewsImgWrapper}>
                             <LazyImage src={news[3]?.urlToImage}
                                        alt={news[3]?.title}
-                                       height='280px'
+                                       height='270px'
                                        width='430px'/>
                         </div>
                         <h3 draggable={false} className={styles.mainNewsTitle}>{news[3]?.title}</h3>

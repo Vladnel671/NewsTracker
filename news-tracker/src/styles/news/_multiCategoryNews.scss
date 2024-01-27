@@ -46,8 +46,9 @@
     flex-direction: column;
 
     .multiNewsImgWrapper {
-      min-height: 210px;
+      min-height: 215px;
       width: 430px;
+      overflow-x: hidden;
     }
   }
 }

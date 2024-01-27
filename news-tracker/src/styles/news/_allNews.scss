@@ -8,7 +8,6 @@
 
   .allNewsLink {
     text-decoration: none;
-    min-height: 180px;
     padding: 0;
     margin: 0;
     color: var(--text-color);
@@ -29,7 +28,6 @@
 
 
     .newsPictureContainer {
-      min-height: 180px;
       display: flex;
       max-width: 360px;
       align-items: center;
