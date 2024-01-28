@@ -44,13 +44,15 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                 <article className={styles.centralNewsBlock}>
                     <a draggable={false} className={styles.newsLink} href={secondColumnNews[0]?.url} target="_blank"
                        rel='noopener noreferrer'>
-                        <div className={styles.centralImgWrapper}>
-                            <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}/>
-                        </div>
-                        <span className={styles.centralNewsAuthor}>
+                        <div className={styles.centralNewsWrapper}>
+                            <div className={styles.centralImgWrapper}>
+                                <LazyImage src={secondColumnNews[0]?.urlToImage} alt={secondColumnNews[0]?.title}/>
+                            </div>
+                            <span className={styles.centralNewsAuthor}>
   {secondColumnNews[0]?.author ? secondColumnNews[0].author.replace(regex, '$1') : ''}
                     </span>
-                        <span draggable={false} className={styles.centralText}>{secondColumnNews[0]?.title}</span>
+                            <span draggable={false} className={styles.centralText}>{secondColumnNews[0]?.title}</span>
+                        </div>
                     </a>
                 </article>
                 <div className={styles.centralListNewsBlock}>

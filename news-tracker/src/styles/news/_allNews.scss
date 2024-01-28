@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .allNewsBlock {
   padding-top: 70px;
   display: flex;
@@ -56,7 +58,7 @@
     display: flex;
     flex-direction: column;
     max-width: 360px;
-    background: var(--allNewsItem-background-color);
+    background: var(--news-background-color);
     height: max-content;
     word-wrap: break-word;
     border-radius: 30px;
@@ -74,8 +76,7 @@
     }
 
     &:hover {
-      transition: 0.1s ease-in;
-      background: rgb(23, 23, 23);
+      @include hoverBackgroundColor
     }
   }
 

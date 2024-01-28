@@ -6,15 +6,7 @@
   align-items: start;
   height: 100%;
   flex-direction: row;
-  margin-top: 20px;
   gap: 20px;
-
-  .horizontalRule {
-    margin: 5px 0;
-    width: 100%;
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
 
   .newsText {
     display: flex;
@@ -42,7 +34,6 @@
   .multiNews {
     padding: 20px;
     border-radius: 30px;
-    background: var(--allNewsItem-background-color);
     display: flex;
     width: 430px;
     min-height: 500px;
@@ -50,7 +41,7 @@
 
     .multiNewsImgWrapper {
       min-height: 215px;
-      width: 430px;
+      max-width: 100%;
       overflow-x: hidden;
     }
   }

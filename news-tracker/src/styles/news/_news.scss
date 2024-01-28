@@ -20,7 +20,7 @@
   .newsSkeletonMainBlock {
     padding: 20px;
     border-radius: 30px;
-    background: var(--allNewsItem-background-color);
+    background: var(--news-background-color);
     display: flex;
     width: 100%;
     justify-content: center;
@@ -32,19 +32,18 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    min-height: 75px;
     padding: 10px;
     border-radius: 10px;
 
     &:hover {
-      transition: 0.1s ease-in;
-      background: rgb(23, 23, 23);
+      @include hoverBackgroundColor
     }
 
     .listImgBLock {
       max-width: 150px;
       min-width: 150px;
       margin: 0 auto;
+      min-height: 90px;
     }
 
     .listText {
@@ -57,9 +56,8 @@
   }
 
   .sideBlock {
-    padding: 20px;
-    border-radius: 30px;
-    background: var(--allNewsItem-background-color);
+    padding: 10px;
+    border-radius: 20px;
     display: flex;
     width: 350px;
     align-items: center;
@@ -76,9 +74,9 @@
       justify-content: space-between;
       padding: 10px;
       border-radius: 10px;
+
       &:hover {
-        transition: 0.1s ease-in;
-        background: rgb(23, 23, 23);
+        @include hoverBackgroundColor
       }
 
       .sideImgWrapper {
@@ -111,9 +109,8 @@
   }
 
   .centralBlock {
-    padding: 20px;
-    border-radius: 30px;
-    background: var(--allNewsItem-background-color);
+    padding: 10px;
+    border-radius: 20px;
     display: flex;
     width: 600px;
     flex-direction: column;
@@ -121,30 +118,40 @@
     color: var(--text-color);
     min-height: 100%;
 
-    .centralImgWrapper {
-      max-width: 600px;
-      margin: 0 auto;
-      overflow-x: hidden;
-      min-height: 300px;
-    }
+    .centralNewsWrapper {
+      padding: 10px;
+      border-radius: 10px;
 
-    .centralText {
-      display: flex;
-      width: 100%;
-      text-align: start;
-      font-weight: 700;
-      font-size: 25px;
-      margin: 3px 0 0;
-      min-height: 60px;
-      @include hoverUnderline;
-    }
+      &:hover {
+        @include hoverBackgroundColor
+      }
 
-    .centralNewsAuthor {
-      display: flex;
-      width: 100%;
-      justify-content: end;
-      font-size: 14px;
-      color: #a2a2a2;
+      .centralImgWrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        overflow-x: hidden;
+        min-height: 300px;
+      }
+
+      .centralText {
+        display: flex;
+        width: 100%;
+        text-align: start;
+        font-weight: 700;
+        font-size: 25px;
+        margin: 3px 0 0;
+        min-height: 60px;
+        @include hoverUnderline;
+      }
+
+      .centralNewsAuthor {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        font-size: 14px;
+        color: #a2a2a2;
+        text-decoration: none;
+      }
     }
 
     .centralListNewsBlock {

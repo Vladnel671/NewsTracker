@@ -12,7 +12,7 @@ const Paginator: React.FC<CustomPaginationProps> = ({count, page, onChange}) => 
             marginBottom: '20px',
             padding: '10px',
             borderRadius: '30px',
-            background: 'var(--allNewsItem-background-color)'
+            background: 'var(--news-background-color)'
         }}
         className={styles.pagination}
         count={count}
