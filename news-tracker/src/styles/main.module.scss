@@ -16,16 +16,21 @@
 }
 
 :root {
-  --main-color: #101418;
   --text-color: #ffffff;
-  --footer-background-color: rgba(33, 39, 45, 0.90);
-  --header-background-color: rgba(33, 39, 45, 0.90);
+  --main-color: #000000;
+  --footer-background-color: rgb(35, 35, 35);
+  --header-background-color: rgba(35, 35, 35, 0.95);
+  --loader-background-color: #000000;
+  --allNewsItem-background-color: rgba(35, 35, 35, 0.95);
+  --allNewsItem-background-color-onHover: rgba(49, 49, 49, 0.95);
+  --container-border-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
   &::-webkit-scrollbar {
     display: none;
   }
+
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -34,4 +39,20 @@ body {
 
   background: var(--main-color);
   -ms-overflow-style: none;
+}
+
+.newsLink {
+  text-decoration: none;
+  height: min-content;
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  width: 100%;
+  @include hoverUnderline;
+}
+.imageHover {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  @include hoverEffect;
 }

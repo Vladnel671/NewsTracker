@@ -9,7 +9,6 @@
   .titleBlock {
     display: flex;
     padding: 20px 20px 0;
-    margin-bottom: 20px;
     font-size: 20px;
   }
 
@@ -21,7 +20,8 @@
 
     .AuthorBlock {
       font-size: 14px;
-      flex-wrap: nowrap;
+      display: flex;
+      justify-content: start;
     }
 
     .sourceNamePublishedBlock {
@@ -38,36 +38,30 @@
     }
 
     .descriptionBlock {
+      padding-top: 20px;
       text-align: start;
     }
 
     .source {
-      align-items: center;
+      align-items: start;
       display: flex;
       padding-bottom: 15px;
       font-size: 15px;
       color: #a2a2a2;
+      flex-wrap: nowrap;
     }
-  }
-
-  .allNewsLink {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-    color: var(--text-color);
-    width: 100%;
   }
 
   .newsContainer {
     display: flex;
     flex-direction: column;
     max-width: 360px;
-    background: var(--header-background-color);
+    background: var(--allNewsItem-background-color);
     height: max-content;
     word-wrap: break-word;
     border-radius: 30px;
     overflow-x: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--container-border-color);
     margin-bottom: 30px;
 
     .newsPictureContainer {
@@ -76,13 +70,13 @@
       max-width: 360px;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid var(--container-border-color);
     }
   }
 
   .newsContainer:hover {
     transition: 0.1s ease-in;
-    background: #171d23;
+    background: var(--allNewsItem-background-color-onHover);
   }
 
   .pagination {

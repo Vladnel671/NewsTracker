@@ -18,13 +18,13 @@ const Footer: React.FC = () => {
             <h2 className={styles.footerLogo}>NewsTracker</h2>
             <nav className={styles.FooterSection}>
                 {socialIcons.map((icon, index) => (
-                    <div className={styles.soc1alsIconWrapper} key={index}>
+                    <a className={styles.soc1alsIconWrapper} key={index}>
                         <img draggable={false} className={styles.footerIcon} src={icon.src} alt={icon.alt}/>
-                    </div>
+                    </a>
                 ))}
             </nav>
             <address>
-                <p className={styles.copyright}>©&nbsp;{new Date().getFullYear()}&nbsp;Name.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+                <p className={styles.copyright}>©&nbsp;{new Date().getFullYear()}&nbsp;Vladislav&nbsp;Nelipovich.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
             </address>
         </footer>
     );
