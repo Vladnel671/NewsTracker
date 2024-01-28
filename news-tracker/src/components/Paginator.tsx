@@ -1,13 +1,19 @@
 import Pagination from '@mui/material/Pagination'
-import { CustomPaginationProps } from "../types/types.ts"
+import {CustomPaginationProps} from "../types/types.ts"
 import React from "react"
 import styles from '../styles/main.module.scss'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import PaginationItem from '@mui/material/PaginationItem'
 
-const Paginator: React.FC<CustomPaginationProps> = ({ count, page, onChange }) => (
+const Paginator: React.FC<CustomPaginationProps> = ({count, page, onChange}) => (
     <Pagination
+        style={{
+            marginBottom: '20px',
+            padding: '10px',
+            borderRadius: '30px',
+            background: 'var(--allNewsItem-background-color)'
+        }}
         className={styles.pagination}
         count={count}
         page={page}
@@ -16,7 +22,7 @@ const Paginator: React.FC<CustomPaginationProps> = ({ count, page, onChange }) =
         size="large"
         renderItem={(item) => (
             <PaginationItem
-                slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+                slots={{previous: ArrowBackIcon, next: ArrowForwardIcon}}
                 {...item}
             />
         )}

@@ -40,6 +40,9 @@
   }
 
   .multiNews {
+    padding: 20px;
+    border-radius: 30px;
+    background: var(--allNewsItem-background-color);
     display: flex;
     width: 430px;
     min-height: 500px;

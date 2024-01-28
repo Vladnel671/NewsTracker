@@ -72,11 +72,11 @@
       justify-content: center;
       border-bottom: 1px solid var(--container-border-color);
     }
-  }
 
-  .newsContainer:hover {
-    transition: 0.1s ease-in;
-    background: var(--allNewsItem-background-color-onHover);
+    &:hover {
+      transition: 0.1s ease-in;
+      background: rgb(23, 23, 23);
+    }
   }
 
   .pagination {

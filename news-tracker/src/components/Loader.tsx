@@ -4,7 +4,7 @@ function Loader() {
     return (
         <div
             style={{
-                background: "var(--loader-background-color)",
+                background: "transparent",
                 display: "flex",
                 height: "calc(100vh - 60px)",
                 flexDirection: "row",

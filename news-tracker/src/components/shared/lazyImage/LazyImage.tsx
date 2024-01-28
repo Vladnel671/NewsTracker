@@ -9,10 +9,10 @@ export const LazyImage: React.FC<ILazyImageProps> = ({src, alt}) => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     const imageStyles = isLoaded ? {} : {display: 'none'};
-    const skeletonStyles = isLoaded ? {width: '100%', height: '100%'} : {};
+    const skeletonStyles = isLoaded ? {display: 'flex', width: '100%', height: 'max-content'} : {};
 
     return (
-        <LazyLoad>
+        <LazyLoad style={skeletonStyles}>
             {isLoaded ? src && (
                 <img
                     className={styles.imageHover}
@@ -21,7 +21,7 @@ export const LazyImage: React.FC<ILazyImageProps> = ({src, alt}) => {
                     alt={alt}
                     onLoad={() => setIsLoaded(true)}
                     style={imageStyles}
-                />) : <Skeleton style={skeletonStyles}/>
+                />) : <Skeleton style={{display: 'flex', width: '100%', minHeight: 'max-content'}}/>
             }
         </LazyLoad>
     );

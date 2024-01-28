@@ -7,7 +7,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
     return (
         <section className={styles.multiNewsBlock}>
             <div className={styles.multiNews}>
-                <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>BUSINESS</h3>
                 <article>
                     <a draggable={false} className={styles.newsLink} href={news[0]?.url} target="_blank"
@@ -29,7 +28,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                 ))}
             </div>
             <div className={styles.multiNews}>
-                <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>SCIENCE</h3>
                 <article>
                     <a draggable={false} className={styles.newsLink} href={news[1]?.url} target="_blank"
@@ -52,7 +50,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({news}) => {
                 ))}
             </div>
             <div className={styles.multiNews}>
-                <hr className={styles.horizontalRule}/>
                 <h3 className={styles.newsCategoryName}>LIFESTYLE</h3>
                 <article>
                     <a draggable={false} className={styles.newsLink} href={news[3]?.url} target="_blank"
