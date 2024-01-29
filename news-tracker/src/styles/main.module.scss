@@ -1,13 +1,7 @@
-@import "./fonts/fonts",
-"./header/header",
-"./news/news",
-"./footer/footer",
-"./news/multiCategoryNews",
-"./news/spotlight",
-"./news/inCaseYouMissedIt",
-"./news/normalize",
-"./news/allNews";
-@import './news/mixins';
+@import "./fonts/fonts", "./header/header", "./news/topheadlines", "./footer/footer",
+  "./news/multiCategoryNews", "./news/spotlight", "./news/inCaseYouMissedIt", "./news/normalize",
+  "./news/allNews";
+@import "./news/mixins";
 
 * {
   margin: 0;
@@ -34,7 +28,8 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: var(--main-color) url("https://getwallpapers.com/wallpaper/full/5/e/2/129307.jpg") no-repeat fixed center center;
+  background: var(--main-color) url("https://getwallpapers.com/wallpaper/full/5/e/2/129307.jpg")
+    no-repeat fixed center center;
   background-size: cover;
 }
 
@@ -46,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   min-height: 100vh;
   -ms-overflow-style: none;
 }
@@ -58,12 +53,18 @@ body {
   margin: 0;
   color: var(--text-color);
   width: 100%;
+}
+
+.NewsLinkHoverUnderline {
   @include hoverUnderline;
 }
 
-.imageHover {
+.newsImage {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.imageHoverEffect {
   @include hoverEffect;
 }

@@ -36,7 +36,7 @@ const InCaseYouMissedIt: React.FC = () => {
                     {images.map((image, index) => (
                         <SwiperSlide key={index}>
                             <article className={styles.inCaseYouMissedWrapperImgWrapper}>
-                                <img className={styles.imageHover} src={image} alt={`Slide ${index + 1}`}/>
+                                <img className={styles.newsImage} src={image} alt={`Slide ${index + 1}`}/>
                             </article>
                         </SwiperSlide>
                     ))}

@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from "../../styles/main.module.scss"
-import {MainNewsBlockProps} from "../../types/types.ts"
-import {LazyImage} from "../shared/lazyImage/LazyImage.tsx"
-import {regex} from "../../constant";
+import React from 'react';
+import { regex } from "../../constant";
+import styles from "../../styles/main.module.scss";
+import { MainNewsBlockProps } from "../../types/types.ts";
+import { LazyImage } from "../shared/lazyImage/LazyImage.tsx";
 
 const MainNews: React.FC<MainNewsBlockProps> = React.memo(({
                                                                firstColumnNews,
