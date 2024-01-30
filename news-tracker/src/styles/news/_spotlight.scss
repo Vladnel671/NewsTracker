@@ -1,3 +1,5 @@
+@import "mixins";
+
 .spotlightBlock {
   display: flex;
   height: 100%;
@@ -32,10 +34,22 @@
     display: flex;
     width: 650px;
     flex-direction: row;
-    justify-content: space-between;
 
+    .spotlightTitleAndDescriptionWrapper {
+      display: flex;
+      flex-direction: column;
+      .spotlightTitle {
+        font-size: 20px;
+        @include hoverUnderline;
+      }
+      .spotlightDescription {
+        font-size: 15px;
+        @include hoverUnderline;
+        width: 100%;
+      }
+    }
     .spotlightImgWrapper {
-      max-width: 500px;
+      max-width:100%;
       margin: 0 auto;
     }
   }

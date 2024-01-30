@@ -1,0 +1,9 @@
+{
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.files.color": "#ffffff",
+  "material-icon-theme.folders.color": "#ffffff",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "workbench.tree.indent": 25,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.formatOnSave": true
+}

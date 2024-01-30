@@ -3,9 +3,9 @@ import LazyLoad from "react-lazyload"
 import Skeleton from "react-loading-skeleton"
 import "react-loading-skeleton/dist/skeleton.css"
 import styles from "../../../styles/main.module.scss"
-import { ILazyImageProps } from "../../../types/types.ts"
+import { INewsImageProps } from "../../../types/types.ts"
 
-export const LazyImage: React.FC<ILazyImageProps> = ({ src, alt }) => {
+export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const imageStyles = isLoaded ? {} : { display: "none" }
