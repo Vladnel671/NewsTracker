@@ -1,31 +1,23 @@
 import Alert from "@mui/material/Alert"
 import { motion } from "framer-motion"
-import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { TOP_HEADLINES, useFetchNewsDataQuery } from "../api/API.ts"
+import React from "react"
+import { TOP_HEADLINES, useFetchNewsDataQuery } from "../services/NewsService.ts"
 import TopHeadlinesSkeleton from "../components/TopHeadlinesSkeleton.tsx"
 import InCaseYouMissedIt from "../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx"
 import MainNews from "../components/mainNews/MainNews.tsx"
 import MultiCategoryNews from "../components/multiCategoryNews/MultiCategoryNews.tsx"
 import Spotlight from "../components/spotlight/Spotlight.tsx"
-import { fetchTopHeadlines } from "../features/news/newsSlice.ts"
-import { AppDispatch } from "../store/store.ts"
 import { scrollToTop } from "../utils/NewsUtils.ts"
 
 const TopHeadlines: React.FC = () => {
-  const dispatch: AppDispatch = useDispatch()
-  const { data: news, isLoading, error } = useFetchNewsDataQuery(TOP_HEADLINES)
   scrollToTop()
+  const { data: news, isLoading, error } = useFetchNewsDataQuery(TOP_HEADLINES)
 
   const firstColumnNews = news?.slice(0, 5) || []
   const secondColumnNews = news?.slice(5, 8) || []
   const thirdColumnNews = news?.slice(8, 12) || []
 
   const firstColumnMultiCategoryNews = news?.slice(12, 30) || []
-
-  useEffect(() => {
-    dispatch(fetchTopHeadlines())
-  }, [dispatch])
 
   if (isLoading) return <TopHeadlinesSkeleton />
   if (!news)

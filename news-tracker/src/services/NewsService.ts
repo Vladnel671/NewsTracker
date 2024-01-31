@@ -10,7 +10,7 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
     fetchNewsData: builder.query<INewsData[], string>({
-      query: (url) => `${BASE_URL}${url}`,
+      query: (url) => url,
       transformResponse: (rawData: INewsData[]) =>
         rawData.filter((news) => !(news.title === "[Removed]" || news.title.trim() === "")),
     }),
