@@ -2,7 +2,7 @@
   &:hover {
     background-color: rgba(197, 197, 197, 0.5);
     opacity: 0.6;
-    transition: opacity 0.1s ease;
+    transition: opacity 0.3s ease;
   }
 }
 
@@ -16,6 +16,6 @@
 @mixin hoverBackgroundColor {
   &:hover {
     background: var(--newsItem-background-color-onHover);
-    transition: color 200ms cubic-bezier(0.08,0.52,0.52,1);
+    transition: opacity 0.3s ease;
   }
 }

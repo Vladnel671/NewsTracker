@@ -8,13 +8,13 @@ import { INewsImageProps } from "../../../types/types.ts"
 export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const imageStyles = isLoaded ? {} : { display: "none" }
-  const skeletonStyles = isLoaded ? { width: "100%", height: "max-content" } : {}
+  const imageStyles = isLoaded ? { display: "block" } : { display: "none" }
+  const skeletonStyles = isLoaded ? {} : { width: "100%", height: "100%" }
 
   return (
     <LazyLoad style={skeletonStyles}>
-      {isLoaded ? (
-        src && (
+      {src && (
+        <>
           <img
             className={`${styles.newsImage} ${styles.imageHoverEffect}`}
             draggable={false}
@@ -23,9 +23,8 @@ export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
             onLoad={() => setIsLoaded(true)}
             style={imageStyles}
           />
-        )
-      ) : (
-        <Skeleton style={{ width: "100%", height: "max-content" }} />
+          {!isLoaded && <Skeleton style={{ width: "100%", height: "100%" }} />}
+        </>
       )}
     </LazyLoad>
   )
