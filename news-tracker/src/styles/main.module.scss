@@ -1,7 +1,7 @@
-@import "./fonts/fonts", "./header/header", "./news/topheadlines", "./footer/footer",
-  "./news/multiCategoryNews", "./news/spotlight", "./news/inCaseYouMissedIt", "./news/normalize",
-  "./news/allNews";
-@import "./news/mixins";
+@import './fonts/fonts', './header/header', './news/topheadlines',
+  './footer/footer', './news/multiCategoryNews', './news/spotlight',
+  './news/inCaseYouMissedIt', './news/normalize', './news/allNews';
+@import './news/mixins';
 
 * {
   margin: 0;
@@ -13,23 +13,25 @@
   --text-color: #ffffff;
   --main-color: #000000;
   --footer-background-color: #000000;
-  --header-background-color: rgba(35, 35, 35, 0.95);
+  --header-background-color: rgba(35, 35, 35, 0.9);
   --loader-background-color: #000000;
-  --news-background-color: rgba(0, 0, 0, 0.3);
-  --newsItem-background-color-onHover: rgb(24, 24, 24);
-  --container-border-color: rgba(255, 255, 255, 0.1);
+  --news-background-color: rgba(11, 11, 11);
+  --newsItem-background-color-onHover: rgb(29, 29, 29);
+  --container-border-color: rgba(255, 255, 255, 0.2);
+  --background-color: rgba(0, 0, 0, 0.9);
 }
 
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: var(--main-color) url("https://getwallpapers.com/wallpaper/full/5/e/2/129307.jpg")
-    no-repeat fixed center center;
+  background: var(--main-color)
+    url('https://wallpapercave.com/wp/wp3396925.jpg') no-repeat fixed center
+    center;
   background-size: cover;
 }
 
@@ -37,13 +39,27 @@ body {
   &::-webkit-scrollbar {
     display: none;
   }
-
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  font-family: "Roboto Condensed", sans-serif;
-  min-height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
   -ms-overflow-style: none;
+  align-items: center;
+
+  .mainBlock {
+    max-width: 1370px;
+    margin: 0 auto;
+  }
+}
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--background-color);
 }
 
 .newsLink {
@@ -55,7 +71,7 @@ body {
   width: 100%;
 }
 
-.NewsLinkHoverUnderline {
+.newsLinkHoverUnderline {
   @include hoverUnderline;
 }
 

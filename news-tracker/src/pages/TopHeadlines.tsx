@@ -1,13 +1,16 @@
-import Alert from "@mui/material/Alert"
-import { motion } from "framer-motion"
-import React from "react"
-import { TOP_HEADLINES, useFetchNewsDataQuery } from "../services/NewsService.ts"
-import TopHeadlinesSkeleton from "../components/TopHeadlinesSkeleton.tsx"
-import InCaseYouMissedIt from "../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx"
-import MainNews from "../components/mainNews/MainNews.tsx"
-import MultiCategoryNews from "../components/multiCategoryNews/MultiCategoryNews.tsx"
-import Spotlight from "../components/spotlight/Spotlight.tsx"
-import { scrollToTop } from "../utils/NewsUtils.ts"
+import Alert from '@mui/material/Alert'
+import { motion } from 'framer-motion'
+import React from 'react'
+import {
+  TOP_HEADLINES,
+  useFetchNewsDataQuery,
+} from '../services/NewsService.ts'
+import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
+import InCaseYouMissedIt from '../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx'
+import MainNews from '../components/mainNews/MainNews.tsx'
+import MultiCategoryNews from '../components/multiCategoryNews/MultiCategoryNews.tsx'
+import Spotlight from '../components/spotlight/Spotlight.tsx'
+import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const TopHeadlines: React.FC = () => {
   scrollToTop()
@@ -22,14 +25,15 @@ const TopHeadlines: React.FC = () => {
   if (isLoading) return <TopHeadlinesSkeleton />
   if (!news)
     return (
-      <Alert variant="filled" severity="info">
+      <Alert variant='filled' severity='info'>
         Missing news!
       </Alert>
     )
   if (error) {
-    const errorMessage = "message" in error ? error.message : JSON.stringify(error)
+    const errorMessage =
+      'message' in error ? error.message : JSON.stringify(error)
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant='filled' severity='error'>
         {errorMessage}
       </Alert>
     )
@@ -43,7 +47,10 @@ const TopHeadlines: React.FC = () => {
         secondColumnNews={secondColumnNews}
         thirdColumnNews={thirdColumnNews}
       />
-      <MultiCategoryNews isLoading={isLoading} news={firstColumnMultiCategoryNews} />
+      <MultiCategoryNews
+        isLoading={isLoading}
+        news={firstColumnMultiCategoryNews}
+      />
       <InCaseYouMissedIt />
       <Spotlight />
     </motion.div>

@@ -1,6 +1,6 @@
 @mixin hoverEffect {
   &:hover {
-    background-color: rgba(197, 197, 197, 0.5);
+    background-color: rgba(197, 197, 197);
     opacity: 0.6;
     transition: opacity 0.3s ease;
   }

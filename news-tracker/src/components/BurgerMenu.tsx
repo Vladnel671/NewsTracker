@@ -1,10 +1,10 @@
-import { IconButton, Menu } from "@material-ui/core"
-import MenuIcon from "@material-ui/icons/Menu"
-import { MenuItem } from "@mui/material"
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import styles from "../../src/styles/main.module.scss"
-import { scrollToTop } from "../utils/NewsUtils.ts"
+import { IconButton, Menu } from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu'
+import { MenuItem } from '@mui/material'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import styles from '../../src/styles/main.module.scss'
+import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const BurgerMenu: React.FC = () => {
   const navigate = useNavigate()
@@ -21,22 +21,27 @@ const BurgerMenu: React.FC = () => {
   const handleMenuItemClick = () => {
     handleClose()
 
-    navigate("/allnews")
+    navigate('/allnews')
     scrollToTop()
   }
 
   return (
     <div className={styles.BurgerMenuBlock}>
-      <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
+      <IconButton
+        edge='start'
+        color='inherit'
+        aria-label='menu'
+        onClick={handleClick}
+      >
         <MenuIcon />
       </IconButton>
       <Menu
-        id="simple-menu"
+        id='simple-menu'
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        style={{ zIndex: "10001" }}
+        style={{ zIndex: '10001' }}
       >
         <MenuItem onClick={() => handleMenuItemClick()}>U.S.</MenuItem>
         <MenuItem onClick={() => handleMenuItemClick()}>International</MenuItem>
@@ -45,7 +50,9 @@ const BurgerMenu: React.FC = () => {
         <MenuItem onClick={() => handleMenuItemClick()}>Technology</MenuItem>
         <MenuItem onClick={() => handleMenuItemClick()}>Lifestyle</MenuItem>
         <MenuItem onClick={() => handleMenuItemClick()}>Health</MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick()}>Virtual Reality</MenuItem>
+        <MenuItem onClick={() => handleMenuItemClick()}>
+          Virtual Reality
+        </MenuItem>
         <MenuItem onClick={() => handleMenuItemClick()}>Weather</MenuItem>
         <MenuItem onClick={() => handleMenuItemClick()}>Sports</MenuItem>
       </Menu>

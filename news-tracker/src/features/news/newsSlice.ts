@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { INewsData, initialState } from "../../types/types"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { INewsData, initialState } from '../../types/types'
 
 const newsSlice = createSlice({
-  name: "news",
+  name: 'news',
   initialState,
   reducers: {
     setNews: (state, action: PayloadAction<INewsData[]>) => {

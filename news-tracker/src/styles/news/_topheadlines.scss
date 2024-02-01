@@ -36,7 +36,7 @@
     border-radius: 10px;
 
     &:hover {
-      @include hoverBackgroundColor
+      @include hoverBackgroundColor;
     }
 
     .listImgBLock {
@@ -76,7 +76,7 @@
       border-radius: 10px;
 
       &:hover {
-        @include hoverBackgroundColor
+        @include hoverBackgroundColor;
       }
 
       .sideImgWrapper {
@@ -94,7 +94,7 @@
         font-size: 25px;
         font-weight: 700;
         min-height: 65px;
-        @include hoverUnderline
+        @include hoverUnderline;
       }
     }
 
@@ -123,7 +123,7 @@
       border-radius: 10px;
 
       &:hover {
-        @include hoverBackgroundColor
+        @include hoverBackgroundColor;
       }
 
       .centralImgWrapper {

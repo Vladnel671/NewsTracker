@@ -1,31 +1,36 @@
-import React, { useState } from "react"
-import styles from "../styles/main.module.scss"
-import AllNewsItem from "../components/AllNewsItem.tsx"
-import Masonry from "react-masonry-css"
-import { INewsData } from "../types/types.ts"
-import Loader from "../components/Loader.tsx"
-import { breakpointColumnsObj, PER_PAGE } from "../constant"
-import Paginator from "../components/Paginator.tsx"
-import { scrollToTop } from "../utils/NewsUtils.ts"
-import { ALL_NEWS_URL, useFetchNewsDataQuery } from "../services/NewsService.ts"
-import Alert from "@mui/material/Alert"
+import React, { useState } from 'react'
+import styles from '../styles/main.module.scss'
+import AllNewsItem from '../components/AllNewsItem.tsx'
+import Masonry from 'react-masonry-css'
+import { INewsData } from '../types/types.ts'
+import Loader from '../components/shared/Loader.tsx'
+import { breakpointColumnsObj, PER_PAGE } from '../constant'
+import Paginator from '../components/Paginator.tsx'
+import { scrollToTop } from '../utils/NewsUtils.ts'
+import { ALL_NEWS_URL, useFetchNewsDataQuery } from '../services/NewsService.ts'
+import Alert from '@mui/material/Alert'
 
 const AllNews: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const NewsItemMemo = React.memo(AllNewsItem)
-  const { data: newsData, isLoading, error } = useFetchNewsDataQuery(ALL_NEWS_URL)
+  const {
+    data: newsData,
+    isLoading,
+    error,
+  } = useFetchNewsDataQuery(ALL_NEWS_URL)
 
   if (isLoading) return <Loader />
   if (!newsData)
     return (
-      <Alert variant="filled" severity="info">
+      <Alert variant='filled' severity='info'>
         Missing news!
       </Alert>
     )
   if (error) {
-    const errorMessage = "message" in error ? error.message : JSON.stringify(error)
+    const errorMessage =
+      'message' in error ? error.message : JSON.stringify(error)
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant='filled' severity='error'>
         {errorMessage}
       </Alert>
     )
@@ -35,7 +40,9 @@ const AllNews: React.FC = () => {
 
   const currentPageData = newsData
     .slice(offset, offset + PER_PAGE)
-    .map((news: INewsData) => <NewsItemMemo isLoading={isLoading} news={news} key={news.title} />)
+    .map((news: INewsData) => (
+      <NewsItemMemo isLoading={isLoading} news={news} key={news.title} />
+    ))
 
   const pageCount = Math.ceil(newsData.length / PER_PAGE)
 
@@ -49,7 +56,11 @@ const AllNews: React.FC = () => {
       {!newsData.length ? (
         <></>
       ) : (
-        <Paginator count={pageCount} page={currentPage + 1} onChange={handlePageChange} />
+        <Paginator
+          count={pageCount}
+          page={currentPage + 1}
+          onChange={handlePageChange}
+        />
       )}
       <Masonry
         breakpointCols={breakpointColumnsObj}
@@ -61,7 +72,11 @@ const AllNews: React.FC = () => {
       {!newsData.length ? (
         <></>
       ) : (
-        <Paginator count={pageCount} page={currentPage + 1} onChange={handlePageChange} />
+        <Paginator
+          count={pageCount}
+          page={currentPage + 1}
+          onChange={handlePageChange}
+        />
       )}
     </section>
   )
