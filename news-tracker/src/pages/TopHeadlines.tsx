@@ -1,10 +1,10 @@
-import Alert from '@mui/material/Alert'
 import { motion } from 'framer-motion'
 import React from 'react'
 import {
   TOP_HEADLINES,
   useFetchNewsDataQuery,
 } from '../services/NewsService.ts'
+import Alert from '@mui/material/Alert'
 import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
 import InCaseYouMissedIt from '../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx'
 import MainNews from '../components/mainNews/MainNews.tsx'
