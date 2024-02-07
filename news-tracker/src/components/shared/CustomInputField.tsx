@@ -1,7 +1,9 @@
-import React from 'react'
-import { styled } from '@mui/material'
-import styles from '../../styles/main.module.scss'
 import { TextField } from '@material-ui/core'
+import { styled } from '@mui/material'
+import React from 'react'
+
+import styles from '../../styles/main.module.scss'
+
 
 interface CustomInputFieldPropsProps {
   keyword: string
@@ -26,11 +28,11 @@ const CustomInputField: React.FC<CustomInputFieldPropsProps> = ({
 }) => {
   return (
     <CustomTextField
-      id='searchField'
+      id="searchField"
       className={styles.searchInput}
       value={keyword}
       onChange={searchHandler}
-      placeholder='Search...'
+      placeholder="Search..."
       InputProps={{
         style: {
           color: 'white',

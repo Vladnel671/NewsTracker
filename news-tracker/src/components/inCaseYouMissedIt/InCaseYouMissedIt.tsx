@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from '../../styles/main.module.scss'
 import { NewsImage } from '../shared/NewsImage'
 
@@ -24,7 +25,7 @@ const InCaseYouMissedIt: React.FC = () => {
       <div className={styles.inCaseYouMissedWrapper}>
         <h3 className={styles.title}>IN CASE YOU MISSED IT</h3>
         <Swiper
-          role='listbox'
+          role="listbox"
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={200}
           slidesPerView={3}

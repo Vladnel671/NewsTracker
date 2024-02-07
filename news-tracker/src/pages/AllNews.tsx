@@ -1,14 +1,15 @@
+import Alert from '@mui/material/Alert'
 import React, { useState } from 'react'
-import styles from '../styles/main.module.scss'
-import AllNewsItem from '../components/AllNewsItem.tsx'
 import Masonry from 'react-masonry-css'
-import { INewsData } from '../types/types.ts'
+
+import AllNewsItem from '../components/AllNewsItem.tsx'
+import Paginator from '../components/Paginator.tsx'
 import Loader from '../components/shared/Loader.tsx'
 import { breakpointColumnsObj, PER_PAGE } from '../constant'
-import Paginator from '../components/Paginator.tsx'
-import { scrollToTop } from '../utils/NewsUtils.ts'
 import { ALL_NEWS_URL, useFetchNewsDataQuery } from '../services/NewsService.ts'
-import Alert from '@mui/material/Alert'
+import styles from '../styles/main.module.scss'
+import { INewsData } from '../types/types.ts'
+import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const AllNews: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -22,7 +23,7 @@ const AllNews: React.FC = () => {
   if (isLoading) return <Loader />
   if (!newsData)
     return (
-      <Alert variant='filled' severity='info'>
+      <Alert variant="filled" severity="info">
         Missing news!
       </Alert>
     )
@@ -30,7 +31,7 @@ const AllNews: React.FC = () => {
     const errorMessage =
       'message' in error ? error.message : JSON.stringify(error)
     return (
-      <Alert variant='filled' severity='error'>
+      <Alert variant="filled" severity="error">
         {errorMessage}
       </Alert>
     )

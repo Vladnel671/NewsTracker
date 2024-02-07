@@ -3,6 +3,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { MenuItem } from '@mui/material'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import styles from '../../src/styles/main.module.scss'
 import { scrollToTop } from '../utils/NewsUtils.ts'
 
@@ -28,15 +29,15 @@ const BurgerMenu: React.FC = () => {
   return (
     <div className={styles.BurgerMenuBlock}>
       <IconButton
-        edge='start'
-        color='inherit'
-        aria-label='menu'
+        edge="start"
+        color="inherit"
+        aria-label="menu"
         onClick={handleClick}
       >
         <MenuIcon />
       </IconButton>
       <Menu
-        id='simple-menu'
+        id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}

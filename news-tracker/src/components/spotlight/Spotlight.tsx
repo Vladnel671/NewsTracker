@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from '../../styles/main.module.scss'
 
 const Spotlight: React.FC = () => (
@@ -24,8 +25,8 @@ const Spotlight: React.FC = () => (
               <img
                 draggable={false}
                 className={styles.newsImage}
-                src='https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg'
-                alt=''
+                src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
+                alt=""
               />
             </div>
           </a>
@@ -45,8 +46,8 @@ const Spotlight: React.FC = () => (
               <img
                 draggable={false}
                 className={styles.newsImage}
-                src='https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg'
-                alt=''
+                src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
+                alt=""
               />
             </div>
           </a>

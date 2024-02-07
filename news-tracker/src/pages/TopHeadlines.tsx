@@ -1,15 +1,16 @@
+import Alert from '@mui/material/Alert'
 import { motion } from 'framer-motion'
 import React from 'react'
-import {
-  TOP_HEADLINES,
-  useFetchNewsDataQuery,
-} from '../services/NewsService.ts'
-import Alert from '@mui/material/Alert'
-import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
+
 import InCaseYouMissedIt from '../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx'
 import MainNews from '../components/mainNews/MainNews.tsx'
 import MultiCategoryNews from '../components/multiCategoryNews/MultiCategoryNews.tsx'
 import Spotlight from '../components/spotlight/Spotlight.tsx'
+import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
+import {
+  TOP_HEADLINES,
+  useFetchNewsDataQuery,
+} from '../services/NewsService.ts'
 import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const TopHeadlines: React.FC = () => {
@@ -25,7 +26,7 @@ const TopHeadlines: React.FC = () => {
   if (isLoading) return <TopHeadlinesSkeleton />
   if (!news)
     return (
-      <Alert variant='filled' severity='info'>
+      <Alert variant="filled" severity="info">
         Missing news!
       </Alert>
     )
@@ -33,7 +34,7 @@ const TopHeadlines: React.FC = () => {
     const errorMessage =
       'message' in error ? error.message : JSON.stringify(error)
     return (
-      <Alert variant='filled' severity='error'>
+      <Alert variant="filled" severity="error">
         {errorMessage}
       </Alert>
     )

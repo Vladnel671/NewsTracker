@@ -1,6 +1,8 @@
-import newsReducer from '../features/news/newsSlice.ts'
 import { configureStore } from '@reduxjs/toolkit'
+
+import newsReducer from '../features/news/newsSlice.ts'
 import { api } from '../services/NewsService.ts'
+
 export const store = configureStore({
   reducer: {
     news: newsReducer,

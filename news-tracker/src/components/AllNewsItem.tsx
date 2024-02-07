@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+
 import { formatDate } from '../constant'
 import styles from '../styles/main.module.scss'
 import { INewsData } from '../types/types.ts'
+
 import { NewsImage } from './shared/NewsImage.tsx'
 
 const AllNewsItem: React.FC<{ news: INewsData; isLoading: boolean }> = ({
@@ -18,8 +20,8 @@ const AllNewsItem: React.FC<{ news: INewsData; isLoading: boolean }> = ({
           draggable={false}
           className={styles.newsLink}
           href={url}
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {urlToImage && (
             <div className={styles.newsPictureContainer}>

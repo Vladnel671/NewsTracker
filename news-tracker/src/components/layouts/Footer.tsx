@@ -1,9 +1,10 @@
 import React from 'react'
-import styles from '../../styles/main.module.scss'
+
 import facebookIcon from '../../assets/icons/facebook.svg'
-import twitterIcon from '../../assets/icons/twitter.svg'
 import instagramIcon from '../../assets/icons/instagram.svg'
+import twitterIcon from '../../assets/icons/twitter.svg'
 import youtubeIcon from '../../assets/icons/youtube.svg'
+import styles from '../../styles/main.module.scss'
 
 const socialIcons = [
   { src: facebookIcon, alt: 'facebook-icon' },

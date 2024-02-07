@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "precommit": "lint-staged --config .lintstagedrc"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -41,10 +42,10 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-lazyload": "^3.2.1",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "eslint": "^8.45.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",

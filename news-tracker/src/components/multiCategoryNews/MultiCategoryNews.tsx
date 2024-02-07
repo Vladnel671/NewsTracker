@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from '../../styles/main.module.scss'
 import { INewsState } from '../../types/types.ts'
 import { NewsImage } from '../shared/NewsImage.tsx'
@@ -12,8 +13,8 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
           draggable={false}
           className={styles.newsLink}
           href={news[0]?.url}
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className={styles.multiNewsImgWrapper}>
             <NewsImage src={news[0]?.urlToImage} alt={news[0]?.title} />
@@ -31,8 +32,8 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
             key={index}
             className={styles.newsLink}
             href={news?.url}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span draggable={false} className={styles.newsText}>
               {news?.title}
@@ -49,8 +50,8 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
           draggable={false}
           className={styles.newsLink}
           href={news[1]?.url}
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className={styles.multiNewsImgWrapper}>
             <NewsImage src={news[1]?.urlToImage} alt={news[1]?.title} />
@@ -68,8 +69,8 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
             key={index}
             className={styles.newsLink}
             href={news?.url}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span draggable={false} className={styles.newsText}>
               {news?.title}
@@ -86,8 +87,8 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
           draggable={false}
           className={styles.newsLink}
           href={news[3]?.url}
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className={styles.multiNewsImgWrapper}>
             <NewsImage src={news[3]?.urlToImage} alt={news[3]?.title} />
@@ -106,8 +107,8 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
             key={index}
             className={styles.newsLink}
             href={news?.url}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span draggable={false} className={styles.newsText}>
               {news?.title}

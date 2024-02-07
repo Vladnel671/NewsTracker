@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { regex } from '../../constant'
 import styles from '../../styles/main.module.scss'
 import { MainNewsBlockProps } from '../../types/types.ts'
@@ -13,8 +14,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(
             draggable={false}
             className={styles.newsLink}
             href={firstColumnNews[0]?.url}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div className={styles.sideImgWrapper}>
               <NewsImage
@@ -35,8 +36,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(
                 draggable={false}
                 className={styles.newsLink}
                 href={newsItem?.url}
-                target='_blank'
-                rel='noopener noreferrer'
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <article className={styles.ListItemBlock}>
                   <div className={styles.listImgBLock}>
@@ -57,8 +58,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(
             draggable={false}
             className={styles.newsLink}
             href={secondColumnNews[0]?.url}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div className={styles.centralNewsWrapper}>
               <div className={styles.centralImgWrapper}>
@@ -86,8 +87,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(
                 draggable={false}
                 className={styles.newsLink}
                 href={newsItem?.url}
-                target='_blank'
-                rel='noopener noreferrer'
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <article className={styles.ListItemBlock}>
                   <div className={styles.listImgBLock}>
@@ -108,8 +109,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(
             draggable={false}
             className={styles.newsLink}
             href={thirdColumnNews[0]?.url}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div className={styles.sideImgWrapper}>
               <NewsImage
@@ -130,8 +131,8 @@ const MainNews: React.FC<MainNewsBlockProps> = React.memo(
                 draggable={false}
                 className={styles.newsLink}
                 href={newsItem?.url}
-                target='_blank'
-                rel='noopener noreferrer'
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <article className={styles.ListItemBlock}>
                   <div className={styles.listImgBLock}>
