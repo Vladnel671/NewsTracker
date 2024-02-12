@@ -15,6 +15,7 @@ import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const TopHeadlines: React.FC = () => {
   scrollToTop()
+
   const { data: news, isLoading, error } = useFetchNewsDataQuery(TOP_HEADLINES)
 
   const firstColumnNews = news?.slice(0, 5) || []
