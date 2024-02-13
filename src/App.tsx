@@ -12,7 +12,7 @@ const App = () => (
     <Header />
     <SkeletonTheme baseColor="#a19c9c" highlightColor="#313131">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 3 }}>
-        <main className={styles.mainBlock}>
+        <main className={styles['main-block']}>
           <AppRoutes />
         </main>
       </motion.div>

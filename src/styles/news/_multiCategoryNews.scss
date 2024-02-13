@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.multiNewsBlock {
+.multi-news-block {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -8,32 +8,34 @@
   flex-direction: row;
   gap: 20px;
 
-  .newsText {
+  .news-text {
     display: flex;
     min-height: 30px;
     margin: 10px 0;
-    @include hoverUnderline;
+
+    @include hover-underline;
   }
 
-  .multiNewsListItem {
+  .multi-news-list-item {
     min-height: 64px;
   }
 
-  .mainNewsTitle {
+  .main-news-title {
     min-height: 48px;
     color: var(--text-color);
     font-size: 20px;
     margin: 5px 0;
-    @include hoverUnderline;
+
+    @include hover-underline;
   }
 
-  .newsCategoryName {
+  .news-category-name {
     color: var(--text-color);
     font-size: 14px;
     margin: 5px 0 10px;
   }
 
-  .multiNews {
+  .multi-news {
     padding: 20px;
     border-radius: 30px;
     display: flex;
@@ -41,7 +43,7 @@
     min-height: 500px;
     flex-direction: column;
 
-    .multiNewsImgWrapper {
+    .multi-news-img-wrapper {
       min-height: 215px;
       max-width: 100%;
       overflow-x: hidden;

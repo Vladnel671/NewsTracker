@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.allNewsBlock {
+.all-news-block {
   padding-top: 70px;
   display: flex;
   flex-direction: column;
@@ -8,39 +8,39 @@
   justify-content: start;
   align-items: center;
 
-  .allNewsItemText {
+  .all-news-item-text {
     display: flex;
     padding: 20px;
-
     color: var(--text-color);
     flex-direction: column;
 
-    .titleBlock {
+    .title-block {
       display: flex;
       font-size: 20px;
-      @include hoverUnderline;
+
+      @include hover-underline;
     }
 
-    .AuthorBlock {
+    .author-block {
       font-size: 14px;
       display: flex;
       justify-content: start;
     }
 
-    .sourceNamePublishedBlock {
+    .source-name-published-block {
       display: flex;
       justify-content: space-between;
       font-size: 14px;
       padding-top: 20px;
       flex-wrap: wrap;
 
-      .publishedAt {
+      .published-at {
         color: #a2a2a2;
         display: flex;
       }
     }
 
-    .descriptionBlock {
+    .description-block {
       padding-top: 20px;
       text-align: start;
     }
@@ -55,7 +55,7 @@
     }
   }
 
-  .newsContainer {
+  .news-container {
     display: flex;
     flex-direction: column;
     max-width: 360px;
@@ -67,7 +67,7 @@
     border: 1px solid var(--container-border-color);
     margin-bottom: 30px;
 
-    .newsPictureContainer {
+    .news-picture-container {
       overflow-x: hidden;
       min-height: 180px;
       display: flex;
@@ -77,7 +77,7 @@
     }
 
     &:hover {
-      @include hoverBackgroundColor;
+      @include hover-background-color;
     }
   }
 
@@ -91,7 +91,7 @@
     align-items: center;
   }
 
-  .masonryGrid {
+  .masonry-grid {
     display: flex;
     flex-direction: row;
     column-gap: 30px;

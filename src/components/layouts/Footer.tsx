@@ -14,14 +14,14 @@ const socialIcons = [
 ]
 
 const Footer: React.FC = () => (
-  <footer className={styles.FooterBlock}>
-    <h2 className={styles.footerLogo}>NewsTracker</h2>
-    <nav className={styles.FooterSection}>
+  <footer className={styles['footer-block']}>
+    <h2 className={styles['footer-logo']}>NewsTracker</h2>
+    <nav className={styles['footer-section']}>
       {socialIcons.map((icon, index) => (
-        <a className={styles.soc1alsIconWrapper} key={index}>
+        <a className={styles['soc1als-icon-wrapper']} key={index}>
           <img
             draggable={false}
-            className={styles.footerIcon}
+            className={styles['footer-icon']}
             src={icon.src}
             alt={icon.alt}
           />

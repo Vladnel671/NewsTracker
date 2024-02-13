@@ -1,21 +1,18 @@
-.HeaderBlock {
+.header-block {
   padding-left: 10px;
   height: 60px;
   justify-content: space-between;
   display: flex;
   align-items: center;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
+  box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
   position: fixed;
   top: 0;
-
   width: 100vw;
   background-color: var(--header-background-color);
   backdrop-filter: blur(3px);
   z-index: 10000;
 
-  .HeaderLink {
+  .header-link {
     color: var(--text-color);
     text-decoration: none;
     display: flex;
@@ -27,7 +24,7 @@
     border: none;
   }
 
-  .NavBarMain {
+  .navbar-main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -36,19 +33,16 @@
     padding: 0 10px;
     width: 300px;
 
-    .BurgerMenuBlock {
+    .burger-menu-block {
       color: var(--text-color);
       display: flex;
       padding-left: 10px;
     }
   }
 
-  .searchInputBlock {
+  .search-input-block {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .searchInput {
   }
 }

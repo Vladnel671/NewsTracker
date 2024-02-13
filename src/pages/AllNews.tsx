@@ -53,7 +53,7 @@ const AllNews: React.FC = () => {
   }
 
   return (
-    <section className={styles.allNewsBlock}>
+    <section className={styles['all-news-block']}>
       {!newsData.length ? (
         <></>
       ) : (
@@ -65,7 +65,7 @@ const AllNews: React.FC = () => {
       )}
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className={styles.masonryGrid}
+        className={styles['masonry-grid']}
         columnClassName={styles.masonryGridColumn}
       >
         {currentPageData}

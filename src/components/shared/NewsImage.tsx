@@ -17,7 +17,7 @@ export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
       {src && (
         <>
           <img
-            className={`${styles.newsImage} ${styles.imageHoverEffect}`}
+            className={`${styles['news-image']} ${styles['image-hover-effect']}`}
             draggable={false}
             src={src}
             alt={alt}

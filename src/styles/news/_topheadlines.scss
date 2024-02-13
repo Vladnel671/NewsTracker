@@ -1,13 +1,13 @@
 @import 'mixins';
 
-.horizontalRule {
+.horizontal-rule {
   margin: 10px 0;
   width: 100%;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgb(255 255 255 / 10%);
 }
 
-.MainNewsBlock {
+.main-news-block {
   font-size: 17px;
   font-weight: lighter;
   display: flex;
@@ -17,7 +17,7 @@
   min-height: max-content;
   gap: 20px;
 
-  .newsSkeletonMainBlock {
+  .news-skeleton-main-block {
     padding: 20px;
     border-radius: 30px;
     background: var(--news-background-color);
@@ -28,7 +28,7 @@
     height: 100vh;
   }
 
-  .ListItemBlock {
+  .list-item-block {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -36,26 +36,28 @@
     border-radius: 10px;
 
     &:hover {
-      @include hoverBackgroundColor;
+      @include hover-background-color;
     }
 
-    .listImgBLock {
+    .list-img-block {
       max-width: 150px;
       min-width: 150px;
       margin: 0 auto;
       min-height: 90px;
     }
 
-    .listText {
+    .list-text {
       display: flex;
       padding-left: 10px;
-      @include hoverUnderline;
+
+      @include hover-underline;
+
       width: 100%;
       word-break: break-word;
     }
   }
 
-  .sideBlock {
+  .side-block {
     padding: 10px;
     border-radius: 20px;
     display: flex;
@@ -67,7 +69,7 @@
     color: var(--text-color);
     min-height: 520px;
 
-    .sideColumnMainNewsBlock {
+    .side-column-main-news-block {
       display: flex;
       width: 100%;
       flex-direction: column;
@@ -76,17 +78,17 @@
       border-radius: 10px;
 
       &:hover {
-        @include hoverBackgroundColor;
+        @include hover-background-color;
       }
 
-      .sideImgWrapper {
+      .side-img-wrapper {
         max-width: 350px;
         margin: 0 auto;
         overflow-x: hidden;
         min-height: 175px;
       }
 
-      .sideColumnMainNewsText {
+      .side-column-main-news-text {
         display: flex;
         width: 100%;
         padding-top: 5px;
@@ -94,11 +96,12 @@
         font-size: 25px;
         font-weight: 700;
         min-height: 65px;
-        @include hoverUnderline;
+
+        @include hover-underline;
       }
     }
 
-    .sideListNewsBlock {
+    .side-list-news-block {
       min-height: 300px;
       display: flex;
       width: 100%;
@@ -108,7 +111,7 @@
     }
   }
 
-  .centralBlock {
+  .central-block {
     padding: 10px;
     border-radius: 20px;
     display: flex;
@@ -118,22 +121,22 @@
     color: var(--text-color);
     min-height: 100%;
 
-    .centralNewsWrapper {
+    .central-news-wrapper {
       padding: 10px;
       border-radius: 10px;
 
       &:hover {
-        @include hoverBackgroundColor;
+        @include hover-background-color;
       }
 
-      .centralImgWrapper {
+      .central-img-wrapper {
         max-width: 600px;
         margin: 0 auto;
         overflow-x: hidden;
         min-height: 300px;
       }
 
-      .centralText {
+      .central-text {
         display: flex;
         width: 100%;
         text-align: start;
@@ -141,10 +144,11 @@
         font-size: 25px;
         margin: 3px 0 0;
         min-height: 60px;
-        @include hoverUnderline;
+
+        @include hover-underline;
       }
 
-      .centralNewsAuthor {
+      .central-news-author {
         display: flex;
         width: 100%;
         justify-content: end;
@@ -153,7 +157,7 @@
       }
     }
 
-    .centralListNewsBlock {
+    .central-list-news-block {
       min-height: 210px;
       width: 100%;
       display: flex;

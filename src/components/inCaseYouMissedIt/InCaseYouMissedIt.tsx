@@ -1,15 +1,14 @@
 import React from 'react'
-
-import styles from '../../styles/main.module.scss'
-import { NewsImage } from '../shared/NewsImage'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import styles from '../../styles/main.module.scss'
+import { NewsImage } from '../shared/NewsImage'
 
 const InCaseYouMissedIt: React.FC = () => {
   const images = [
@@ -21,8 +20,8 @@ const InCaseYouMissedIt: React.FC = () => {
   ]
 
   return (
-    <section className={styles.inCaseYouMissedItBlock}>
-      <div className={styles.inCaseYouMissedWrapper}>
+    <section className={styles['in-case-you-missed-it-block']}>
+      <div className={styles['in-case-you-missed-wrapper']}>
         <h3 className={styles.title}>IN CASE YOU MISSED IT</h3>
         <Swiper
           role="listbox"
@@ -35,7 +34,7 @@ const InCaseYouMissedIt: React.FC = () => {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <article className={styles.inCaseYouMissedImgWrapper}>
+              <article className={styles['in-case-you-missed-img-wrapper']}>
                 <NewsImage src={image} alt={`Slide ${index + 1}`} />
               </article>
             </SwiperSlide>

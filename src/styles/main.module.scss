@@ -10,15 +10,15 @@
 }
 
 :root {
-  --text-color: #ffffff;
-  --main-color: #000000;
-  --footer-background-color: #000000;
-  --header-background-color: rgba(35, 35, 35, 0.9);
-  --loader-background-color: #000000;
-  --news-background-color: rgba(11, 11, 11);
-  --newsItem-background-color-onHover: rgb(29, 29, 29);
-  --container-border-color: rgba(255, 255, 255, 0.2);
-  --background-color: rgba(0, 0, 0, 0.9);
+  --text-color: #fff;
+  --main-color: #000;
+  --footer-background-color: #000;
+  --header-background-color: rgb(35 35 35 / 90%);
+  --loader-background-color: #000;
+  --news-background-color: rgb(11 11 11);
+  --news-item-background-color-on-hover: rgb(29 29 29);
+  --container-border-color: rgb(255 255 255 / 20%);
+  --background-color: rgb(0 0 0 / 90%);
 }
 
 body::before {
@@ -39,6 +39,7 @@ body {
   &::-webkit-scrollbar {
     display: none;
   }
+
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -46,11 +47,12 @@ body {
   -ms-overflow-style: none;
   align-items: center;
 
-  .mainBlock {
+  .main-block {
     max-width: 1370px;
     margin: 0 auto;
   }
 }
+
 body::after {
   content: '';
   position: fixed;
@@ -62,7 +64,7 @@ body::after {
   background: var(--background-color);
 }
 
-.newsLink {
+.news-link {
   text-decoration: none;
   height: min-content;
   padding: 0;
@@ -71,16 +73,16 @@ body::after {
   width: 100%;
 }
 
-.newsLinkHoverUnderline {
-  @include hoverUnderline;
+.news-link-hover-underline {
+  @include hover-underline;
 }
 
-.newsImage {
+.news-image {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.imageHoverEffect {
-  @include hoverEffect;
+.image-hover-effect {
+  @include hover-effect;
 }

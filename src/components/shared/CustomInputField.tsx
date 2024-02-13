@@ -27,8 +27,8 @@ const CustomInputField: React.FC<CustomInputFieldPropsProps> = ({
 }) => {
   return (
     <CustomTextField
-      id="searchField"
-      className={styles.searchInput}
+      id="search-field"
+      className={styles['search-input']}
       value={keyword}
       onChange={searchHandler}
       placeholder="Search..."

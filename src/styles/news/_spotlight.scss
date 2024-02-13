@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.spotlightBlock {
+.spotlight-block {
   display: flex;
   height: 100%;
   justify-content: start;
@@ -9,46 +9,52 @@
   color: var(--text-color);
   margin-bottom: 80px;
 
-  .titleWrapper {
+  .spotlight-title-wrapper {
     align-items: start;
 
-    .spotlightTitle {
+    .spotlight-title {
       display: flex;
       flex-shrink: 1;
     }
   }
 
-  .spotlightContentWrapper {
+  .spotlight-content-wrapper {
     align-items: center;
     padding: 20px;
     border-radius: 30px;
   }
 
-  .spotlightWrapper {
+  .spotlight-wrapper {
     display: flex;
     gap: 20px;
     flex-direction: row;
   }
 
-  .spotlightItem {
+  .spotlight-item {
     display: flex;
     width: 650px;
     flex-direction: row;
 
-    .spotlightTitleAndDescriptionWrapper {
+    .spotlight-title-and-description-wrapper {
       display: flex;
       flex-direction: column;
-      .spotlightTitle {
+
+      .spotlight-text {
         font-size: 20px;
-        @include hoverUnderline;
+
+        @include hover-underline;
       }
-      .spotlightDescription {
+
+      .spotlight-description {
         font-size: 15px;
-        @include hoverUnderline;
+
+        @include hover-underline;
+
         width: 100%;
       }
     }
-    .spotlightImgWrapper {
+
+    .spotlight-img-wrapper {
       max-width: 100%;
       margin: 0 auto;
     }

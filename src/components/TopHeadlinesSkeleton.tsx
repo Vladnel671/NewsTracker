@@ -30,8 +30,8 @@ const SkeletonBlock = ({ count = 1 }) => (
 )
 
 const TopHeadlinesSkeleton: React.FC = () => (
-  <div className={styles.MainNewsBlock}>
-    <div className={styles.newsSkeletonMainBlock}>
+  <div className={styles['main-news-block']}>
+    <div className={styles['news-skeleton-main-block']}>
       <div>
         <SkeletonBlock count={3} />
       </div>

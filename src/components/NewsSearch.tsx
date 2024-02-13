@@ -3,9 +3,8 @@ import SearchIcon from '@mui/icons-material/Search'
 import React, { ChangeEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import styles from '../styles/main.module.scss'
-
 import CustomInputField from './shared/CustomInputField'
+import styles from '../styles/main.module.scss'
 
 const NewsSearch: React.FC = () => {
   const [keyword, setKeyword] = useState<string>('')
@@ -24,7 +23,7 @@ const NewsSearch: React.FC = () => {
   }
 
   return (
-    <div className={styles.searchInputBlock}>
+    <div className={styles['search-input-block']}>
       <IconButton onClick={getData} aria-label="search">
         <SearchIcon style={{ color: 'white' }} />
       </IconButton>

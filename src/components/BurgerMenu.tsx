@@ -27,7 +27,7 @@ const BurgerMenu: React.FC = () => {
   }
 
   return (
-    <div className={styles.BurgerMenuBlock}>
+    <div className={styles['burger-menu-block']}>
       <IconButton
         edge="start"
         color="inherit"

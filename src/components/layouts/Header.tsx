@@ -7,18 +7,18 @@ import BurgerMenu from '../BurgerMenu.tsx'
 import NewsSearch from '../NewsSearch.tsx'
 
 const Header: React.FC = () => (
-  <header className={styles.HeaderBlock}>
+  <header className={styles['header-block']}>
     <NavLink
       draggable={false}
       onClick={scrollToTop}
-      className={styles.HeaderLink}
+      className={styles['header-link']}
       to="/"
       role="link"
     >
       <h1>NewsTracker</h1>
     </NavLink>
     <NewsSearch />
-    <div className={styles.NavBarMain}>
+    <div className={styles['navbar-main']}>
       <BurgerMenu />
     </div>
   </header>

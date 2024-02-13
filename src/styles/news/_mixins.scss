@@ -1,21 +1,21 @@
-@mixin hoverEffect {
+@mixin hover-effect {
   &:hover {
-    background-color: rgba(197, 197, 197);
+    background-color: rgb(197 197 197);
     opacity: 0.6;
     transition: opacity 0.3s ease;
   }
 }
 
-@mixin hoverUnderline {
+@mixin hover-underline {
   &:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
   }
 }
 
-@mixin hoverBackgroundColor {
+@mixin hover-background-color {
   &:hover {
-    background: var(--newsItem-background-color-onHover);
+    background: var(--news-item-background-color-on-hover);
     transition: opacity 0.3s ease;
   }
 }
