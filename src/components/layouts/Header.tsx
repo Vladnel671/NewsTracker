@@ -8,18 +8,27 @@ import NewsSearch from '../NewsSearch.tsx'
 
 const Header: React.FC = () => (
   <header className={styles['header-block']}>
-    <NavLink
-      draggable={false}
-      onClick={scrollToTop}
-      className={styles['header-link']}
-      to="/"
-      role="link"
+    <div
+      style={{
+        display: 'flex',
+        width: '1200px',
+        maxWidth: '1200px',
+        justifyContent: 'space-between',
+      }}
     >
-      <h1>NewsTracker</h1>
-    </NavLink>
-    <NewsSearch />
-    <div className={styles['navbar-main']}>
-      <BurgerMenu />
+      <NavLink
+        draggable={false}
+        onClick={scrollToTop}
+        className={styles['header-link']}
+        to="/"
+        role="link"
+      >
+        <h1>NewsTracker</h1>
+      </NavLink>
+      <NewsSearch />
+      <div className={styles['navbar-main']}>
+        <BurgerMenu />
+      </div>
     </div>
   </header>
 )

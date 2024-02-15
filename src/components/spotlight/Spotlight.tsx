@@ -24,7 +24,7 @@ const Spotlight: React.FC = () => (
             <div className={styles['spotlight-img-wrapper']}>
               <img
                 draggable={false}
-                className={styles['newsImage']}
+                className={styles['news-image']}
                 src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
                 alt=""
               />

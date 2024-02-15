@@ -33,6 +33,14 @@ const Paginator: React.FC<CustomPaginationProps> = ({
     sx={{
       '& .MuiPaginationItem-page': {
         color: '#ffffff',
+        borderRadius: '10px',
+        height: '40px',
+        width: '60px',
+        '&:hover': {
+          backgroundColor: '#2b2b2b',
+          color: '#ffffff',
+          borderRadius: '10px',
+        },
       },
       '& .MuiPaginationItem-page.Mui-selected': {
         backgroundColor: '#ffffff',
