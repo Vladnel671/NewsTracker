@@ -7,16 +7,13 @@ import MainNews from '../components/mainNews/MainNews.tsx'
 import MultiCategoryNews from '../components/multiCategoryNews/MultiCategoryNews.tsx'
 import Spotlight from '../components/spotlight/Spotlight.tsx'
 import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
-import {
-  TOP_HEADLINES,
-  useFetchNewsDataQuery,
-} from '../services/NewsService.ts'
+import { useFetchTopHeadlinesQuery } from '../services/NewsService.ts'
 import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const TopHeadlines: React.FC = () => {
   scrollToTop()
 
-  const { data: news, isLoading, error } = useFetchNewsDataQuery(TOP_HEADLINES)
+  const { data: news, isLoading, error } = useFetchTopHeadlinesQuery()
 
   const firstColumnNews = news?.slice(0, 5) || []
   const secondColumnNews = news?.slice(5, 8) || []

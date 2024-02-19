@@ -123,6 +123,7 @@
     .central-news-wrapper {
       padding: 10px;
       border-radius: 10px;
+      min-height: 430px;
 
       &:hover {
         @include hover-background-color;
