@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @mixin hover-effect {
   &:hover {
     background-color: rgb(197 197 197);
@@ -15,7 +17,7 @@
 
 @mixin hover-background-color {
   &:hover {
-    background: var(--news-item-background-color-on-hover);
+    background: color.scale($color: #000, $lightness: 10%);
     transition: opacity 0.3s ease;
   }
 }
