@@ -50,15 +50,6 @@ const AllNews: React.FC = () => {
 
   return (
     <section className={styles['all-news-block']}>
-      {!newsData.length ? (
-        <></>
-      ) : (
-        <Paginator
-          count={pageCount}
-          page={currentPage + 1}
-          onChange={handlePageChange}
-        />
-      )}
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className={styles['masonry-grid']}
