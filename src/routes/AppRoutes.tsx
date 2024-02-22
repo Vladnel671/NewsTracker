@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 
+import NotFound from '../components/NotFound.tsx'
 import AllNews from '../pages/AllNews.tsx'
-import NotFound from '../pages/NotFound.tsx'
 import TopHeadlines from '../pages/TopHeadlines.tsx'
 
 export const AppRoutes = () => {

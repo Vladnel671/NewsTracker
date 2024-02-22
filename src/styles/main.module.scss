@@ -1,7 +1,6 @@
-@import './fonts/fonts', './header/header', './news/topheadlines',
-  './footer/footer', './news/multiCategoryNews', './news/spotlight',
-  './news/inCaseYouMissedIt', './news/allNews';
-@import './news/mixins';
+@import './abstracts/fonts', './layout/header', './pages/topheadlines',
+  './layout/footer', './components/multiCategoryNews', './components/spotlight',
+  './components/inCaseYouMissedIt', './pages/allNews', './abstracts/mixins';
 
 :root {
   --text-color: #fff;
