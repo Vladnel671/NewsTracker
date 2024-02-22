@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styles from '../../styles/main.module.scss'
+import { NewsImage } from '../shared/NewsImage'
 
 const Spotlight: React.FC = () => (
   <section className={styles['spotlight-block']}>
@@ -22,9 +23,7 @@ const Spotlight: React.FC = () => (
               </span>
             </div>
             <div className={styles['spotlight-img-wrapper']}>
-              <img
-                draggable={false}
-                className={styles['news-image']}
+              <NewsImage
                 src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
                 alt=""
               />
@@ -43,9 +42,7 @@ const Spotlight: React.FC = () => (
               </span>
             </div>
             <div className={styles['spotlight-img-wrapper']}>
-              <img
-                draggable={false}
-                className={styles['news-image']}
+              <NewsImage
                 src="https://cdn.vox-cdn.com/thumbor/dY1-HtI-QLYbgDgMeBjK5JkyY0U=/0x0:1000x791/1200x628/filters:focal(306x661:307x662)/cdn.vox-cdn.com/uploads/chorus_asset/file/25200758/belkin_stand_pro_lifestyle.jpg"
                 alt=""
               />
