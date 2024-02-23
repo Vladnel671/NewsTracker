@@ -1,14 +1,15 @@
 @import '../abstracts/mixins';
+@import '../abstracts/variables';
 
 .footer-block {
   display: flex;
-  background: var(--footer-background-color);
+  background: $footer-background-color;
   height: 40vh;
   bottom: 0;
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  color: var(--text-color);
+  color: $text-color;
   padding-top: 80px;
   border-top: 1px solid rgb(24 24 24);
   user-select: none;

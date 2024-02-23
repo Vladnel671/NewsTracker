@@ -1,4 +1,5 @@
 @import '../abstracts/mixins';
+@import '../abstracts/variables';
 
 .horizontal-rule {
   margin: 10px 0;
@@ -64,7 +65,7 @@
     justify-content: space-between;
     flex-direction: column;
     height: max-content;
-    color: var(--text-color);
+    color: $text-color;
     min-height: 520px;
 
     .side-column-main-news-block {
@@ -116,7 +117,7 @@
     width: 600px;
     flex-direction: column;
     align-items: center;
-    color: var(--text-color);
+    color: $text-color;
     min-height: 100%;
 
     .central-news-wrapper {
