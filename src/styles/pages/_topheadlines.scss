@@ -13,19 +13,8 @@
   font-weight: lighter;
   display: flex;
   flex-direction: row;
-  padding-top: 70px;
   justify-content: center;
   min-height: max-content;
-
-  .news-skeleton-main-block {
-    padding: 20px;
-    border-radius: 30px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: row;
-    height: 100vh;
-  }
 
   .list-item-block {
     width: 100%;

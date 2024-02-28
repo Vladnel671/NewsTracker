@@ -8,7 +8,6 @@
   flex-direction: column;
   align-items: center;
   color: $text-color;
-  margin-bottom: 80px;
 
   .spotlight-title-wrapper {
     align-items: start;
@@ -33,7 +32,6 @@
 
   .spotlight-item {
     display: flex;
-    width: 650px;
     flex-direction: row;
 
     .spotlight-title-and-description-wrapper {

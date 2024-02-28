@@ -1,7 +1,10 @@
-@import './abstracts/fonts', './layout/header', './pages/topheadlines',
-  './layout/footer', './components/multiCategoryNews', './components/spotlight',
-  './components/inCaseYouMissedIt', './pages/allNews', './abstracts/mixins',
-  './abstracts/variables', './base/reset';
+@import './abstracts/fonts', './abstracts/mixins', './abstracts/variables';
+@import './layout/header', './layout/footer';
+@import './components/multi-category-news', './components/spotlight',
+  './components/in-case-you-missed-it';
+@import './pages/all-news', './pages/topheadlines';
+@import './base/reset';
+@import './components/main-skeleton';
 
 ::selection {
   background-color: #c5c5c5;
@@ -10,7 +13,7 @@
 
 ::-webkit-scrollbar {
   z-index: 100;
-  width: 12px;
+  width: 13px;
 }
 
 ::-webkit-scrollbar-track {
@@ -18,13 +21,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f1f1f;
+  background: rgb(25 25 25 / 90%);
   border: 1px solid rgb(35 35 35 / 90%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(25 25 25 / 90%);
+  background: #2b2b2b;
+  transition: 0.5s ease-in-out;
 }
 
 body {
@@ -36,6 +40,11 @@ body {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
+    background: #2c2c2c56;
+    border-radius: 10px;
+    margin-top: 70px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
   }
 }
 

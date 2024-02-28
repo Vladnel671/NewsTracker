@@ -22,18 +22,12 @@ const TopHeadlines: React.FC = () => {
   const firstColumnMultiCategoryNews = news?.slice(12, 30) || []
 
   if (isLoading) return <TopHeadlinesSkeleton />
-  if (!news)
-    return (
-      <Alert variant="filled" severity="info">
-        Missing news!
-      </Alert>
-    )
-  if (error) {
+  if (error && !news) {
     const errorMessage =
       'message' in error ? error.message : JSON.stringify(error)
     return (
       <Alert variant="filled" severity="error">
-        {errorMessage}
+        Missing news!:{errorMessage}
       </Alert>
     )
   }
