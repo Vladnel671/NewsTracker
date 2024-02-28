@@ -4,9 +4,9 @@ import React from 'react'
 
 import InCaseYouMissedIt from '../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx'
 import MainNews from '../components/mainNews/MainNews.tsx'
+import MainSkeleton from '../components/MainSkeleton.tsx'
 import MultiCategoryNews from '../components/multiCategoryNews/MultiCategoryNews.tsx'
 import Spotlight from '../components/spotlight/Spotlight.tsx'
-import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
 import { useFetchTopHeadlinesQuery } from '../services/NewsService.ts'
 import { scrollToTop } from '../utils/NewsUtils.ts'
 
@@ -21,7 +21,7 @@ const TopHeadlines: React.FC = () => {
 
   const firstColumnMultiCategoryNews = news?.slice(12, 30) || []
 
-  if (isLoading) return <TopHeadlinesSkeleton />
+  if (isLoading) return <MainSkeleton />
   if (error && !news) {
     const errorMessage =
       'message' in error ? error.message : JSON.stringify(error)

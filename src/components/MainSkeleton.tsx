@@ -21,15 +21,20 @@ const SkeletonBlock = ({ count = 1 }) => (
             alignItems: 'center',
           }}
         >
-          <Skeleton width={'140px'} height={'70px'} />
-          <Skeleton height={'5px'} width={'140px'} count={3} />
+          <Skeleton width={'120px'} height={'70px'} />
+          <Skeleton
+            style={{ marginLeft: '10px' }}
+            height={'5px'}
+            width={'120px'}
+            count={3}
+          />
         </div>
       </div>
     ))}
   </>
 )
 
-const TopHeadlinesSkeleton: React.FC = () => (
+const MainSkeleton: React.FC = () => (
   <div className={styles['news-skeleton-main-block']}>
     <div>
       <SkeletonBlock count={3} />
@@ -93,4 +98,4 @@ const TopHeadlinesSkeleton: React.FC = () => (
   </div>
 )
 
-export default TopHeadlinesSkeleton
+export default MainSkeleton
