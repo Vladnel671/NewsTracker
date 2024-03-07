@@ -3,9 +3,9 @@ import React from 'react'
 import { NewsImage } from './ui/shared/NewsImage.tsx'
 import { regex } from '../constant/index.ts'
 import styles from '../styles/main.module.scss'
-import { MainNewsBlockProps } from '../types/types.ts'
+import { IMainNewsBlockProps } from '../types/types.ts'
 
-const MainNews: React.FC<MainNewsBlockProps> = React.memo(
+const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
   ({ firstColumnNews, secondColumnNews, thirdColumnNews }) => (
     <section className={styles['main-news-block']}>
       <div className={styles['side-block']}>

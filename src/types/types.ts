@@ -29,15 +29,19 @@ export interface INewsImageProps {
   alt: string
 }
 
-export interface CustomPaginationProps extends PaginationProps {
+export interface ICustomPaginationProps extends PaginationProps {
   count: number
   page: number
   onChange: (event: React.ChangeEvent<unknown>, page: number) => void
 }
 
-export interface MainNewsBlockProps {
+export interface IMainNewsBlockProps {
   firstColumnNews: INewsData[]
   secondColumnNews: INewsData[]
   thirdColumnNews: INewsData[]
   isLoading: boolean
+}
+
+export interface IconProps {
+  className?: string
 }

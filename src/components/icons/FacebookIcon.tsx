@@ -1,7 +1,10 @@
 import React from 'react'
 
-export const FacebookIcon: React.FC = () => (
+import { IconProps } from '../../types/types'
+
+export const FacebookIcon: React.FC<IconProps> = ({ className }) => (
   <svg
+    className={className}
     width="100%"
     height="100%"
     viewBox="0 0 24 24"

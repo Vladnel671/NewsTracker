@@ -15,22 +15,22 @@ const Footer: React.FC = () => (
       <ul className={styles['socials-list']}>
         <li className={styles['social-icon']}>
           <a>
-            <FacebookIcon />
+            <FacebookIcon className={styles['icon']} />
           </a>
         </li>
         <li className={styles['social-icon']}>
           <a>
-            <TwitterIcon />
+            <TwitterIcon className={styles['icon']} />
           </a>
         </li>
         <li className={styles['social-icon']}>
           <a>
-            <InstagramIcon />
+            <InstagramIcon className={styles['icon']} />
           </a>
         </li>
         <li className={styles['social-icon']}>
           <a>
-            <YoutubeIcon />
+            <YoutubeIcon className={styles['icon']} />
           </a>
         </li>
       </ul>

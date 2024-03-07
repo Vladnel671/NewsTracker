@@ -5,9 +5,9 @@ import PaginationItem from '@mui/material/PaginationItem'
 import React from 'react'
 
 import styles from '../../styles/main.module.scss'
-import { CustomPaginationProps } from '../../types/types.ts'
+import { ICustomPaginationProps } from '../../types/types.ts'
 
-const Paginator: React.FC<CustomPaginationProps> = ({
+const Paginator: React.FC<ICustomPaginationProps> = ({
   count,
   page,
   onChange,
