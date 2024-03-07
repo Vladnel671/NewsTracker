@@ -14,10 +14,15 @@
   border-top: 1px solid rgb(24 24 24);
   user-select: none;
 
-  .footer-socials {
+  .socials {
     display: flex;
-    gap: 50px;
     margin-bottom: 30px;
+
+    .socials-list {
+      display: flex;
+      gap: 50px;
+      flex-direction: row;
+    }
   }
 
   .copyright {
@@ -27,12 +32,6 @@
 
   .footer-logo {
     margin-bottom: 30px;
-  }
-
-  .footer-icon {
-    display: block;
-    max-width: 100%;
-    height: auto;
   }
 
   .social-icon {

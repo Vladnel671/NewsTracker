@@ -11,20 +11,26 @@ import {
 const Footer: React.FC = () => (
   <footer className={styles['footer-block']}>
     <h2 className={styles['footer-logo']}>NewsTracker</h2>
-    <nav className={styles['footer-socials']}>
-      <ul>
-        <li>
-          <a className={styles['social-icon']}>
+    <nav className={styles['socials']}>
+      <ul className={styles['socials-list']}>
+        <li className={styles['social-icon']}>
+          <a>
             <FacebookIcon />
           </a>
-          <a className={styles['social-icon']}>
+        </li>
+        <li className={styles['social-icon']}>
+          <a>
+            <TwitterIcon />
+          </a>
+        </li>
+        <li className={styles['social-icon']}>
+          <a>
             <InstagramIcon />
           </a>
-          <a className={styles['social-icon']}>
+        </li>
+        <li className={styles['social-icon']}>
+          <a>
             <YoutubeIcon />
-          </a>
-          <a className={styles['social-icon']}>
-            <TwitterIcon />
           </a>
         </li>
       </ul>
