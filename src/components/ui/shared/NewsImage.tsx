@@ -3,8 +3,8 @@ import LazyLoad from 'react-lazyload'
 import Skeleton from 'react-loading-skeleton'
 
 import 'react-loading-skeleton/dist/skeleton.css'
-import styles from '../../styles/main.module.scss'
-import { INewsImageProps } from '../../types/types.ts'
+import styles from '../../../styles/main.module.scss'
+import { INewsImageProps } from '../../../types/types.ts'
 
 export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false)

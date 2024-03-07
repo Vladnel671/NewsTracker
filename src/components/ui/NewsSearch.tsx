@@ -4,7 +4,7 @@ import React, { ChangeEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import CustomInputField from './shared/CustomInputField'
-import styles from '../styles/main.module.scss'
+import styles from '../../styles/main.module.scss'
 
 const NewsSearch: React.FC = () => {
   const [keyword, setKeyword] = useState<string>('')

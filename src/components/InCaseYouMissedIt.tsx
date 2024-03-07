@@ -7,8 +7,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
-import styles from '../../styles/main.module.scss'
-import { NewsImage } from '../shared/NewsImage'
+import { NewsImage } from './ui/shared/NewsImage'
+import styles from '../styles/main.module.scss'
 
 const InCaseYouMissedIt: React.FC = () => {
   const images = [

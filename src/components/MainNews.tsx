@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { regex } from '../../constant'
-import styles from '../../styles/main.module.scss'
-import { MainNewsBlockProps } from '../../types/types.ts'
-import { NewsImage } from '../shared/NewsImage.tsx'
+import { NewsImage } from './ui/shared/NewsImage.tsx'
+import { regex } from '../constant/index.ts'
+import styles from '../styles/main.module.scss'
+import { MainNewsBlockProps } from '../types/types.ts'
 
 const MainNews: React.FC<MainNewsBlockProps> = React.memo(
   ({ firstColumnNews, secondColumnNews, thirdColumnNews }) => (

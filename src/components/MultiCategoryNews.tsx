@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from '../../styles/main.module.scss'
-import { INewsState } from '../../types/types.ts'
-import { NewsImage } from '../shared/NewsImage.tsx'
+import { NewsImage } from './ui/shared/NewsImage.tsx'
+import styles from '../styles/main.module.scss'
+import { INewsState } from '../types/types.ts'
 
 const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
   <section className={styles['multi-news-block']}>

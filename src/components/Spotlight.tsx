@@ -1,7 +1,7 @@
 import React from 'react'
 
-import styles from '../../styles/main.module.scss'
-import { NewsImage } from '../shared/NewsImage'
+import { NewsImage } from './ui/shared/NewsImage'
+import styles from '../styles/main.module.scss'
 
 const Spotlight: React.FC = () => (
   <section className={styles['spotlight-block']}>

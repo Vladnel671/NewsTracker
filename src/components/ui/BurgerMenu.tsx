@@ -4,8 +4,8 @@ import { MenuItem } from '@mui/material'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import styles from '../../src/styles/main.module.scss'
-import { scrollToTop } from '../utils/NewsUtils.ts'
+import styles from '../../styles/main.module.scss'
+import { scrollToTop } from '../../utils/NewsUtils.ts'
 
 const BurgerMenu: React.FC = () => {
   const navigate = useNavigate()

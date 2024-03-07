@@ -2,7 +2,7 @@ import { TextField } from '@material-ui/core'
 import { styled } from '@mui/material'
 import React from 'react'
 
-import styles from '../../styles/main.module.scss'
+import styles from '../../../styles/main.module.scss'
 
 interface CustomInputFieldPropsProps {
   keyword: string
