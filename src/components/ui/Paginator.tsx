@@ -37,8 +37,8 @@ const Paginator: React.FC<ICustomPaginationProps> = ({
         height: '40px',
         width: '50px',
         '&:hover': {
-          backgroundColor: '#2b2b2b',
-          color: '#ffffff',
+          backgroundColor: '#cccccc',
+          color: '#000',
           borderRadius: '10px',
         },
       },

@@ -7,28 +7,27 @@
 @import './components/main-skeleton';
 
 ::selection {
-  background-color: #c5c5c5;
-  color: #000;
+  background-color: $selection-background-color;
+  color: $selection-color;
 }
 
 ::-webkit-scrollbar {
   z-index: 100;
-  width: 13px;
+  width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f0f0f;
+  background: $scrollbar-track;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(25 25 25 / 90%);
-  border: 1px solid rgb(35 35 35 / 90%);
+  background: $scrollbar-thumb;
+  border: 1px solid $scrollbar-thumb-border-color;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2b2b2b;
-  transition: 0.5s ease-in-out;
+  background: $scrollbar-thumb-hover;
 }
 
 body {
@@ -40,12 +39,13 @@ body {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #2c2c2c3b;
-    border-radius: 5px;
+    background: #48063c;
+    border-radius: 20px;
     margin-top: 70px;
     overflow-x: hidden;
     margin-bottom: 20px;
-    padding: 10px 20px;
+    padding: 20px 50px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
   }
 }
 
@@ -56,10 +56,6 @@ body {
   margin: 0;
   color: $text-color;
   width: 100%;
-}
-
-.news-link-hover-underline {
-  @include hover-underline;
 }
 
 .news-image {

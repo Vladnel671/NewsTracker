@@ -12,12 +12,14 @@
   &:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+    color: rgb(220 220 220);
   }
 }
 
 @mixin hover-background-color {
   &:hover {
-    background: color.scale($color: #000, $lightness: 10%);
-    transition: opacity 0.3s ease;
+    background: color.scale($color: #160212, $lightness: 10%);
+    box-shadow: 0 0 10px rgb(0 0 0 / 80%);
+    border: 1px solid transparent;
   }
 }

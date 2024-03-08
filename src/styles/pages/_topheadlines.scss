@@ -22,6 +22,8 @@
     flex-direction: row;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border: 1px solid transparent;
 
     &:hover {
       @include hover-background-color;
@@ -64,6 +66,8 @@
       justify-content: space-between;
       padding: 10px;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+      border: 1px solid transparent;
 
       &:hover {
         @include hover-background-color;
@@ -113,6 +117,8 @@
       padding: 10px;
       border-radius: 10px;
       min-height: 430px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+      border: 1px solid transparent;
 
       &:hover {
         @include hover-background-color;
@@ -122,7 +128,7 @@
         max-width: 600px;
         margin: 0 auto;
         overflow-x: hidden;
-        min-height: 300px;
+        min-height: 260px;
       }
 
       .central-text {
@@ -143,6 +149,7 @@
         justify-content: end;
         font-size: 14px;
         color: #a2a2a2;
+        min-height: 20px;
       }
     }
 
