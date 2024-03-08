@@ -31,7 +31,7 @@
 }
 
 body {
-  background: $main-color;
+  background: $body-background-color;
   overflow-x: hidden;
   font-family: 'Roboto Condensed', sans-serif;
 
@@ -39,7 +39,7 @@ body {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #48063c;
+    background: $main-block-background-color;
     border-radius: 20px;
     margin-top: 70px;
     overflow-x: hidden;
