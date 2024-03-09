@@ -7,6 +7,7 @@ import styles from '../../../styles/main.module.scss'
 interface CustomInputFieldPropsProps {
   keyword: string
   searchHandler: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
 const CustomTextField = styled(TextField)({
@@ -24,9 +25,11 @@ const CustomTextField = styled(TextField)({
 const CustomInputField: React.FC<CustomInputFieldPropsProps> = ({
   searchHandler,
   keyword,
+  onKeyPress,
 }) => {
   return (
     <CustomTextField
+      onKeyDown={onKeyPress}
       id="search-field"
       className={styles['search-input']}
       value={keyword}

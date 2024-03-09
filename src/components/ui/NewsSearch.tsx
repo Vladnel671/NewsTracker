@@ -14,6 +14,12 @@ const NewsSearch: React.FC = () => {
     setKeyword(event.target.value)
   }
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      getData()
+    }
+  }
+
   const getData = () => {
     if (keyword.trim() === '') {
       return
@@ -27,7 +33,11 @@ const NewsSearch: React.FC = () => {
       <IconButton onClick={getData} aria-label="search">
         <SearchIcon style={{ color: 'white' }} />
       </IconButton>
-      <CustomInputField keyword={keyword} searchHandler={searchHandler} />
+      <CustomInputField
+        onKeyPress={handleKeyPress}
+        keyword={keyword}
+        searchHandler={searchHandler}
+      />
     </div>
   )
 }
