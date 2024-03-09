@@ -18,7 +18,10 @@
 
 @mixin hover-background-color {
   &:hover {
-    background: color.scale($color: #160212, $lightness: 10%);
+    background: color.scale(
+      $color: $main-block-background-color,
+      $lightness: 10%
+    );
     box-shadow: 0 0 10px rgb(0 0 0 / 80%);
     border: 1px solid transparent;
   }

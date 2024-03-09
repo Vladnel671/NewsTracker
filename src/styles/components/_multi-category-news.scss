@@ -37,12 +37,20 @@
   }
 
   .multi-news {
+    background-color: $news-item-background-color;
     padding: 20px;
     border-radius: 30px;
     display: flex;
     width: 430px;
     min-height: 500px;
     flex-direction: column;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border: 1px solid transparent;
+    transition: $news-transition-on-hover;
+
+    &:hover {
+      @include hover-background-color;
+    }
 
     .multi-news-img-wrapper {
       min-height: 215px;

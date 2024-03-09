@@ -24,6 +24,7 @@ const InCaseYouMissedIt: React.FC = () => {
       <div className={styles['in-case-you-missed-wrapper']}>
         <h3 className={styles.title}>IN CASE YOU MISSED IT</h3>
         <Swiper
+          className={styles['swiper']}
           role="listbox"
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={200}

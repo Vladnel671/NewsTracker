@@ -6,18 +6,23 @@
   flex-direction: column;
   align-items: center;
   color: $text-color;
-}
 
-.in-case-you-missed-wrapper {
-  align-items: center;
+  .in-case-you-missed-wrapper {
+    align-items: center;
 
-  .title {
-    margin-bottom: 10px;
+    .swiper {
+      width: 100%;
+      min-height: 400px;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
   }
-}
 
-.in-case-you-missed-img-wrapper {
-  max-width: 500px;
-  margin: 0 auto;
-  min-height: 250px;
+  .in-case-you-missed-img-wrapper {
+    max-width: 200px;
+    margin: 0 auto;
+    min-height: 250px;
+  }
 }
