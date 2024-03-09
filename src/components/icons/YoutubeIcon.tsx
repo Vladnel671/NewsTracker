@@ -15,13 +15,7 @@ export const YoutubeIcon: React.FC<IconProps> = ({ className }) => (
     <title>youtube [#168]</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g
-      id="Page-1"
-      stroke="none"
-      stroke-width="1"
-      fill="none"
-      fill-rule="evenodd"
-    >
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Dribbble-Light-Preview"
         transform="translate(-300.000000, -7442.000000)"

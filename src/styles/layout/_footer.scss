@@ -4,14 +4,14 @@
 .footer-block {
   display: flex;
   background: $footer-background-color;
-  height: 40vh;
+  height: 15rem;
   bottom: 0;
   align-items: center;
   justify-content: start;
   flex-direction: column;
   color: $text-color;
-  padding-top: 80px;
-  border-top: 1px solid rgb(24 24 24);
+  padding-top: 3rem;
+  border-top: 1px solid rgb(255 255 255 / 10%);
   user-select: none;
 
   > h2 {
@@ -24,7 +24,7 @@
 
     .socials-list {
       display: flex;
-      gap: 50px;
+      gap: 3rem;
       flex-direction: row;
     }
   }
@@ -44,13 +44,13 @@
     cursor: pointer;
 
     .icon path {
-      fill: aliceblue;
-      transition: fill 0.5s ease;
+      fill: $footer-icons-background-color;
+      transition: fill 0.3s ease;
     }
 
     &:hover {
       .icon path {
-        fill: rgb(0 255 251);
+        fill: $footer-icons-background-color-on-hover;
       }
     }
   }

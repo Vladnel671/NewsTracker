@@ -9,11 +9,13 @@ import { INewsImageProps } from '../../../types/types.ts'
 export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const imageStyles = isLoaded ? { display: 'block' } : { display: 'none' }
+  const imageStyles = isLoaded
+    ? { width: '100%', height: '100%' }
+    : { display: 'none' }
   const skeletonStyles = isLoaded ? { width: '100%', height: '100%' } : {}
 
   return (
-    <LazyLoad style={skeletonStyles}>
+    <LazyLoad>
       {src && (
         <>
           <img
@@ -24,7 +26,7 @@ export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
             onLoad={() => setIsLoaded(true)}
             style={imageStyles}
           />
-          {!isLoaded && <Skeleton style={{ width: '100%', height: '100%' }} />}
+          {!isLoaded && <Skeleton style={skeletonStyles} />}
         </>
       )}
     </LazyLoad>

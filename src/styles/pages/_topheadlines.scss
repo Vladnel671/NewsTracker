@@ -114,9 +114,10 @@
     min-height: 100%;
 
     .central-news-wrapper {
+      width: 100%;
       padding: 10px;
       border-radius: 10px;
-      min-height: 430px;
+      min-height: 350px;
       box-shadow: 0 0 10px rgb(0 0 0 / 40%);
       border: 1px solid transparent;
 
@@ -125,7 +126,7 @@
       }
 
       .central-img-wrapper {
-        max-width: 600px;
+        width: 100%;
         margin: 0 auto;
         overflow-x: hidden;
         min-height: 260px;
