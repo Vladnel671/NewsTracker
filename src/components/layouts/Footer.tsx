@@ -6,6 +6,7 @@ import {
   InstagramIcon,
   TwitterIcon,
   YoutubeIcon,
+  GithubIcon,
 } from '../icons/index'
 
 const Footer: React.FC = () => (
@@ -31,6 +32,16 @@ const Footer: React.FC = () => (
         <li className={styles['social-icon']}>
           <a>
             <YoutubeIcon className={styles['icon']} />
+          </a>
+        </li>
+        <li className={styles['social-icon']}>
+          <a
+            draggable={false}
+            href={'https://github.com/Vladnel671/NewsTracker'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon className={styles['icon']} />
           </a>
         </li>
       </ul>
