@@ -15,6 +15,7 @@
   flex-direction: row;
   justify-content: center;
   min-height: max-content;
+  margin-bottom: 20px;
 
   .list-item-block {
     background-color: $news-item-background-color;
@@ -144,7 +145,6 @@
         text-align: start;
         font-weight: 700;
         font-size: 25px;
-        margin: 3px 0 0;
         min-height: 60px;
 
         @include hover-underline;
@@ -156,7 +156,8 @@
         justify-content: end;
         font-size: 14px;
         color: $central-news-author-color;
-        min-height: 20px;
+        min-height: 15px;
+        padding: 2px 0;
       }
     }
 
