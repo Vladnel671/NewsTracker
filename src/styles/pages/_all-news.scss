@@ -57,7 +57,6 @@
   }
 
   .news-container {
-    background-color: $news-item-background-color;
     display: flex;
     flex-direction: column;
     max-width: 360px;
@@ -65,9 +64,9 @@
     word-wrap: break-word;
     border-radius: 30px;
     overflow-x: hidden;
-    border: 1px solid $container-border-color;
+    border: 1px solid transparent;
     margin-bottom: 30px;
-    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%);
     transition: $news-transition-on-hover;
 
     .news-picture-container {

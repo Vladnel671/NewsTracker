@@ -31,10 +31,8 @@
   }
 
   .spotlight-item {
-    background-color: $news-item-background-color;
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
     border: 1px solid transparent;
     padding: 15px;
     border-radius: 20px;

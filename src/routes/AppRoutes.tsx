@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import Loader from '../components/ui/shared/Loader.tsx'
 
-const NotFound = lazy(() => import('../components/NotFound.tsx'))
+const NotFound = lazy(() => import('../pages/NotFound.tsx'))
 const AllNews = lazy(() => import('../pages/AllNews.tsx'))
 const TopHeadlines = lazy(() => import('../pages/TopHeadlines.tsx'))
 
