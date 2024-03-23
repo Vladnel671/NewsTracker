@@ -23,7 +23,7 @@ const Header: React.FC = () => (
         to="/"
         role="link"
       >
-        <h1>NewsTracker</h1>
+        <h1 translate="no">NewsTracker</h1>
       </NavLink>
       <NewsSearch />
       <div className={styles['navbar-main']}>

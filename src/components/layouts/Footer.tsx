@@ -11,7 +11,9 @@ import {
 
 const Footer: React.FC = () => (
   <footer className={styles['footer-block']}>
-    <h2 className={styles['footer-logo']}>NewsTracker</h2>
+    <h2 translate="no" className={styles['footer-logo']}>
+      NewsTracker
+    </h2>
     <nav className={styles['socials']}>
       <ul className={styles['socials-list']}>
         <li className={styles['social-icon']}>
@@ -47,7 +49,7 @@ const Footer: React.FC = () => (
       </ul>
     </nav>
     <address>
-      <p className={styles.copyright}>
+      <p translate="no" className={styles.copyright}>
         ©&nbsp;{new Date().getFullYear()}
         &nbsp;Vladislav&nbsp;Nelipovich.&nbsp;All&nbsp;rights&nbsp;reserved.
       </p>
