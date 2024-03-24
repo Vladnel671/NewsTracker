@@ -9,26 +9,28 @@ import { INewsImageProps } from '../../../types/types.ts'
 export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const imageStyles = isLoaded
-    ? { width: '100%', height: '100%' }
-    : { display: 'none' }
-  const skeletonStyles = isLoaded ? { width: '100%', height: '100%' } : {}
-
   return (
-    <LazyLoad>
-      {src && (
-        <>
-          <img
-            className={`${styles['news-image']} ${styles['image-hover-effect']}`}
-            draggable={false}
-            src={src}
-            alt={alt}
-            onLoad={() => setIsLoaded(true)}
-            style={imageStyles}
-          />
-          {!isLoaded && <Skeleton style={skeletonStyles} />}
-        </>
-      )}
+    <LazyLoad style={{ height: '100%' }}>
+      <div style={{ position: 'relative', height: '100%' }}>
+        <img
+          className={`${styles['news-image']} ${styles['image-hover-effect']}`}
+          draggable={false}
+          src={src}
+          alt={alt}
+          onLoad={() => setIsLoaded(true)}
+          style={{ display: isLoaded ? 'block' : 'none' }}
+        />
+        <Skeleton
+          height="100%"
+          style={{
+            display: isLoaded ? 'none' : 'block',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+          }}
+        />
+      </div>
     </LazyLoad>
   )
 }

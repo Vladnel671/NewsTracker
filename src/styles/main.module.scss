@@ -37,14 +37,13 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 
   .main-block {
-    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 20px;
     margin-top: 50px;
     overflow-x: hidden;
     margin-bottom: 20px;
-    padding: 20px 50px;
+    padding: 20px 0;
   }
 }
 
@@ -65,9 +64,4 @@ body {
 
 .image-hover-effect {
   @include hover-effect;
-}
-
-.max-container {
-  width: 100%;
-  height: 100%;
 }

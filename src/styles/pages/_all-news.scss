@@ -11,7 +11,7 @@
 
   .all-news-item-text {
     display: flex;
-    padding: 20px;
+    padding: 0 20px 20px;
     color: $text-color;
     flex-direction: column;
 
@@ -32,7 +32,7 @@
       display: flex;
       justify-content: space-between;
       font-size: 14px;
-      padding-top: 20px;
+      padding-top: 30px;
       flex-wrap: wrap;
 
       .published-at {
@@ -57,6 +57,7 @@
   }
 
   .news-container {
+    background-color: $all-news-background-color;
     display: flex;
     flex-direction: column;
     max-width: 360px;
@@ -64,12 +65,13 @@
     word-wrap: break-word;
     border-radius: 30px;
     overflow-x: hidden;
-    border: 1px solid transparent;
     margin-bottom: 30px;
     box-shadow: 0 0 10px rgb(0 0 0 / 90%);
     transition: $news-transition-on-hover;
+    border: none;
 
     .news-picture-container {
+      border: none;
       overflow-x: hidden;
       min-height: 180px;
       display: flex;
