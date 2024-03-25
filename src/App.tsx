@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { SkeletonTheme } from 'react-loading-skeleton'
 
 import 'react-loading-skeleton/dist/skeleton.css'
-import Footer from './components/layouts/Footer.tsx'
-import Header from './components/layouts/Header.tsx'
+import Footer from './layout/Footer.tsx'
+import Header from './layout/Header.tsx'
 import { AppRoutes } from './routes/AppRoutes.tsx'
 import styles from './styles/main.module.scss'
 

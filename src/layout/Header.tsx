@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import styles from '../../styles/main.module.scss'
-import { scrollToTop } from '../../utils/NewsUtils.ts'
-import BurgerMenu from '../ui/BurgerMenu.tsx'
-import NewsSearch from '../ui/NewsSearch.tsx'
+import BurgerMenu from '../components/ui/BurgerMenu.tsx'
+import NewsSearch from '../components/ui/NewsSearch.tsx'
+import styles from '../styles/main.module.scss'
+import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const Header: React.FC = () => (
   <header className={styles['header-block']}>
