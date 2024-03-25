@@ -20,23 +20,32 @@
 
   .spotlight-content-wrapper {
     align-items: center;
-    padding: 20px;
     border-radius: 30px;
+    width: 100%;
   }
 
   .spotlight-wrapper {
+    width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .img-and-text-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .spotlight-item {
     display: flex;
     flex-direction: row;
     border: 1px solid transparent;
-    padding: 15px;
+    padding: 20px;
     border-radius: 20px;
     transition: $news-transition-on-hover;
+    width: 100%;
 
     &:hover {
       @include hover-background-color;
@@ -45,6 +54,7 @@
     .spotlight-title-and-description-wrapper {
       display: flex;
       flex-direction: column;
+      width: 200px;
 
       .spotlight-text {
         font-size: 20px;
@@ -57,12 +67,12 @@
 
         @include hover-underline;
 
-        width: 100%;
+        padding-top: 20px;
       }
     }
 
     .spotlight-img-wrapper {
-      max-width: 100%;
+      max-width: 350px;
       margin: 0 auto;
       min-height: 200px;
     }

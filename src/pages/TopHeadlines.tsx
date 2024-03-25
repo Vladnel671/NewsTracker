@@ -20,6 +20,7 @@ const TopHeadlines: React.FC = () => {
   const thirdColumnNews = news?.slice(8, 12) || []
 
   const firstColumnMultiCategoryNews = news?.slice(12, 30) || []
+  const spotlightNews = firstColumnMultiCategoryNews.slice(2, 5)
 
   if (isLoading) return <MainSkeleton />
   if (error && !news) {
@@ -40,12 +41,9 @@ const TopHeadlines: React.FC = () => {
         secondColumnNews={secondColumnNews}
         thirdColumnNews={thirdColumnNews}
       />
-      <MultiCategoryNews
-        isLoading={isLoading}
-        news={firstColumnMultiCategoryNews}
-      />
-      <InCaseYouMissedIt />
-      <Spotlight />
+      <MultiCategoryNews news={firstColumnMultiCategoryNews} />
+      <InCaseYouMissedIt inCaseYouMissedItNews={firstColumnMultiCategoryNews} />
+      <Spotlight spotlightNews={spotlightNews} />
     </motion.div>
   )
 }
