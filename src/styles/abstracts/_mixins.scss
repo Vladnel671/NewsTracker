@@ -1,0 +1,27 @@
+@use 'sass:color';
+
+@mixin hover-effect {
+  &:hover {
+    background-color: rgb(197 197 197);
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+  }
+}
+
+@mixin hover-underline {
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    color: rgb(220 220 220);
+  }
+}
+
+@mixin hover-background-color {
+  &:hover {
+    background: color.scale(
+      $color: $main-block-background-color,
+      $lightness: 10%
+    );
+    box-shadow: 0 0 10px rgb(0 0 0 / 80%);
+  }
+}

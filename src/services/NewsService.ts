@@ -10,8 +10,15 @@ export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
-    fetchNewsData: builder.query<INewsData[], string>({
-      query: (url) => url,
+    fetchTopHeadlines: builder.query<INewsData[], void>({
+      query: () => TOP_HEADLINES,
+      transformResponse: (rawData: INewsData[]) =>
+        rawData.filter(
+          (news) => !(news.title === '[Removed]' || news.title.trim() === '')
+        ),
+    }),
+    fetchAllNews: builder.query<INewsData[], void>({
+      query: () => ALL_NEWS_URL,
       transformResponse: (rawData: INewsData[]) =>
         rawData.filter(
           (news) => !(news.title === '[Removed]' || news.title.trim() === '')
@@ -20,4 +27,4 @@ export const api = createApi({
   }),
 })
 
-export const { useFetchNewsDataQuery } = api
+export const { useFetchTopHeadlinesQuery, useFetchAllNewsQuery } = api

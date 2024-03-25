@@ -1,42 +1,54 @@
-@import './fonts/fonts', './header/header', './news/topheadlines',
-  './footer/footer', './news/multiCategoryNews', './news/spotlight',
-  './news/inCaseYouMissedIt', './news/allNews';
-@import './news/mixins';
+@import './abstracts/fonts', './abstracts/mixins', './abstracts/variables';
+@import './layout/header', './layout/footer';
+@import './components/multi-category-news', './components/spotlight',
+  './components/in-case-you-missed-it';
+@import './pages/all-news', './pages/topheadlines';
+@import './base/reset';
+@import './components/main-skeleton';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+::selection {
+  background-color: $selection-background-color;
+  color: $selection-color;
 }
 
-:root {
-  --text-color: #fff;
-  --main-color: #000;
-  --footer-background-color: #000;
-  --header-background-color: rgb(35 35 35 / 90%);
-  --loader-background-color: #000;
-  --news-background-color: rgb(11 11 11);
-  --news-item-background-color-on-hover: rgb(29 29 29);
-  --container-border-color: rgb(255 255 255 / 20%);
-  --background-color: rgb(0 0 0 / 90%);
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  z-index: 100;
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+  border: 1px solid rgb(255 255 255 / 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
+  border: 1px solid $scrollbar-thumb-border-color;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollbar-thumb-hover;
 }
 
 body {
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  background: var(--main-color);
-  display: flex;
-  flex-direction: column;
+  background: $body-background-color;
   overflow-x: hidden;
   font-family: 'Roboto Condensed', sans-serif;
-  -ms-overflow-style: none;
-  align-items: center;
 
   .main-block {
-    max-width: 1370px;
+    max-width: 1200px;
     margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 50px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    padding: 20px 0;
   }
 }
 
@@ -45,12 +57,8 @@ body {
   height: min-content;
   padding: 0;
   margin: 0;
-  color: var(--text-color);
+  color: $text-color;
   width: 100%;
-}
-
-.news-link-hover-underline {
-  @include hover-underline;
 }
 
 .news-image {

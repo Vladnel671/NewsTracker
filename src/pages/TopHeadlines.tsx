@@ -2,41 +2,33 @@ import Alert from '@mui/material/Alert'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-import InCaseYouMissedIt from '../components/inCaseYouMissedIt/InCaseYouMissedIt.tsx'
-import MainNews from '../components/mainNews/MainNews.tsx'
-import MultiCategoryNews from '../components/multiCategoryNews/MultiCategoryNews.tsx'
-import Spotlight from '../components/spotlight/Spotlight.tsx'
-import TopHeadlinesSkeleton from '../components/TopHeadlinesSkeleton.tsx'
-import {
-  TOP_HEADLINES,
-  useFetchNewsDataQuery,
-} from '../services/NewsService.ts'
+import InCaseYouMissedIt from '../components/InCaseYouMissedIt.tsx'
+import MainNews from '../components/MainNews.tsx'
+import MultiCategoryNews from '../components/MultiCategoryNews.tsx'
+import Spotlight from '../components/Spotlight.tsx'
+import MainSkeleton from '../components/ui/MainSkeleton.tsx'
+import { useFetchTopHeadlinesQuery } from '../services/NewsService.ts'
 import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const TopHeadlines: React.FC = () => {
   scrollToTop()
 
-  const { data: news, isLoading, error } = useFetchNewsDataQuery(TOP_HEADLINES)
+  const { data: news, isLoading, error } = useFetchTopHeadlinesQuery()
 
   const firstColumnNews = news?.slice(0, 5) || []
   const secondColumnNews = news?.slice(5, 8) || []
   const thirdColumnNews = news?.slice(8, 12) || []
 
   const firstColumnMultiCategoryNews = news?.slice(12, 30) || []
+  const spotlightNews = firstColumnMultiCategoryNews.slice(2, 5)
 
-  if (isLoading) return <TopHeadlinesSkeleton />
-  if (!news)
-    return (
-      <Alert variant="filled" severity="info">
-        Missing news!
-      </Alert>
-    )
-  if (error) {
+  if (isLoading) return <MainSkeleton />
+  if (error && !news) {
     const errorMessage =
       'message' in error ? error.message : JSON.stringify(error)
     return (
       <Alert variant="filled" severity="error">
-        {errorMessage}
+        Missing news!:{errorMessage}
       </Alert>
     )
   }
@@ -49,12 +41,9 @@ const TopHeadlines: React.FC = () => {
         secondColumnNews={secondColumnNews}
         thirdColumnNews={thirdColumnNews}
       />
-      <MultiCategoryNews
-        isLoading={isLoading}
-        news={firstColumnMultiCategoryNews}
-      />
-      <InCaseYouMissedIt />
-      <Spotlight />
+      <MultiCategoryNews news={firstColumnMultiCategoryNews} />
+      <InCaseYouMissedIt inCaseYouMissedItNews={firstColumnMultiCategoryNews} />
+      <Spotlight spotlightNews={spotlightNews} />
     </motion.div>
   )
 }
