@@ -11,6 +11,11 @@
   color: $selection-color;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 ::-webkit-scrollbar {
   z-index: 100;
   width: 15px;
