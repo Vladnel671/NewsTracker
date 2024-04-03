@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 
 import { NewsImage } from './ui/shared/NewsImage.tsx'
-import { formatDate } from '../constant'
+import { formatDate } from '../constants/index.ts'
 import styles from '../styles/main.module.scss'
 import { INewsData } from '../types/types.ts'
 
