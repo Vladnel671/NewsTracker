@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { NewsImage } from './ui/shared/NewsImage.tsx'
-import { regex } from '../constant/index.ts'
+import { regex } from '../constants/index.ts'
 import styles from '../styles/main.module.scss'
 import { IMainNewsBlockProps } from '../types/types.ts'
 

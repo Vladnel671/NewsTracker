@@ -1,7 +1,6 @@
+import { Skeleton } from '@mui/material'
 import React from 'react'
-import Skeleton from 'react-loading-skeleton'
 
-import 'react-loading-skeleton/dist/skeleton.css'
 import styles from '../../styles/main.module.scss'
 
 const SkeletonBlock = ({ count = 1 }) => (
@@ -26,7 +25,6 @@ const SkeletonBlock = ({ count = 1 }) => (
             style={{ marginLeft: '10px' }}
             height={'5px'}
             width={'120px'}
-            count={3}
           />
         </div>
       </div>
@@ -67,7 +65,6 @@ const MainSkeleton: React.FC = () => (
             style={{ marginLeft: '10px' }}
             height={'5px'}
             width={'190px'}
-            count={2}
           />
         </div>
         <div
@@ -87,7 +84,6 @@ const MainSkeleton: React.FC = () => (
             style={{ marginLeft: '10px' }}
             height={'5px'}
             width={'190px'}
-            count={2}
           />
         </div>
       </div>

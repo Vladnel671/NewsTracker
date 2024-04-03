@@ -7,14 +7,12 @@ const NotFound = lazy(() => import('../pages/NotFound.tsx'))
 const AllNews = lazy(() => import('../pages/AllNews.tsx'))
 const TopHeadlines = lazy(() => import('../pages/TopHeadlines.tsx'))
 
-export const AppRoutes = () => {
-  return (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/" element={<TopHeadlines />} />
-        <Route path="/allnews" element={<AllNews />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
-  )
-}
+export const AppRoutes = () => (
+  <Suspense fallback={<Loader />}>
+    <Routes>
+      <Route path="/" element={<TopHeadlines />} />
+      <Route path="/allnews" element={<AllNews />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Suspense>
+)
