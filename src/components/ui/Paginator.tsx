@@ -13,11 +13,6 @@ const Paginator: React.FC<ICustomPaginationProps> = ({
   onChange,
 }) => (
   <Pagination
-    style={{
-      marginBottom: '20px',
-      padding: '10px',
-      borderRadius: '30px',
-    }}
     className={styles.pagination}
     count={count}
     page={page}

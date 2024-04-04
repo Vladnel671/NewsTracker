@@ -5,26 +5,90 @@
   flex-direction: column;
   align-items: center;
   color: $text-color;
-  margin-bottom: 180px;
 
   .in-case-you-missed-wrapper {
     align-items: center;
     width: 100%;
-    height: 100px;
 
     .in-case-you-missed-img-wrapper {
       display: flex;
-      height: auto;
-      width: 300px;
+      width: 100%;
     }
 
     .swiper {
       width: 100%;
-      min-height: 150px;
+      padding: 10px;
     }
 
     .title {
       margin-bottom: 10px;
+    }
+  }
+}
+
+@media (width >= 320px) {
+  .in-case-you-missed-it-block {
+    margin-bottom: 10px;
+    min-height: 220px;
+    overflow: hidden;
+
+    .in-case-you-missed-wrapper {
+      min-height: 100%;
+
+      .swiper {
+        min-height: 200px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .title {
+    padding-left: 12px;
+  }
+}
+
+@media (width >= 480px) {
+  .in-case-you-missed-it-block {
+    margin-bottom: 10px;
+    min-height: 250px;
+    overflow: hidden;
+
+    .in-case-you-missed-wrapper {
+      min-height: 100%;
+
+      .swiper {
+        min-height: 250px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .title {
+    padding-left: 12px;
+  }
+}
+
+@media (width >= 640px) {
+  .in-case-you-missed-it-block {
+    min-height: 300px;
+
+    .in-case-you-missed-wrapper {
+      .swiper {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .in-case-you-missed-it-block {
+    padding: 10px;
+    min-height: 300px;
+
+    .in-case-you-missed-wrapper {
+      .swiper {
+        min-height: 300px;
+      }
     }
   }
 }

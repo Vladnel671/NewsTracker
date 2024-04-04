@@ -74,3 +74,30 @@ body {
 .image-hover-effect {
   @include hover-effect;
 }
+
+@media (width >= 320px) {
+  body {
+    .main-block {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+}
+
+@media (width >= 425px) {
+  body {
+    .main-block {
+      margin-bottom: 20px;
+      padding: 20px 0;
+    }
+  }
+}
+
+@media (width >= 640px) {
+  body {
+    .main-block {
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  }
+}

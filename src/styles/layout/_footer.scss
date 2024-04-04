@@ -24,7 +24,6 @@
 
     .socials-list {
       display: flex;
-      gap: 2.5rem;
       flex-direction: row;
     }
   }
@@ -54,6 +53,26 @@
     &:hover {
       .icon path {
         fill: $footer-icons-background-color-on-hover;
+      }
+    }
+  }
+}
+
+@media (width >= 320px) {
+  .footer-block {
+    .socials {
+      .socials-list {
+        gap: 1.7rem;
+      }
+    }
+  }
+}
+
+@media (width >= 640px) {
+  .footer-block {
+    .socials {
+      .socials-list {
+        gap: 2.5rem;
       }
     }
   }
