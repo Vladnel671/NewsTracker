@@ -51,7 +51,7 @@ const Footer: React.FC = () => (
     <address>
       <p translate="no" className={styles.copyright}>
         ©&nbsp;{new Date().getFullYear()}
-        &nbsp;Vladislav&nbsp;Nelipovich.&nbsp;All&nbsp;rights&nbsp;reserved.
+        &nbsp;All&nbsp;rights&nbsp;reserved.
       </p>
     </address>
   </footer>

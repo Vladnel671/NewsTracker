@@ -36,17 +36,21 @@
   background: $scrollbar-thumb-hover;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background: radial-gradient(
     circle at bottom right,
     #5b5b5b -100%,
     #1a1a1d 70%
   );
-  overflow-x: hidden;
   font-family: 'Roboto Condensed', sans-serif;
 
   .main-block {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
     border-radius: 20px;
     margin-top: 50px;

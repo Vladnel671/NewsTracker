@@ -11,8 +11,8 @@ const Header: React.FC = () => (
     <div
       style={{
         display: 'flex',
-        width: '1170px',
-        maxWidth: '1170px',
+        width: '1140px',
+        maxWidth: '1140px',
         justifyContent: 'space-between',
       }}
     >
