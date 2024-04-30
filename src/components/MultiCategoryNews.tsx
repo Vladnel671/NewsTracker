@@ -12,7 +12,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
         <a
           draggable={false}
           className={styles['news-link']}
-          href={news[0]?.url}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -31,7 +30,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
             draggable={false}
             key={index}
             className={styles['news-link']}
-            href={news?.url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -49,7 +47,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
         <a
           draggable={false}
           className={styles['news-link']}
-          href={news[1]?.url}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -68,7 +65,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
             draggable={false}
             key={index}
             className={styles['news-link']}
-            href={news?.url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -86,7 +82,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
         <a
           draggable={false}
           className={styles['news-link']}
-          href={news[3]?.url}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -106,7 +101,6 @@ const MultiCategoryNews: React.FC<INewsState> = React.memo(({ news }) => (
             draggable={false}
             key={index}
             className={styles['news-link']}
-            href={news?.url}
             target="_blank"
             rel="noopener noreferrer"
           >

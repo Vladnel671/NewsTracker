@@ -9,8 +9,7 @@ import { INewsData } from '../types/types.ts'
 const AllNewsItem: React.FC<{ news: INewsData; isLoading: boolean }> = ({
   news,
 }) => {
-  const { source, publishedAt, title, urlToImage, author, description, url } =
-    news
+  const { source, publishedAt, title, urlToImage, author, description } = news
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 3 }}>
@@ -18,7 +17,6 @@ const AllNewsItem: React.FC<{ news: INewsData; isLoading: boolean }> = ({
         <a
           draggable={false}
           className={styles['news-link']}
-          href={url}
           target="_blank"
           rel="noopener noreferrer"
         >

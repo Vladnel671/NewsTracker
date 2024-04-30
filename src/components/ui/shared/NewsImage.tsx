@@ -15,6 +15,7 @@ export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
     <div ref={ref}>
       {inView ? (
         <img
+          draggable="false"
           className={`${styles['news-image']} ${styles['image-hover-effect']}`}
           src={src}
           alt={alt}

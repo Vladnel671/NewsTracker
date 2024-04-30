@@ -13,7 +13,6 @@ const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
           <a
             draggable={false}
             className={styles['news-link']}
-            href={firstColumnNews[0]?.url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,7 +37,6 @@ const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
               <a
                 draggable={false}
                 className={styles['news-link']}
-                href={newsItem?.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -60,7 +58,6 @@ const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
           <a
             draggable={false}
             className={styles['news-link']}
-            href={secondColumnNews[0]?.url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -89,7 +86,6 @@ const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
               <a
                 draggable={false}
                 className={styles['news-link']}
-                href={newsItem?.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -111,7 +107,6 @@ const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
           <a
             draggable={false}
             className={styles['news-link']}
-            href={thirdColumnNews[0]?.url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -136,7 +131,6 @@ const MainNews: React.FC<IMainNewsBlockProps> = React.memo(
               <a
                 draggable={false}
                 className={styles['news-link']}
-                href={newsItem?.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >

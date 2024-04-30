@@ -36,7 +36,6 @@ const InCaseYouMissedIt: React.FC<{ inCaseYouMissedItNews: INewsData[] }> = ({
               <a
                 draggable={false}
                 className={styles['news-link']}
-                href={image?.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ position: 'absolute' }}
