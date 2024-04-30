@@ -1,35 +1,29 @@
 import { Skeleton } from '@mui/material'
-import React, { useState } from 'react'
-import LazyLoad from 'react-lazyload'
+import React from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import styles from '../../../styles/main.module.scss'
 import { INewsImageProps } from '../../../types/types.ts'
 
 export const NewsImage: React.FC<INewsImageProps> = ({ src, alt }) => {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  })
 
   return (
-    <LazyLoad style={{ height: '100%' }}>
-      <div style={{ position: 'relative', height: '100%' }}>
+    <div ref={ref}>
+      {inView ? (
         <img
           className={`${styles['news-image']} ${styles['image-hover-effect']}`}
-          draggable={false}
           src={src}
           alt={alt}
-          onLoad={() => setIsLoaded(true)}
-          style={{ display: isLoaded ? 'block' : 'none' }}
         />
+      ) : (
         <Skeleton
-          height="100%"
-          style={{
-            display: isLoaded ? 'none' : 'block',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-          }}
+          style={{ position: 'absolute', height: '100%', width: '100%' }}
         />
-      </div>
-    </LazyLoad>
+      )}
+    </div>
   )
 }
