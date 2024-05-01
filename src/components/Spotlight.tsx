@@ -2,9 +2,9 @@ import React from 'react'
 
 import { NewsImage } from './ui/shared/NewsImage'
 import styles from '../styles/main.module.scss'
-import { INewsData } from '../types/types'
+import { NewsData } from '../types/types'
 
-const Spotlight: React.FC<{ spotlightNews: INewsData[] }> = ({
+const Spotlight: React.FC<{ spotlightNews: NewsData[] }> = ({
   spotlightNews,
 }) => (
   <section className={styles['spotlight-block']}>

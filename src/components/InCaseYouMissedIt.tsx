@@ -9,9 +9,9 @@ import 'swiper/css/scrollbar'
 
 import { NewsImage } from './ui/shared/NewsImage'
 import styles from '../styles/main.module.scss'
-import { INewsData } from '../types/types'
+import { NewsData } from '../types/types'
 
-const InCaseYouMissedIt: React.FC<{ inCaseYouMissedItNews: INewsData[] }> = ({
+const InCaseYouMissedIt: React.FC<{ inCaseYouMissedItNews: NewsData[] }> = ({
   inCaseYouMissedItNews,
 }) => (
   <section className={styles['in-case-you-missed-it-block']}>

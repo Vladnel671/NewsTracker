@@ -1,7 +1,7 @@
 import Alert from '@mui/material/Alert'
 import React, { Suspense } from 'react'
 
-import MainSkeleton from '../components/ui/MainSkeleton.tsx'
+import Loader from '../components/ui/shared/Loader.tsx'
 import {
   InCaseYouMissedIt,
   MainNews,
@@ -23,7 +23,7 @@ const TopHeadlines: React.FC = () => {
   const firstColumnMultiCategoryNews = news?.slice(12, 30) || []
   const spotlightNews = firstColumnMultiCategoryNews.slice(2, 5)
 
-  if (isLoading) return <MainSkeleton />
+  if (isLoading) return <Loader />
   if (error && !news) {
     const errorMessage =
       'message' in error ? error.message : JSON.stringify(error)
@@ -38,7 +38,6 @@ const TopHeadlines: React.FC = () => {
     <>
       <Suspense fallback="">
         <MainNews
-          isLoading={isLoading}
           firstColumnNews={firstColumnNews}
           secondColumnNews={secondColumnNews}
           thirdColumnNews={thirdColumnNews}
