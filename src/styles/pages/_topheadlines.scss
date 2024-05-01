@@ -291,3 +291,39 @@
     }
   }
 }
+
+@media (width >= 1140px) {
+  .central-block {
+    min-width: 550px;
+
+    .central-news-wrapper {
+      min-height: 300px;
+      padding: 7px;
+
+      .central-img-wrapper {
+        min-height: 300px;
+        min-height: auto;
+      }
+    }
+  }
+
+  .side-list-news-block,
+  .central-block {
+    .list-item-block {
+      width: 100%;
+      flex-direction: row;
+
+      .list-text {
+        text-align: start;
+        padding-left: 0;
+      }
+
+      .list-img-block {
+        max-width: 150px;
+        min-width: 150px;
+        margin: 0 auto;
+        min-height: 90px;
+      }
+    }
+  }
+}

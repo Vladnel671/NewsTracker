@@ -1,15 +1,13 @@
 @import '../abstracts/variables';
 
 .header-block {
-  padding-left: 10px;
-  height: 3.5rem;
   justify-content: center;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background-color: $header-background-color;
   backdrop-filter: blur(3px);
   z-index: 10000;
