@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { INewsData, initialState } from '../../types/types'
+import { NewsData, initialState } from '../../types/types'
 
 const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
-    setNews: (state, action: PayloadAction<INewsData[]>) => {
+    setNews: (state, action: PayloadAction<NewsData[]>) => {
       state.allNews.news = action.payload
     },
-    setTopHeadlines: (state, action: PayloadAction<INewsData[]>) => {
+    setTopHeadlines: (state, action: PayloadAction<NewsData[]>) => {
       state.topHeadlines.news = action.payload
     },
   },

@@ -8,7 +8,7 @@ import Loader from '../components/ui/shared/Loader.tsx'
 import { breakpointColumnsObj, PER_PAGE } from '../constants/index.ts'
 import { useFetchAllNewsQuery } from '../services/NewsService.ts'
 import styles from '../styles/main.module.scss'
-import { INewsData } from '../types/types.ts'
+import { NewsData } from '../types/types.ts'
 import { scrollToTop } from '../utils/NewsUtils.ts'
 
 const AllNews: React.FC = () => {
@@ -37,7 +37,7 @@ const AllNews: React.FC = () => {
 
   const currentPageData = newsData
     .slice(offset, offset + PER_PAGE)
-    .map((news: INewsData) => (
+    .map((news: NewsData) => (
       <NewsItemMemo isLoading={isLoading} news={news} key={news.title} />
     ))
 

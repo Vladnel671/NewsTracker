@@ -3,9 +3,9 @@ import React from 'react'
 import { NewsImage } from './ui/shared/NewsImage.tsx'
 import { formatDate } from '../constants/index.ts'
 import styles from '../styles/main.module.scss'
-import { INewsData } from '../types/types.ts'
+import { NewsData } from '../types/types.ts'
 
-const AllNewsItem: React.FC<{ news: INewsData; isLoading: boolean }> = ({
+const AllNewsItem: React.FC<{ news: NewsData; isLoading: boolean }> = ({
   news,
 }) => {
   const { source, publishedAt, title, urlToImage, author, description } = news

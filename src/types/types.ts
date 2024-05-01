@@ -1,11 +1,11 @@
 import { PaginationProps } from '@mui/material'
 
 export interface INewsState {
-  news: INewsData[]
+  news: NewsData[]
   isLoading?: boolean
 }
 
-export interface INewsData {
+export interface NewsData {
   author: string
   title: string
   description: string
@@ -35,11 +35,10 @@ export interface ICustomPaginationProps extends PaginationProps {
   onChange: (event: React.ChangeEvent<unknown>, page: number) => void
 }
 
-export interface IMainNewsBlockProps {
-  firstColumnNews: INewsData[]
-  secondColumnNews: INewsData[]
-  thirdColumnNews: INewsData[]
-  isLoading: boolean
+export interface MainNewsProps {
+  firstColumnNews: NewsData[]
+  secondColumnNews: NewsData[]
+  thirdColumnNews: NewsData[]
 }
 
 export interface IconProps {
