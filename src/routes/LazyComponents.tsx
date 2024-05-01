@@ -4,7 +4,9 @@ export const NotFound = lazy(() => import('../pages/NotFound.tsx'))
 export const AllNews = lazy(() => import('../pages/AllNews.tsx'))
 export const TopHeadlines = lazy(() => import('../pages/TopHeadlines.tsx'))
 
-export const MainNews = lazy(() => import('../components/MainNews.tsx'))
+export const MainNews = lazy(
+  () => import('../components/MainNews/MainNews.tsx')
+)
 export const MultiCategoryNews = lazy(
   () => import('../components/MultiCategoryNews.tsx')
 )
